@@ -48,20 +48,20 @@ the following code will be generated:
 {
   val fresh$macro$1: Int = f();
   val fresh$macro$2: Double = g();
-  com.sizmek.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString()
+  com.sizmek.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString();
 }: String
 ```
 
-You can check this by adding a compiler option: `scalacOptions += "-Xprint:all"`.
+You can check this by adding a compiler option: `scalacOptions += "-Ymacro-debug-lite"`.
 
 In this code `com.sizmek.fsi.`package`.stringBuilder()` stands for getting a preallocated instance of
 `java.lang.StringBuilder` from the thread-local pool.
 
 By default a buffer capacity of all created `java.lang.StringBuilder` instances is 16384 characters (32Kb). If limit
-is reached reallocation happens. However next retrieval from the pool a new `java.lang.StringBuilder`
-instance will be allocated with the default size of the buffer and returned to avoid exhausting of Java heap. So if you want
-to work with longer strings without reallocations then set a greater value for the following JVM system property:
-`com.sizmek.fsi.buffer.size`.
+is reached buffer size grows to ensure that whole string can fit in it. However next retrieval from the pool a new 
+`java.lang.StringBuilder` instance will be allocated with the default size of the buffer and returned to avoid 
+exhausting of Java heap. So if you want to work with longer strings without reallocations then set a greater value for 
+the following JVM system property: `com.sizmek.fsi.buffer.size`.
 
 ## How to contribute
 
@@ -81,21 +81,28 @@ To see throughput with allocation rate for different approaches of string concat
 for a specified Scala version using the following command:
 
 ```sh
-sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof gc .*'
+sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof -rf json -rff jdk-8_scala-2.12.4.json gc .*' > jdk-8_scala-2.12.4.txt
 ```
+
+It will save benchmark report in a JSON file and redirect output of benchmark running to the text file.
+
+Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
+of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like 
+[here](http://jmh.morethan.io/?source=http://jmh.morethan.io/?source=https://Sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
+  
 
 ### Publish locally
 
 Publish to the local Ivy repo:
 
 ```sh
-sbt publishLocal
+sbt +publishLocal
 ```
 
 Publish to the local Maven repo:
 
 ```sh
-sbt publishM2
+sbt +publishM2
 ```
 
 ### Release
