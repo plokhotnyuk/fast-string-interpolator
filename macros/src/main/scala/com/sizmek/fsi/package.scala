@@ -85,9 +85,15 @@ package object fsi {
       if (args.isEmpty) c.Expr(Literal(Constant(constants.mkString)))
       else {
         val (valDeclarations, values) = args.map { arg =>
-          val name = TermName(c.freshName())
-          val tpe = if (arg.tree.tpe <:< definitions.NullTpe) typeOf[String] else arg.tree.tpe
-          (q"val $name: $tpe = $arg", Ident(name))
+          arg.tree match {
+            case tree if tree.tpe <:< definitions.NullTpe =>
+              (EmptyTree, q"(null: String)")
+            case tree @ Literal(Constant(_)) =>
+              (EmptyTree, tree)
+            case tree =>
+              val name = TermName(c.freshName())
+              (q"val $name = $tree", Ident(name))
+          }
         }.unzip
 
         val stringBuilderWithAppends = constants.zipAll(values, "", null)
