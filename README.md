@@ -81,15 +81,17 @@ To see throughput with allocation rate for different approaches of string concat
 for a specified Scala version using the following command:
 
 ```sh
-sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof -rf json -rff jdk-8_scala-2.12.4.json gc .*' > jdk-8_scala-2.12.4.txt
+sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof -rf json -rff jdk-8_scala-2.12.4.json gc .*'
 ```
 
-It will save benchmark report in a JSON file and redirect output of benchmark running to the text file.
+It will save benchmark report in a specified JSON file.
 
 Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
 of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like 
-[here](http://jmh.morethan.io/?source=http://jmh.morethan.io/?source=https://Sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
-  
+[here](http://jmh.morethan.io/?source=http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
+
+[Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
+Interpolator for different JDK, and Scala versions.  
 
 ### Publish locally
 
