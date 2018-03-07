@@ -1,0 +1,17 @@
+language: scala
+
+matrix:
+  include:
+    - os: linux
+      jdk: oraclejdk9
+      addons:
+        apt:
+          packages:
+            - oracle-java9-installer # Forces use of newer JDK 9 build
+    - os: linux
+      jdk: openjdk8
+    - os: linux
+      jdk: oraclejdk8
+
+script:
+  - sbt -no-colors clean +test

@@ -41,13 +41,10 @@ package object fsi {
       * It inserts its arguments between corresponding parts of the string context.
       * It also treats standard escape sequences as defined in the Scala specification.
       *
+      * If a `parts` string contains a backslash (`\`) character that does not start
+      * a valid escape sequence, then compilation error will be reported.
+      *
       * @param `args` The arguments to be inserted into the resulting string.
-      * @throws IllegalArgumentException
-      * if the number of `parts` in the enclosing `StringContext` does not exceed
-      * the number of arguments `arg` by exactly 1.
-      * @throws scala.StringContext.InvalidEscapeException
-      * if a `parts` string contains a backslash (`\`) character
-      * that does not start a valid escape sequence.
       */
     def fs(args: Any*): String = macro Impl.fs
 
@@ -58,9 +55,6 @@ package object fsi {
       * standard escape sequences as defined in the Scala specification.
       *
       * @param `args` The arguments to be inserted into the resulting string.
-      * @throws IllegalArgumentException
-      * if the number of `parts` in the enclosing `StringContext` does not exceed
-      * the number of arguments `arg` by exactly 1.
       */
     def fraw(args: Any*): String = macro Impl.fraw
   }
@@ -82,7 +76,11 @@ package object fsi {
 
       val constants = (c.prefix.tree match {
         case Apply(_, List(Apply(_, literals))) => literals
-      }).map { case Literal(Constant(s: String)) => process(s) }
+      }).map { case Literal(Constant(s: String)) =>
+        try process(s) catch {
+          case ex: InvalidEscapeException => c.abort(c.enclosingPosition, ex.getMessage)
+        }
+      }
 
       if (args.isEmpty) c.Expr(Literal(Constant(constants.mkString)))
       else {
