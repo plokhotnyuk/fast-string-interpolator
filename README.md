@@ -1,3 +1,5 @@
+[![build status](https://travis-ci.org/Sizmek/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/Sizmek/fast-string-interpolator) 
+
 # Fast String Interpolator
 
 Scala macro that generates ultra-fast string interpolators.
