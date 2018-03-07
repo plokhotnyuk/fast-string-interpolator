@@ -9,9 +9,9 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
     "call args exactly once and in order of declaration in a string literal" in {
       var x = 0
 
-      def f(): Int = {
+      def f(): Null = {
         x += 1
-        x
+        null
       }
 
       def g(): Int = {
@@ -19,7 +19,7 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
         x
       }
 
-      fs"${f()}${g()}" shouldBe "19"
+      fs"${f()}${g()}" shouldBe "null9"
     }
     "build the same string as a simple string interpolator" in {
       fs"${null}${1}${'A'}${"A"}" shouldBe s"${null}${1}${'A'}${"A"}"
@@ -39,9 +39,9 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
     "call args exactly once and in order of declaration in a string literal" in {
       var x = 0
 
-      def f(): Int = {
+      def f(): Null = {
         x += 1
-        x
+        null
       }
 
       def g(): Int = {
@@ -49,7 +49,7 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
         x
       }
 
-      fraw"${f()}${g()}" shouldBe "19"
+      fraw"${f()}${g()}" shouldBe "null9"
     }
     "build the same string as a raw string interpolator" in {
       fraw"${null}${1}${'A'}${"A"}" shouldBe raw"${null}${1}${'A'}${"A"}"

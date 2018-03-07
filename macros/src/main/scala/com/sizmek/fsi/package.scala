@@ -86,13 +86,12 @@ package object fsi {
       else {
         val (valDeclarations, values) = args.map { arg =>
           arg.tree match {
-            case tree if tree.tpe <:< definitions.NullTpe =>
-              (EmptyTree, q"(null: String)")
             case tree @ Literal(Constant(_)) =>
-              (EmptyTree, tree)
+              (EmptyTree, if (tree.tpe <:< definitions.NullTpe) q"(null: String)" else tree)
             case tree =>
               val name = TermName(c.freshName())
-              (q"val $name = $tree", Ident(name))
+              val tpe = if (tree.tpe <:< definitions.NullTpe) typeOf[String] else tree.tpe
+              (q"val $name: $tpe = $arg", Ident(name))
           }
         }.unzip
 
