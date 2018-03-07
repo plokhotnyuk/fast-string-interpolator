@@ -91,7 +91,7 @@ of your file to the drop zone or using the `source` parameter with an HTTP link 
 [here](http://jmh.morethan.io/?source=http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
 
 [Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
-Interpolator for different JDK, and Scala versions.  
+Interpolator for different JDK and Scala versions.  
 
 ### Publish locally
 
