@@ -27,7 +27,8 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
       fs"${null}xx${1}xx${'A'}xx${"A"}" shouldBe s"${null}xx${1}xx${'A'}xx${"A"}"
       fs"[${fs"<${fs"{${fs"${1}".toInt}}"}>"}]" shouldBe s"[${s"<${s"{${s"${1}".toInt}}"}>"}]"
       fs"\b\f\n\t\1\11\111" shouldBe s"\b\f\n\t\1\11\111"
-      fs"""" shouldBe s"""""""
+      fs""""""" shouldBe s"""""""
+      (1 to 16384).foldLeft("")((s, i) => fs"$s$i") shouldBe (1 to 16384).foldLeft("")((s, i) => s"$s$i")
     }
     "don't compile in case of escaping error" in {
       assert(intercept[TestFailedException](assertCompiles(""" fs"\d" """)).getMessage.contains {
@@ -58,6 +59,7 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
       fraw"[${fraw"<${fraw"{${fraw"${1}".toInt}}"}>"}]" shouldBe raw"[${raw"<${raw"{${raw"${1}".toInt}}"}>"}]"
       fraw"\b\f\n\t\1\11\111" shouldBe raw"\b\f\n\t\1\11\111"
       fraw""""""" shouldBe raw"""""""
+      (1 to 16384).foldLeft("")((s, i) => fraw"$s$i") shouldBe (1 to 16384).foldLeft("")((s, i) => raw"$s$i")
     }
   }
 }

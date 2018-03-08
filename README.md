@@ -69,10 +69,10 @@ the following JVM system property: `com.sizmek.fsi.buffer.size`.
 
 ### Build
 
-To compile and run tests for different Scala versions use a command:
+To compile, run tests, and check coverage for different Scala versions use a command:
 
 ```sh
-sbt clean +test
+sbt clean +coverage +test +coverageReport
 ```
 
 ### Run benchmarks
