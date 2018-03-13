@@ -16,7 +16,6 @@ lazy val commonSettings = Seq(
       url = url("https://twitter.com/aplokhotnyuk")
     )
   ),
-  crossScalaVersions := Seq("2.13.0-M3", "2.12.4", "2.11.12"),
   scalaVersion := "2.12.4",
   scalacOptions ++= Seq(
     "-deprecation",
@@ -62,6 +61,7 @@ lazy val macros = project
   .settings(commonSettings: _*)
   .settings(publishSettings: _*)
   .settings(
+    crossScalaVersions := Seq("2.13.0-M3", "2.12.4", "2.11.12"),
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
@@ -74,6 +74,7 @@ lazy val benchmark = project
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
+    crossScalaVersions := Seq("2.12.4", "2.11.12"),
     libraryDependencies ++= Seq(
       "com.outr" %% "perfolation" % "1.0.0",
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
