@@ -13,6 +13,7 @@ class StringConcatenationBenchmarkSpec extends WordSpec with Matchers {
       benchmark.frawInterpolator shouldBe expected
       benchmark.fsInterpolator shouldBe expected
       benchmark.javaStringBuilder shouldBe expected
+      benchmark.pInterpolator shouldBe expected
       benchmark.rawInterpolator shouldBe expected
       benchmark.scalaStringBuilder shouldBe expected
       benchmark.scalaStringConcatenation shouldBe expected

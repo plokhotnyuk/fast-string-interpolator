@@ -75,6 +75,7 @@ lazy val benchmark = project
   .settings(noPublishSettings: _*)
   .settings(
     libraryDependencies ++= Seq(
+      "com.outr" %% "perfolation" % "1.0.0",
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
     )

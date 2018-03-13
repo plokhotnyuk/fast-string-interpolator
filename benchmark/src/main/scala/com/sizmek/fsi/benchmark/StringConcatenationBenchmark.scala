@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit
 
 import com.sizmek.fsi._
 import org.openjdk.jmh.annotations.{Benchmark, _}
+import perfolation._
 
 @State(Scope.Benchmark)
 @Warmup(iterations = 5)
@@ -47,6 +48,10 @@ class StringConcatenationBenchmark {
     new java.lang.StringBuilder().append(int).append("xxx").append(long).append("xxx").append(float)
       .append("xxx").append(double).append("xxx").append(char).append("xxx").append(boolean)
       .append("xxx").append(string).toString
+
+  @Benchmark
+  def pInterpolator: String =
+    p"${int}xxx${long}xxx${float}xxx${double}xxx${char}xxx${boolean}xxx$string"
 
   @Benchmark
   def rawInterpolator: String =
