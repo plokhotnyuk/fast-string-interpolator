@@ -14,4 +14,7 @@ matrix:
       jdk: oraclejdk8
 
 script:
-  - sbt -no-colors clean +test
+  - sbt -no-colors clean coverage +test coverageReport
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
