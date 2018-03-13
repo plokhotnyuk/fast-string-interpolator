@@ -1,5 +1,4 @@
 language: scala
-
 matrix:
   include:
     - os: linux
@@ -12,9 +11,7 @@ matrix:
       jdk: openjdk8
     - os: linux
       jdk: oraclejdk8
-
 script:
   - sbt -no-colors clean coverage +test coverageReport
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
