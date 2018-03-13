@@ -9,14 +9,20 @@ Scala macro that generates ultra-fast string interpolators.
 
 A high-performance 100% compatible drop-in replacement of simple and raw string interpolators (s"" or raw"" literals).
 
-Currently, it doesn't support formatting string interpolator (f"" literal).
+Currently, it doesn't support formatting string interpolator (f"" literal), however this will probably be added very soon.
 
 ## How to use
+
+Build and publish locally for all Scala versions (release to Sonatype or Bintray repo is coming)
+
+```sbt
+sbt clean +publishLocal
+```
 
 Add the library to a dependency list in your `build.sbt` file:
 
 ```sbt
-libraryDependencies += "com.sizmek.fast-string-interpolator" %% "macros" % "0.1.0"
+libraryDependencies += "com.sizmek.fast-string-interpolator" %% "macros" % "0.1.0-SNAPSHOT"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):
@@ -84,7 +90,7 @@ To see throughput with allocation rate for different approaches of string concat
 for a specified Scala version using the following command:
 
 ```sh
-sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof -rf json -rff jdk-8_scala-2.12.4.json gc .*'
+sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof gc -rf json -rff jdk-8_scala-2.12.4.json gc .*'
 ```
 
 It will save benchmark report in a specified JSON file.
