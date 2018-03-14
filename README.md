@@ -7,9 +7,9 @@ Scala macro that generates ultra-fast string interpolators.
 
 ## Goals, features, and limitations
 
-A high-performance 100% compatible drop-in replacement of simple and raw string interpolators (s"" or raw"" literals).
+A high-performance 100% compatible drop-in replacement of simple and raw string interpolators (`s""` or `raw""` literals).
 
-Currently, it doesn't support formatting string interpolator (f"" literal), however this will probably be added very soon.
+Currently, it doesn't support formatting string interpolator (`f""` literal), however this will probably be added soon.
 
 ## How to use
 
@@ -63,7 +63,7 @@ the following code will be generated:
 
 You can check this by adding a compiler option: `scalacOptions += "-Ymacro-debug-lite"`.
 
-In this code `com.sizmek.fsi.`package`.stringBuilder()` stands for getting a preallocated instance of
+In this code ```com.sizmek.fsi.`package`.stringBuilder()``` stands for getting a preallocated instance of
 `java.lang.StringBuilder` from the thread-local pool.
 
 By default a buffer capacity of all created `java.lang.StringBuilder` instances is 16384 characters (32Kb). If limit
@@ -90,7 +90,7 @@ To see throughput with allocation rate for different approaches of string concat
 for a specified Scala version using the following command:
 
 ```sh
-sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof gc -rf json -rff jdk-8_scala-2.12.4.json gc .*'
+sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof gc -rf json -rff jdk-8_scala-2.12.4.json .*'
 ```
 
 It will save benchmark report in a specified JSON file.
