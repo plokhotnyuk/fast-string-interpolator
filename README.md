@@ -13,7 +13,7 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 
 ## How to use
 
-The library is published to JCenter, so add an resolver for it (or ensure that it is already added):
+The library is published to JCenter, so please add a resolver for it (or ensure that it is already added):
 
 ```sbt
 resolvers += Resolver.jcenterRepo
