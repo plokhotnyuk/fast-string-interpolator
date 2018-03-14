@@ -97,7 +97,7 @@ It will save benchmark report in a specified JSON file.
 
 Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
 of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like 
-[here](http://jmh.morethan.io/?source=http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
+[here](http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
 
 [Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
 Interpolator for different JDK and Scala versions.  
