@@ -22,7 +22,7 @@ sbt clean +publishLocal
 Add the library to a dependency list in your `build.sbt` file:
 
 ```sbt
-libraryDependencies += "com.sizmek.fast-string-interpolator" %% "macros" % "0.1.0-SNAPSHOT"
+libraryDependencies += "com.sizmek.fsi" %% "macros" % "0.1.0"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):

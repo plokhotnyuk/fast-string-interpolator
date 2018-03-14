@@ -6,7 +6,7 @@ lazy val commonSettings = Seq(
   organization := "com.sizmek.fsi",
   organizationHomepage := Some(url("https://sizmek.com")),
   homepage := Some(url("https://github.com/Sizmek/fast-string-interpolator")),
-  licenses := Seq(("Apache License 2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))),
+  licenses := Seq(("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))),
   startYear := Some(2018),
   developers := List(
     Developer(
@@ -14,7 +14,13 @@ lazy val commonSettings = Seq(
       name = "Andriy Plokhotnyuk",
       email = "andriy.plokhotnyuk@sizmek.com",
       url = url("https://twitter.com/aplokhotnyuk")
-    )
+    ),
+    Developer(
+      id = "AnderEnder",
+      name = "Andrii Radyk",
+      email = "andrii.radyk@sizmek.com",
+      url = url("https://github.com/AnderEnder")
+    ),
   ),
   scalaVersion := "2.12.4",
   scalacOptions ++= Seq(
@@ -27,17 +33,23 @@ lazy val commonSettings = Seq(
     "-Xfuture",
     "-Xlint"
   ),
-  testOptions in Test += Tests.Argument("-oDF")
+  testOptions in Test += Tests.Argument("-oDF"),
 )
 
 lazy val noPublishSettings = Seq(
   skip in publish := true,
-  publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging)
+  publishArtifact := false,
+  // Replace tasks to work around https://github.com/sbt/sbt-bintray/issues/93
+  bintrayRelease := (),
+  bintrayEnsureBintrayPackageExists := (),
+  bintrayEnsureLicenses := (),
 )
 
 lazy val publishSettings = Seq(
-  publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging),
-  sonatypeProfileName := "com.sizmek",
+  // publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging),
+  // sonatypeProfileName := "com.sizmek",
+  bintrayOrganization := Some("sizmek"),
+  bintrayRepository := "sizmek-maven",
   scmInfo := Some(
     ScmInfo(
       url("https://github.com/Sizmek/fast-string-interpolator"),
@@ -55,6 +67,7 @@ lazy val publishSettings = Seq(
 
 lazy val `fast-string-interpolator` = project.in(file("."))
   .aggregate(macros, benchmark)
+  .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
 
 lazy val macros = project
