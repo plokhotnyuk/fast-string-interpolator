@@ -24,9 +24,8 @@ releaseProcess := Seq[ReleaseStep](
   updateVersionInReadme,
   commitReleaseVersion,
   tagRelease,
-  releaseStepCommandAndRemaining("+publishSigned"),
+  releaseStepCommandAndRemaining("+publish"),
   setNextVersion,
   commitNextVersion,
-  releaseStepCommand("sonatypeReleaseAll"),
   pushChanges
 )
