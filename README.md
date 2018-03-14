@@ -13,10 +13,10 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 
 ## How to use
 
-Build and publish locally for all Scala versions (release to Sonatype or Bintray repo is coming)
+The library is published to JCenter, so add an resolver for it (or ensure that it is already added):
 
 ```sbt
-sbt clean +publishLocal
+resolvers += Resolver.jcenterRepo
 ```
 
 Add the library to a dependency list in your `build.sbt` file:
