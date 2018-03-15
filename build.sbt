@@ -22,7 +22,9 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.4",
+  resolvers += "nightlies" at "https://scala-ci.typesafe.com/artifactory/scala-release-temp/",
+  scalaVersion := "2.12.5-bin-0b6d7c3",
+  scalaBinaryVersion := "2.12",
   scalacOptions ++= Seq(
     "-deprecation",
     "-encoding", "UTF-8",
