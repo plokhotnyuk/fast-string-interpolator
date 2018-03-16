@@ -13,13 +13,14 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 
 ## How to use
 
-The library is published to JCenter, so please add a resolver for it (or ensure that it is already added):
+The library is published to JCenter, so please add a resolver for it in your `build.sbt` file or ensure that it is 
+already added:
 
 ```sbt
 resolvers += Resolver.jcenterRepo
 ```
 
-Add the library to a dependency list in your `build.sbt` file:
+Add the library to a dependency list:
 
 ```sbt
 libraryDependencies += "com.sizmek.fsi" %% "macros" % "0.1.0"
@@ -86,10 +87,10 @@ the following JVM system property: `com.sizmek.fsi.buffer.size`.
 
 ### Build
 
-To compile, run tests, and check coverage for different Scala versions use a command:
+To compile, run tests, check coverage, and check binary compatibility for different Scala versions use a command:
 
 ```sh
-sbt clean +coverage +test +coverageReport
+sbt clean +coverage +test +coverageReport +mimaReportBinaryIssues
 ```
 
 ### Run benchmarks

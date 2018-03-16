@@ -21,6 +21,7 @@ releaseProcess := Seq[ReleaseStep](
   runClean,
   releaseStepCommandAndRemaining("+test"),
   setReleaseVersion,
+  releaseStepCommandAndRemaining("+mimaReportBinaryIssues"),
   updateVersionInReadme,
   commitReleaseVersion,
   tagRelease,

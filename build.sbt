@@ -1,6 +1,32 @@
 import com.typesafe.sbt.pgp.PgpKeys._
+import com.typesafe.tools.mima.plugin.MimaPlugin.mimaDefaultSettings
 import sbt.Keys.scalacOptions
 import sbt.url
+import scala.sys.process._
+
+lazy val oldVersion = "git describe --abbrev=0".!!.trim.replaceAll("^v", "")
+
+def mimaSettings = mimaDefaultSettings ++ Seq(
+  mimaCheckDirection := {
+    def isPatch = {
+      val Array(newMajor, newMinor, _) = version.value.split('.')
+      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
+      newMajor == oldMajor && newMinor == oldMinor
+    }
+
+    if (isPatch) "both" else "backward"
+  },
+  mimaPreviousArtifacts := {
+    def isCheckingRequired = {
+      val Array(newMajor, newMinor, _) = version.value.split('.')
+      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
+      newMajor == oldMajor && (newMajor != "0" || newMinor == oldMinor)
+    }
+
+    if (isCheckingRequired) Set(organization.value %% moduleName.value % oldVersion)
+    else Set()
+  }
+)
 
 lazy val commonSettings = Seq(
   organization := "com.sizmek.fsi",
@@ -23,6 +49,7 @@ lazy val commonSettings = Seq(
     ),
   ),
   scalaVersion := "2.12.4",
+  resolvers += Resolver.jcenterRepo,
   scalacOptions ++= Seq(
     "-deprecation",
     "-encoding", "UTF-8",
@@ -46,8 +73,6 @@ lazy val noPublishSettings = Seq(
 )
 
 lazy val publishSettings = Seq(
-  // publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging),
-  // sonatypeProfileName := "com.sizmek",
   bintrayOrganization := Some("sizmek"),
   bintrayRepository := "sizmek-maven",
   scmInfo := Some(
@@ -72,6 +97,7 @@ lazy val `fast-string-interpolator` = project.in(file("."))
 
 lazy val macros = project
   .settings(commonSettings: _*)
+  .settings(mimaSettings: _*)
   .settings(publishSettings: _*)
   .settings(
     crossScalaVersions := Seq("2.13.0-M3", "2.12.4", "2.11.12"),
