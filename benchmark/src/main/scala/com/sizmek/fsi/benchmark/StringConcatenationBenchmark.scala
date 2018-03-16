@@ -2,6 +2,7 @@ package com.sizmek.fsi.benchmark
 
 import java.util.concurrent.TimeUnit
 
+import com.dongxiguo.fastring.Fastring.Implicits._
 import com.sizmek.fsi._
 import org.openjdk.jmh.annotations.{Benchmark, _}
 import perfolation._
@@ -34,6 +35,10 @@ class StringConcatenationBenchmark {
   @Benchmark
   def fInterpolator: String =
     f"${int}xxx${long}xxx${float}xxx${double}xxx${char}xxx${boolean}xxx$string"
+
+  @Benchmark
+  def fastInterpolator: String =
+    fast"${int}xxx${long}xxx${float}xxx${double}xxx${char}xxx${boolean}xxx$string".toString
 
   @Benchmark
   def frawInterpolator: String =

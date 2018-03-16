@@ -41,9 +41,10 @@ That's it! You have got ~2.5x speed up in runtime and ~5x less usage of heap mem
 
 Also, it is more efficient than a simple concatenation of strings by the `+` operator or using string builders for that.
 
-Check for benchmark results where the fast string interpolator compared with
-Scala interpolators, Scala/Java string builders, and a string concatenation using JDK 8 and Scala 2.12.4:
+Check for benchmark results where the fast string interpolator compared with standard Scala interpolators, 3rd-party 
+interpolators, Scala/Java string builders, and a string concatenation using JDK 8 and Scala 2.12.4:
 - *fInterpolator* - standard string interpolator with formatting
+- *fastInterpolator* - the [fastring](https://github.com/Atry/fastring) interpolator  
 - *frawInterpolator* - fast string interpolator replacement for raw string interpolator  
 - *fsInterpolator* - fast string interpolator replacement for simple string interpolator 
 - *javaStringBuilder* - java.lang.StringBuilder

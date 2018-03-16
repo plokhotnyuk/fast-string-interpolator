@@ -10,6 +10,7 @@ class StringConcatenationBenchmarkSpec extends WordSpec with Matchers {
   "StringConcatenationBenchmark" should {
     "build the same string value" in {
       benchmark.fInterpolator shouldBe expected
+      benchmark.fastInterpolator shouldBe expected
       benchmark.frawInterpolator shouldBe expected
       benchmark.fsInterpolator shouldBe expected
       benchmark.javaStringBuilder shouldBe expected
