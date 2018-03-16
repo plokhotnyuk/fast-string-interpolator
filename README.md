@@ -43,6 +43,15 @@ Also, it is more efficient than a simple concatenation of strings by the `+` ope
 
 Check for benchmark results where the fast string interpolator compared with
 Scala interpolators, Scala/Java string builders, and a string concatenation using JDK 8 and Scala 2.12.4:
+- *fInterpolator* - standard string interpolator with formatting
+- *frawInterpolator* - fast string interpolator replacement for raw string interpolator  
+- *fsInterpolator* - fast string interpolator replacement for simple string interpolator 
+- *javaStringBuilder* - java.lang.StringBuilder
+- *pInterpolator* - the [perfolation](https://github.com/outr/perfolation) interpolator
+- *rawInterpolator* - standard raw string interpolator  
+- *sInterpolator* - standard simple string interpolator 
+- *scalaStringBuilder* - scala.collection.mutable.StringBuilder
+- *scalaStringConcatenation* - `+` operand for strings 
 
 [![Throughput](docs/fast_string_interpolator_throughput.png)](docs/fast_string_interpolator_throughput.png)
 
@@ -129,7 +138,7 @@ sbt release
 
 ## Acknowledgments
 
-A general idea and some parts of code was borrowed from an article: ["Scala: String Interpolation Performance" by Dmitry Komarov](https://medium.com/@dkomanov/scala-string-interpolation-performance-21dc85e83afd).
+A general idea and some parts of code was borrowed from an article ["Scala: String Interpolation Performance" by Dmitry Komanov](https://medium.com/@dkomanov/scala-string-interpolation-performance-21dc85e83afd).
 
 An idea to use a thread-local cache for string builders come from an implementation of
 [Jsoniter-scala - a most efficient JSON parser for Scala](https://github.com/plokhotnyuk/jsoniter-scala).
