@@ -4,10 +4,10 @@
 [info] Loading project definition from /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/project
 [info] Loading settings from release.sbt,build.sbt,version.sbt ...
 [info] Set current project to fast-string-interpolator (in build file:/home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/)
+[success] Total time: 0 s, completed Mar 16, 2018 11:24:51 AM
 [info] Setting Scala version to 2.12.4 on 3 projects.
 [info] Reapplying settings...
 [info] Set current project to fast-string-interpolator (in build file:/home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/)
-[success] Total time: 0 s, completed Mar 13, 2018 6:22:40 PM
 [info] Updating macros...
 [info] Done updating.
 [info] Updating benchmark...
@@ -15,22 +15,22 @@
 [info] Compiling 1 Scala source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/macros/target/scala-2.12/classes ...
 [info] Done compiling.
 [info] Compiling 1 Scala source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/classes ...
-[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/macros/target/scala-2.12/macros_2.12-0.1.0-SNAPSHOT.jar ...
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/macros/target/scala-2.12/macros_2.12-0.1.1-SNAPSHOT.jar ...
 [info] Done packaging.
 [info] Done compiling.
-[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/benchmark_2.12-0.1.0-SNAPSHOT.jar ...
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/benchmark_2.12-0.1.1-SNAPSHOT.jar ...
 [info] Done packaging.
-Processing 1 classes from /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/classes with "reflection" generator
+Processing 2 classes from /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/classes with "reflection" generator
 Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/src_managed/jmh and resources to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/resource_managed/jmh
 [info] Compiling 1 Scala source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/test-classes ...
-[info] Compiling 13 Java sources to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/classes ...
+[info] Compiling 14 Java sources to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/classes ...
 [info] Done compiling.
-[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/benchmark_2.12-0.1.0-SNAPSHOT-tests.jar ...
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/benchmark_2.12-0.1.1-SNAPSHOT-tests.jar ...
 [info] Done packaging.
 [info] Done compiling.
-[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/benchmark_2.12-0.1.0-SNAPSHOT-jmh.jar ...
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark/target/scala-2.12/benchmark_2.12-0.1.1-SNAPSHOT-jmh.jar ...
 [info] Done packaging.
-[info] Running (fork) org.openjdk.jmh.Main -prof gc -rf json -rff jdk-8_scala-2.12.4.json gc .*
+[info] Running (fork) org.openjdk.jmh.Main -prof gc -rf json -rff jdk-8_scala-2.12.4.json .*
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -41,94 +41,192 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator
-[info] # Run progress: 0.00% complete, ETA 00:01:30
+[info] # Run progress: 0.00% complete, ETA 00:01:40
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 241065.245 ops/s
-[info] # Warmup Iteration   2: 429565.727 ops/s
-[info] # Warmup Iteration   3: 420370.812 ops/s
-[info] # Warmup Iteration   4: 455464.110 ops/s
-[info] # Warmup Iteration   5: 454396.347 ops/s
-[info] Iteration   1: 465841.146 ops/s
-[info]                  ·gc.alloc.rate:                   1110.488 MB/sec
+[info] # Warmup Iteration   1: 251959.700 ops/s
+[info] # Warmup Iteration   2: 435445.385 ops/s
+[info] # Warmup Iteration   3: 438258.754 ops/s
+[info] # Warmup Iteration   4: 480542.021 ops/s
+[info] # Warmup Iteration   5: 468069.968 ops/s
+[info] Iteration   1: 478999.522 ops/s
+[info]                  ·gc.alloc.rate:                   1141.991 MB/sec
 [info]                  ·gc.alloc.rate.norm:              3752.001 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1111.096 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     3754.053 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.281 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1163.097 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     3821.344 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.205 B/op
 [info]                  ·gc.count:                        3.000 counts
 [info]                  ·gc.time:                         2.000 ms
-[info] Iteration   2: 479574.728 ops/s
-[info]                  ·gc.alloc.rate:                   1143.281 MB/sec
+[info] Iteration   2: 481010.626 ops/s
+[info]                  ·gc.alloc.rate:                   1146.937 MB/sec
 [info]                  ·gc.alloc.rate.norm:              3752.001 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1265.980 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     4154.674 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.478 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1324.214 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     4331.932 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.409 B/op
 [info]                  ·gc.count:                        4.000 counts
 [info]                  ·gc.time:                         3.000 ms
-[info] Iteration   3: 477725.509 ops/s
-[info]                  ·gc.alloc.rate:                   1139.302 MB/sec
+[info] Iteration   3: 476312.288 ops/s
+[info]                  ·gc.alloc.rate:                   1135.770 MB/sec
 [info]                  ·gc.alloc.rate.norm:              3752.001 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1061.604 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     3496.124 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.480 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1109.009 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     3663.595 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.275 B/op
 [info]                  ·gc.count:                        4.000 counts
 [info]                  ·gc.time:                         3.000 ms
-[info] Iteration   4: 474347.910 ops/s
-[info]                  ·gc.alloc.rate:                   1130.821 MB/sec
+[info] Iteration   4: 473931.466 ops/s
+[info]                  ·gc.alloc.rate:                   1130.000 MB/sec
 [info]                  ·gc.alloc.rate.norm:              3752.001 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1094.506 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     3631.510 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1141.860 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     3791.382 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.207 B/op
 [info]                  ·gc.count:                        5.000 counts
 [info]                  ·gc.time:                         4.000 ms
-[info] Iteration   5: 475901.424 ops/s
-[info]                  ·gc.alloc.rate:                   1134.482 MB/sec
+[info] Iteration   5: 468823.374 ops/s
+[info]                  ·gc.alloc.rate:                   1118.064 MB/sec
 [info]                  ·gc.alloc.rate.norm:              3752.001 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1200.660 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     3970.869 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.413 B/op
-[info]                  ·gc.count:                        7.000 counts
-[info]                  ·gc.time:                         6.000 ms
+[info]                  ·gc.churn.PS_Eden_Space:          1092.161 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     3665.075 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.210 B/op
+[info]                  ·gc.count:                        6.000 counts
+[info]                  ·gc.time:                         4.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator":
-[info]   474678.143 ±(99.9%) 20462.919 ops/s [Average]
-[info]   (min, avg, max) = (465841.146, 474678.143, 479574.728), stdev = 5314.155
-[info]   CI (99.9%): [454215.224, 495141.063] (assumes normal distribution)
+[info]   475815.455 ±(99.9%) 18246.277 ops/s [Average]
+[info]   (min, avg, max) = (468823.374, 475815.455, 481010.626), stdev = 4738.500
+[info]   CI (99.9%): [457569.178, 494061.732] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.alloc.rate":
-[info]   1131.675 ±(99.9%) 49.100 MB/sec [Average]
-[info]   (min, avg, max) = (1110.488, 1131.675, 1143.281), stdev = 12.751
-[info]   CI (99.9%): [1082.575, 1180.774] (assumes normal distribution)
+[info]   1134.552 ±(99.9%) 43.171 MB/sec [Average]
+[info]   (min, avg, max) = (1118.064, 1134.552, 1146.937), stdev = 11.211
+[info]   CI (99.9%): [1091.381, 1177.723] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.alloc.rate.norm":
 [info]   3752.001 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (3752.001, 3752.001, 3752.001), stdev = 0.001
 [info]   CI (99.9%): [3752.001, 3752.001] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Eden_Space":
-[info]   1146.769 ±(99.9%) 324.305 MB/sec [Average]
-[info]   (min, avg, max) = (1061.604, 1146.769, 1265.980), stdev = 84.221
-[info]   CI (99.9%): [822.465, 1471.074] (assumes normal distribution)
+[info]   1166.068 ±(99.9%) 356.694 MB/sec [Average]
+[info]   (min, avg, max) = (1092.161, 1166.068, 1324.214), stdev = 92.632
+[info]   CI (99.9%): [809.374, 1522.762] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Eden_Space.norm":
-[info]   3801.446 ±(99.9%) 1014.811 B/op [Average]
-[info]   (min, avg, max) = (3496.124, 3801.446, 4154.674), stdev = 263.543
-[info]   CI (99.9%): [2786.635, 4816.258] (assumes normal distribution)
+[info]   3854.666 ±(99.9%) 1063.905 B/op [Average]
+[info]   (min, avg, max) = (3663.595, 3854.666, 4331.932), stdev = 276.293
+[info]   CI (99.9%): [2790.760, 4918.571] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Survivor_Space":
-[info]   0.112 ±(99.9%) 0.146 MB/sec [Average]
-[info]   (min, avg, max) = (0.062, 0.112, 0.146), stdev = 0.038
-[info]   CI (99.9%): [≈ 0, 0.258] (assumes normal distribution)
+[info]   0.079 ±(99.9%) 0.105 MB/sec [Average]
+[info]   (min, avg, max) = (0.062, 0.079, 0.125), stdev = 0.027
+[info]   CI (99.9%): [≈ 0, 0.184] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.372 ±(99.9%) 0.472 B/op [Average]
-[info]   (min, avg, max) = (0.207, 0.372, 0.480), stdev = 0.122
-[info]   CI (99.9%): [≈ 0, 0.844] (assumes normal distribution)
+[info]   0.261 ±(99.9%) 0.337 B/op [Average]
+[info]   (min, avg, max) = (0.205, 0.261, 0.409), stdev = 0.088
+[info]   CI (99.9%): [≈ 0, 0.598] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.count":
-[info]   23.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (3.000, 4.600, 7.000), stdev = 1.517
-[info]   CI (99.9%): [23.000, 23.000] (assumes normal distribution)
+[info]   22.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (3.000, 4.400, 6.000), stdev = 1.140
+[info]   CI (99.9%): [22.000, 22.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fInterpolator:·gc.time":
-[info]   18.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (2.000, 3.600, 6.000), stdev = 1.517
-[info]   CI (99.9%): [18.000, 18.000] (assumes normal distribution)
+[info]   16.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (2.000, 3.200, 4.000), stdev = 0.837
+[info]   CI (99.9%): [16.000, 16.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 1.8.0_161, VM 25.161-b12
+[info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator
+[info] # Run progress: 10.00% complete, ETA 00:02:18
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 2086680.621 ops/s
+[info] # Warmup Iteration   2: 2581226.929 ops/s
+[info] # Warmup Iteration   3: 3073963.706 ops/s
+[info] # Warmup Iteration   4: 3068551.701 ops/s
+[info] # Warmup Iteration   5: 3061371.013 ops/s
+[info] Iteration   1: 3018795.347 ops/s
+[info]                  ·gc.alloc.rate:                   2547.360 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1328.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2257.571 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1176.926 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.043 B/op
+[info]                  ·gc.count:                        5.000 counts
+[info]                  ·gc.time:                         4.000 ms
+[info] Iteration   2: 3006831.048 ops/s
+[info]                  ·gc.alloc.rate:                   2537.324 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1328.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2692.291 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1409.108 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.065 B/op
+[info]                  ·gc.count:                        8.000 counts
+[info]                  ·gc.time:                         6.000 ms
+[info] Iteration   3: 2998681.190 ops/s
+[info]                  ·gc.alloc.rate:                   2531.045 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1328.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2628.374 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1379.067 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.076 B/op
+[info]                  ·gc.count:                        12.000 counts
+[info]                  ·gc.time:                         9.000 ms
+[info] Iteration   4: 2971128.801 ops/s
+[info]                  ·gc.alloc.rate:                   2507.207 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1328.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2538.806 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1344.737 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.187 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.099 B/op
+[info]                  ·gc.count:                        15.000 counts
+[info]                  ·gc.time:                         10.000 ms
+[info] Iteration   5: 2988573.394 ops/s
+[info]                  ·gc.alloc.rate:                   2522.132 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1328.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2564.884 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1350.511 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.044 B/op
+[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.time:                         10.000 ms
+[info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator":
+[info]   2996801.956 ±(99.9%) 69808.350 ops/s [Average]
+[info]   (min, avg, max) = (2971128.801, 2996801.956, 3018795.347), stdev = 18129.007
+[info]   CI (99.9%): [2926993.606, 3066610.306] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.alloc.rate":
+[info]   2529.013 ±(99.9%) 58.797 MB/sec [Average]
+[info]   (min, avg, max) = (2507.207, 2529.013, 2547.360), stdev = 15.269
+[info]   CI (99.9%): [2470.216, 2587.811] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.alloc.rate.norm":
+[info]   1328.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (1328.000, 1328.000, 1328.000), stdev = 0.001
+[info]   CI (99.9%): [1328.000, 1328.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Eden_Space":
+[info]   2536.385 ±(99.9%) 642.388 MB/sec [Average]
+[info]   (min, avg, max) = (2257.571, 2536.385, 2692.291), stdev = 166.826
+[info]   CI (99.9%): [1893.997, 3178.774] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Eden_Space.norm":
+[info]   1332.070 ±(99.9%) 348.231 B/op [Average]
+[info]   (min, avg, max) = (1176.926, 1332.070, 1409.108), stdev = 90.435
+[info]   CI (99.9%): [983.838, 1680.301] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Survivor_Space":
+[info]   0.125 ±(99.9%) 0.170 MB/sec [Average]
+[info]   (min, avg, max) = (0.083, 0.125, 0.187), stdev = 0.044
+[info]   CI (99.9%): [≈ 0, 0.295] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Survivor_Space.norm":
+[info]   0.066 ±(99.9%) 0.091 B/op [Average]
+[info]   (min, avg, max) = (0.043, 0.066, 0.099), stdev = 0.024
+[info]   CI (99.9%): [≈ 0, 0.156] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.count":
+[info]   54.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (5.000, 10.800, 15.000), stdev = 4.207
+[info]   CI (99.9%): [54.000, 54.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fastInterpolator:·gc.time":
+[info]   39.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (4.000, 7.800, 10.000), stdev = 2.683
+[info]   CI (99.9%): [39.000, 39.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -139,94 +237,94 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator
-[info] # Run progress: 11.11% complete, ETA 00:02:02
+[info] # Run progress: 20.00% complete, ETA 00:02:02
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 4598551.248 ops/s
-[info] # Warmup Iteration   2: 5716496.547 ops/s
-[info] # Warmup Iteration   3: 6273929.299 ops/s
-[info] # Warmup Iteration   4: 6573052.178 ops/s
-[info] # Warmup Iteration   5: 6721345.774 ops/s
-[info] Iteration   1: 6911657.793 ops/s
-[info]                  ·gc.alloc.rate:                   1159.797 MB/sec
+[info] # Warmup Iteration   1: 4621169.235 ops/s
+[info] # Warmup Iteration   2: 5830818.755 ops/s
+[info] # Warmup Iteration   3: 6756196.153 ops/s
+[info] # Warmup Iteration   4: 6736764.297 ops/s
+[info] # Warmup Iteration   5: 6728101.032 ops/s
+[info] Iteration   1: 6720562.719 ops/s
+[info]                  ·gc.alloc.rate:                   1127.725 MB/sec
 [info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1062.236 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     241.793 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.014 B/op
-[info]                  ·gc.count:                        3.000 counts
-[info]                  ·gc.time:                         3.000 ms
-[info] Iteration   2: 6928301.129 ops/s
-[info]                  ·gc.alloc.rate:                   1162.105 MB/sec
-[info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1210.992 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     275.106 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.028 B/op
-[info]                  ·gc.count:                        4.000 counts
-[info]                  ·gc.time:                         3.000 ms
-[info] Iteration   3: 6838242.908 ops/s
-[info]                  ·gc.alloc.rate:                   1147.066 MB/sec
-[info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1015.854 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     233.801 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1142.876 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     267.547 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.019 B/op
-[info]                  ·gc.count:                        4.000 counts
-[info]                  ·gc.time:                         3.000 ms
-[info] Iteration   4: 6908926.530 ops/s
-[info]                  ·gc.alloc.rate:                   1158.970 MB/sec
-[info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1234.763 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     281.265 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.024 B/op
-[info]                  ·gc.count:                        6.000 counts
-[info]                  ·gc.time:                         5.000 ms
-[info] Iteration   5: 6885393.528 ops/s
-[info]                  ·gc.alloc.rate:                   1155.215 MB/sec
-[info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1244.978 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     284.514 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.024 B/op
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.020 B/op
 [info]                  ·gc.count:                        8.000 counts
-[info]                  ·gc.time:                         7.000 ms
+[info]                  ·gc.time:                         5.000 ms
+[info] Iteration   2: 6731041.270 ops/s
+[info]                  ·gc.alloc.rate:                   1129.158 MB/sec
+[info]                  ·gc.alloc.rate.norm:              264.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1116.179 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     260.966 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.250 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.058 B/op
+[info]                  ·gc.count:                        11.000 counts
+[info]                  ·gc.time:                         8.000 ms
+[info] Iteration   3: 6692602.820 ops/s
+[info]                  ·gc.alloc.rate:                   1122.996 MB/sec
+[info]                  ·gc.alloc.rate.norm:              264.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1116.110 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     262.381 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.034 B/op
+[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.time:                         11.000 ms
+[info] Iteration   4: 6682964.270 ops/s
+[info]                  ·gc.alloc.rate:                   1121.125 MB/sec
+[info]                  ·gc.alloc.rate.norm:              264.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1122.874 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     264.412 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.042 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.010 B/op
+[info]                  ·gc.count:                        13.000 counts
+[info]                  ·gc.time:                         9.000 ms
+[info] Iteration   5: 6610375.023 ops/s
+[info]                  ·gc.alloc.rate:                   1108.987 MB/sec
+[info]                  ·gc.alloc.rate.norm:              264.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1115.223 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     265.485 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.020 B/op
+[info]                  ·gc.count:                        13.000 counts
+[info]                  ·gc.time:                         8.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator":
-[info]   6894504.378 ±(99.9%) 134673.748 ops/s [Average]
-[info]   (min, avg, max) = (6838242.908, 6894504.378, 6928301.129), stdev = 34974.345
-[info]   CI (99.9%): [6759830.630, 7029178.126] (assumes normal distribution)
+[info]   6687509.220 ±(99.9%) 182488.216 ops/s [Average]
+[info]   (min, avg, max) = (6610375.023, 6687509.220, 6731041.270), stdev = 47391.610
+[info]   CI (99.9%): [6505021.004, 6869997.436] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.alloc.rate":
-[info]   1156.630 ±(99.9%) 22.696 MB/sec [Average]
-[info]   (min, avg, max) = (1147.066, 1156.630, 1162.105), stdev = 5.894
-[info]   CI (99.9%): [1133.935, 1179.326] (assumes normal distribution)
+[info]   1121.998 ±(99.9%) 30.751 MB/sec [Average]
+[info]   (min, avg, max) = (1108.987, 1121.998, 1129.158), stdev = 7.986
+[info]   CI (99.9%): [1091.247, 1152.750] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.alloc.rate.norm":
 [info]   264.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (264.000, 264.000, 264.000), stdev = 0.001
 [info]   CI (99.9%): [264.000, 264.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Eden_Space":
-[info]   1153.765 ±(99.9%) 410.921 MB/sec [Average]
-[info]   (min, avg, max) = (1015.854, 1153.765, 1244.978), stdev = 106.715
-[info]   CI (99.9%): [742.844, 1564.686] (assumes normal distribution)
+[info]   1122.653 ±(99.9%) 45.110 MB/sec [Average]
+[info]   (min, avg, max) = (1115.223, 1122.653, 1142.876), stdev = 11.715
+[info]   CI (99.9%): [1077.543, 1167.763] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Eden_Space.norm":
-[info]   263.296 ±(99.9%) 91.222 B/op [Average]
-[info]   (min, avg, max) = (233.801, 263.296, 284.514), stdev = 23.690
-[info]   CI (99.9%): [172.074, 354.517] (assumes normal distribution)
+[info]   264.158 ±(99.9%) 9.941 B/op [Average]
+[info]   (min, avg, max) = (260.966, 264.158, 267.547), stdev = 2.582
+[info]   CI (99.9%): [254.217, 274.099] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Survivor_Space":
-[info]   0.096 ±(99.9%) 0.091 MB/sec [Average]
-[info]   (min, avg, max) = (0.062, 0.096, 0.125), stdev = 0.024
-[info]   CI (99.9%): [0.004, 0.187] (assumes normal distribution)
+[info]   0.121 ±(99.9%) 0.313 MB/sec [Average]
+[info]   (min, avg, max) = (0.042, 0.121, 0.250), stdev = 0.081
+[info]   CI (99.9%): [≈ 0, 0.433] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.022 ±(99.9%) 0.021 B/op [Average]
-[info]   (min, avg, max) = (0.014, 0.022, 0.028), stdev = 0.005
-[info]   CI (99.9%): [0.001, 0.043] (assumes normal distribution)
+[info]   0.028 ±(99.9%) 0.073 B/op [Average]
+[info]   (min, avg, max) = (0.010, 0.028, 0.058), stdev = 0.019
+[info]   CI (99.9%): [≈ 0, 0.101] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.count":
-[info]   25.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (3.000, 5.000, 8.000), stdev = 2.000
-[info]   CI (99.9%): [25.000, 25.000] (assumes normal distribution)
+[info]   59.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (8.000, 11.800, 14.000), stdev = 2.387
+[info]   CI (99.9%): [59.000, 59.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.frawInterpolator:·gc.time":
-[info]   21.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (3.000, 4.200, 7.000), stdev = 1.789
-[info]   CI (99.9%): [21.000, 21.000] (assumes normal distribution)
+[info]   41.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 8.200, 11.000), stdev = 2.168
+[info]   CI (99.9%): [41.000, 41.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -237,94 +335,94 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator
-[info] # Run progress: 22.22% complete, ETA 00:01:47
+[info] # Run progress: 30.00% complete, ETA 00:01:47
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 4650213.379 ops/s
-[info] # Warmup Iteration   2: 5866515.069 ops/s
-[info] # Warmup Iteration   3: 6351889.131 ops/s
-[info] # Warmup Iteration   4: 6567784.057 ops/s
-[info] # Warmup Iteration   5: 6861677.707 ops/s
-[info] Iteration   1: 6667247.476 ops/s
-[info]                  ·gc.alloc.rate:                   1118.387 MB/sec
+[info] # Warmup Iteration   1: 4651353.665 ops/s
+[info] # Warmup Iteration   2: 5899604.240 ops/s
+[info] # Warmup Iteration   3: 6725976.680 ops/s
+[info] # Warmup Iteration   4: 6990141.565 ops/s
+[info] # Warmup Iteration   5: 6978840.946 ops/s
+[info] Iteration   1: 6955284.268 ops/s
+[info]                  ·gc.alloc.rate:                   1166.825 MB/sec
 [info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1061.859 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     250.656 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.015 B/op
-[info]                  ·gc.count:                        3.000 counts
-[info]                  ·gc.time:                         2.000 ms
-[info] Iteration   2: 6804185.367 ops/s
-[info]                  ·gc.alloc.rate:                   1141.306 MB/sec
-[info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1211.053 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     280.134 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.029 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1385.116 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     313.390 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.019 B/op
 [info]                  ·gc.count:                        4.000 counts
 [info]                  ·gc.time:                         3.000 ms
-[info] Iteration   3: 6914110.865 ops/s
-[info]                  ·gc.alloc.rate:                   1159.830 MB/sec
+[info] Iteration   2: 6978200.109 ops/s
+[info]                  ·gc.alloc.rate:                   1170.623 MB/sec
 [info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1243.788 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     283.110 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1158.857 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     261.347 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.033 B/op
+[info]                  ·gc.count:                        4.000 counts
+[info]                  ·gc.time:                         3.000 ms
+[info] Iteration   3: 6801829.859 ops/s
+[info]                  ·gc.alloc.rate:                   1141.232 MB/sec
+[info]                  ·gc.alloc.rate.norm:              264.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          1191.643 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     275.661 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.019 B/op
 [info]                  ·gc.count:                        5.000 counts
-[info]                  ·gc.time:                         3.000 ms
-[info] Iteration   4: 6938079.214 ops/s
-[info]                  ·gc.alloc.rate:                   1163.842 MB/sec
+[info]                  ·gc.time:                         4.000 ms
+[info] Iteration   4: 6822847.579 ops/s
+[info]                  ·gc.alloc.rate:                   1144.574 MB/sec
 [info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1006.932 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     228.407 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.014 B/op
-[info]                  ·gc.count:                        5.000 counts
+[info]                  ·gc.churn.PS_Eden_Space:          1137.113 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     262.279 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.019 B/op
+[info]                  ·gc.count:                        6.000 counts
 [info]                  ·gc.time:                         5.000 ms
-[info] Iteration   5: 6825209.705 ops/s
-[info]                  ·gc.alloc.rate:                   1144.910 MB/sec
+[info] Iteration   5: 6646889.843 ops/s
+[info]                  ·gc.alloc.rate:                   1115.048 MB/sec
 [info]                  ·gc.alloc.rate.norm:              264.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1244.803 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     287.034 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.024 B/op
-[info]                  ·gc.count:                        8.000 counts
+[info]                  ·gc.churn.PS_Eden_Space:          1026.304 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     242.989 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.020 B/op
+[info]                  ·gc.count:                        7.000 counts
 [info]                  ·gc.time:                         5.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator":
-[info]   6829766.525 ±(99.9%) 412635.656 ops/s [Average]
-[info]   (min, avg, max) = (6667247.476, 6829766.525, 6938079.214), stdev = 107160.169
-[info]   CI (99.9%): [6417130.870, 7242402.181] (assumes normal distribution)
+[info]   6841010.332 ±(99.9%) 514559.455 ops/s [Average]
+[info]   (min, avg, max) = (6646889.843, 6841010.332, 6978200.109), stdev = 133629.457
+[info]   CI (99.9%): [6326450.876, 7355569.787] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.alloc.rate":
-[info]   1145.655 ±(99.9%) 69.277 MB/sec [Average]
-[info]   (min, avg, max) = (1118.387, 1145.655, 1163.842), stdev = 17.991
-[info]   CI (99.9%): [1076.377, 1214.932] (assumes normal distribution)
+[info]   1147.660 ±(99.9%) 86.296 MB/sec [Average]
+[info]   (min, avg, max) = (1115.048, 1147.660, 1170.623), stdev = 22.411
+[info]   CI (99.9%): [1061.364, 1233.957] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.alloc.rate.norm":
 [info]   264.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (264.000, 264.000, 264.000), stdev = 0.001
 [info]   CI (99.9%): [264.000, 264.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Eden_Space":
-[info]   1153.687 ±(99.9%) 429.138 MB/sec [Average]
-[info]   (min, avg, max) = (1006.932, 1153.687, 1244.803), stdev = 111.446
-[info]   CI (99.9%): [724.549, 1582.825] (assumes normal distribution)
+[info]   1179.807 ±(99.9%) 502.494 MB/sec [Average]
+[info]   (min, avg, max) = (1026.304, 1179.807, 1385.116), stdev = 130.496
+[info]   CI (99.9%): [677.313, 1682.301] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Eden_Space.norm":
-[info]   265.868 ±(99.9%) 97.860 B/op [Average]
-[info]   (min, avg, max) = (228.407, 265.868, 287.034), stdev = 25.414
-[info]   CI (99.9%): [168.008, 363.729] (assumes normal distribution)
+[info]   271.133 ±(99.9%) 101.375 B/op [Average]
+[info]   (min, avg, max) = (242.989, 271.133, 313.390), stdev = 26.327
+[info]   CI (99.9%): [169.758, 372.508] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Survivor_Space":
-[info]   0.087 ±(99.9%) 0.105 MB/sec [Average]
-[info]   (min, avg, max) = (0.062, 0.087, 0.125), stdev = 0.027
-[info]   CI (99.9%): [≈ 0, 0.192] (assumes normal distribution)
+[info]   0.096 ±(99.9%) 0.108 MB/sec [Average]
+[info]   (min, avg, max) = (0.083, 0.096, 0.146), stdev = 0.028
+[info]   CI (99.9%): [≈ 0, 0.203] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.020 ±(99.9%) 0.024 B/op [Average]
-[info]   (min, avg, max) = (0.014, 0.020, 0.029), stdev = 0.006
-[info]   CI (99.9%): [≈ 0, 0.044] (assumes normal distribution)
+[info]   0.022 ±(99.9%) 0.023 B/op [Average]
+[info]   (min, avg, max) = (0.019, 0.022, 0.033), stdev = 0.006
+[info]   CI (99.9%): [≈ 0, 0.045] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.count":
-[info]   25.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (3.000, 5.000, 8.000), stdev = 1.871
-[info]   CI (99.9%): [25.000, 25.000] (assumes normal distribution)
+[info]   26.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (4.000, 5.200, 7.000), stdev = 1.304
+[info]   CI (99.9%): [26.000, 26.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.fsInterpolator:·gc.time":
-[info]   18.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (2.000, 3.600, 5.000), stdev = 1.342
-[info]   CI (99.9%): [18.000, 18.000] (assumes normal distribution)
+[info]   20.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (3.000, 4.000, 5.000), stdev = 1.000
+[info]   CI (99.9%): [20.000, 20.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -335,94 +433,94 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder
-[info] # Run progress: 33.33% complete, ETA 00:01:31
+[info] # Run progress: 40.00% complete, ETA 00:01:31
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 3289557.241 ops/s
-[info] # Warmup Iteration   2: 3780923.571 ops/s
-[info] # Warmup Iteration   3: 4576566.789 ops/s
-[info] # Warmup Iteration   4: 4574304.015 ops/s
-[info] # Warmup Iteration   5: 4513056.515 ops/s
-[info] Iteration   1: 4561127.120 ops/s
-[info]                  ·gc.alloc.rate:                   2573.256 MB/sec
+[info] # Warmup Iteration   1: 3234084.580 ops/s
+[info] # Warmup Iteration   2: 3934577.721 ops/s
+[info] # Warmup Iteration   3: 4591567.728 ops/s
+[info] # Warmup Iteration   4: 4588124.244 ops/s
+[info] # Warmup Iteration   5: 4535354.097 ops/s
+[info] Iteration   1: 4502565.672 ops/s
+[info]                  ·gc.alloc.rate:                   2541.092 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2700.628 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     931.954 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.042 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.014 B/op
-[info]                  ·gc.count:                        7.000 counts
-[info]                  ·gc.time:                         5.000 ms
-[info] Iteration   2: 4435362.916 ops/s
-[info]                  ·gc.alloc.rate:                   2503.292 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2651.086 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     940.427 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.167 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.059 B/op
-[info]                  ·gc.count:                        10.000 counts
-[info]                  ·gc.time:                         9.000 ms
-[info] Iteration   3: 4455519.859 ops/s
-[info]                  ·gc.alloc.rate:                   2513.800 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2486.039 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     878.193 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.037 B/op
-[info]                  ·gc.count:                        15.000 counts
-[info]                  ·gc.time:                         9.000 ms
-[info] Iteration   4: 4411466.555 ops/s
-[info]                  ·gc.alloc.rate:                   2490.155 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2517.156 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     897.629 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2416.635 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     844.508 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.022 B/op
+[info]                  ·gc.count:                        6.000 counts
+[info]                  ·gc.time:                         5.000 ms
+[info] Iteration   2: 4473741.702 ops/s
+[info]                  ·gc.alloc.rate:                   2524.416 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2594.889 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     912.790 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.044 B/op
+[info]                  ·gc.count:                        9.000 counts
+[info]                  ·gc.time:                         7.000 ms
+[info] Iteration   3: 4562740.912 ops/s
+[info]                  ·gc.alloc.rate:                   2574.354 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2576.474 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     888.731 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.036 B/op
+[info]                  ·gc.count:                        13.000 counts
+[info]                  ·gc.time:                         9.000 ms
+[info] Iteration   4: 4521135.808 ops/s
+[info]                  ·gc.alloc.rate:                   2551.091 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2589.012 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     901.200 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.036 B/op
 [info]                  ·gc.count:                        14.000 counts
 [info]                  ·gc.time:                         11.000 ms
-[info] Iteration   5: 4460322.833 ops/s
-[info]                  ·gc.alloc.rate:                   2517.619 MB/sec
+[info] Iteration   5: 4492639.565 ops/s
+[info]                  ·gc.alloc.rate:                   2534.883 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2460.651 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     867.907 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.051 B/op
-[info]                  ·gc.count:                        15.000 counts
+[info]                  ·gc.churn.PS_Eden_Space:          2512.401 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     880.124 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.029 B/op
+[info]                  ·gc.count:                        14.000 counts
 [info]                  ·gc.time:                         10.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder":
-[info]   4464759.857 ±(99.9%) 220330.117 ops/s [Average]
-[info]   (min, avg, max) = (4411466.555, 4464759.857, 4561127.120), stdev = 57219.032
-[info]   CI (99.9%): [4244429.739, 4685089.974] (assumes normal distribution)
+[info]   4510564.732 ±(99.9%) 130231.111 ops/s [Average]
+[info]   (min, avg, max) = (4473741.702, 4510564.732, 4562740.912), stdev = 33820.606
+[info]   CI (99.9%): [4380333.621, 4640795.842] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.alloc.rate":
-[info]   2519.625 ±(99.9%) 122.519 MB/sec [Average]
-[info]   (min, avg, max) = (2490.155, 2519.625, 2573.256), stdev = 31.818
-[info]   CI (99.9%): [2397.105, 2642.144] (assumes normal distribution)
+[info]   2545.167 ±(99.9%) 73.060 MB/sec [Average]
+[info]   (min, avg, max) = (2524.416, 2545.167, 2574.354), stdev = 18.973
+[info]   CI (99.9%): [2472.108, 2618.227] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.alloc.rate.norm":
 [info]   888.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (888.000, 888.000, 888.000), stdev = 0.001
 [info]   CI (99.9%): [888.000, 888.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Eden_Space":
-[info]   2563.112 ±(99.9%) 409.331 MB/sec [Average]
-[info]   (min, avg, max) = (2460.651, 2563.112, 2700.628), stdev = 106.302
-[info]   CI (99.9%): [2153.781, 2972.443] (assumes normal distribution)
+[info]   2537.882 ±(99.9%) 290.102 MB/sec [Average]
+[info]   (min, avg, max) = (2416.635, 2537.882, 2594.889), stdev = 75.339
+[info]   CI (99.9%): [2247.780, 2827.984] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Eden_Space.norm":
-[info]   903.222 ±(99.9%) 123.501 B/op [Average]
-[info]   (min, avg, max) = (867.907, 903.222, 940.427), stdev = 32.073
-[info]   CI (99.9%): [779.721, 1026.723] (assumes normal distribution)
+[info]   885.471 ±(99.9%) 100.245 B/op [Average]
+[info]   (min, avg, max) = (844.508, 885.471, 912.790), stdev = 26.033
+[info]   CI (99.9%): [785.225, 985.716] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Survivor_Space":
-[info]   0.104 ±(99.9%) 0.204 MB/sec [Average]
-[info]   (min, avg, max) = (0.042, 0.104, 0.167), stdev = 0.053
-[info]   CI (99.9%): [≈ 0, 0.309] (assumes normal distribution)
+[info]   0.096 ±(99.9%) 0.091 MB/sec [Average]
+[info]   (min, avg, max) = (0.062, 0.096, 0.125), stdev = 0.024
+[info]   CI (99.9%): [0.004, 0.187] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.037 ±(99.9%) 0.073 B/op [Average]
-[info]   (min, avg, max) = (0.014, 0.037, 0.059), stdev = 0.019
-[info]   CI (99.9%): [≈ 0, 0.109] (assumes normal distribution)
+[info]   0.033 ±(99.9%) 0.032 B/op [Average]
+[info]   (min, avg, max) = (0.022, 0.033, 0.044), stdev = 0.008
+[info]   CI (99.9%): [0.001, 0.065] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.count":
-[info]   61.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (7.000, 12.200, 15.000), stdev = 3.564
-[info]   CI (99.9%): [61.000, 61.000] (assumes normal distribution)
+[info]   56.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (6.000, 11.200, 14.000), stdev = 3.564
+[info]   CI (99.9%): [56.000, 56.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.javaStringBuilder:·gc.time":
-[info]   44.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (5.000, 8.800, 11.000), stdev = 2.280
-[info]   CI (99.9%): [44.000, 44.000] (assumes normal distribution)
+[info]   42.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 8.400, 11.000), stdev = 2.408
+[info]   CI (99.9%): [42.000, 42.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -433,94 +531,94 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator
-[info] # Run progress: 44.44% complete, ETA 00:01:16
+[info] # Run progress: 50.00% complete, ETA 00:01:16
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 4614121.317 ops/s
-[info] # Warmup Iteration   2: 4537503.994 ops/s
-[info] # Warmup Iteration   3: 5874472.017 ops/s
-[info] # Warmup Iteration   4: 5847867.350 ops/s
-[info] # Warmup Iteration   5: 5798290.510 ops/s
-[info] Iteration   1: 5853486.235 ops/s
-[info]                  ·gc.alloc.rate:                   2142.188 MB/sec
+[info] # Warmup Iteration   1: 4496496.194 ops/s
+[info] # Warmup Iteration   2: 4741204.603 ops/s
+[info] # Warmup Iteration   3: 5755797.736 ops/s
+[info] # Warmup Iteration   4: 5904737.903 ops/s
+[info] # Warmup Iteration   5: 5842889.248 ops/s
+[info] Iteration   1: 5832893.887 ops/s
+[info]                  ·gc.alloc.rate:                   2134.791 MB/sec
 [info]                  ·gc.alloc.rate.norm:              576.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2425.870 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     652.278 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2229.593 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     601.579 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.017 B/op
+[info]                  ·gc.count:                        4.000 counts
+[info]                  ·gc.time:                         3.000 ms
+[info] Iteration   2: 5862343.798 ops/s
+[info]                  ·gc.alloc.rate:                   2146.229 MB/sec
+[info]                  ·gc.alloc.rate.norm:              576.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2258.230 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     606.059 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.028 B/op
 [info]                  ·gc.count:                        5.000 counts
 [info]                  ·gc.time:                         3.000 ms
-[info] Iteration   2: 5827994.897 ops/s
-[info]                  ·gc.alloc.rate:                   2133.455 MB/sec
+[info] Iteration   3: 5848310.458 ops/s
+[info]                  ·gc.alloc.rate:                   2140.456 MB/sec
 [info]                  ·gc.alloc.rate.norm:              576.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2258.715 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     609.818 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2107.094 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     567.022 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.017 B/op
+[info]                  ·gc.count:                        6.000 counts
+[info]                  ·gc.time:                         5.000 ms
+[info] Iteration   4: 5794108.873 ops/s
+[info]                  ·gc.alloc.rate:                   2121.254 MB/sec
+[info]                  ·gc.alloc.rate.norm:              576.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2276.698 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     618.209 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.017 B/op
+[info]                  ·gc.count:                        9.000 counts
+[info]                  ·gc.time:                         7.000 ms
+[info] Iteration   5: 5796491.100 ops/s
+[info]                  ·gc.alloc.rate:                   2121.924 MB/sec
+[info]                  ·gc.alloc.rate.norm:              576.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2100.820 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     570.271 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.034 B/op
-[info]                  ·gc.count:                        6.000 counts
-[info]                  ·gc.time:                         4.000 ms
-[info] Iteration   3: 5684571.281 ops/s
-[info]                  ·gc.alloc.rate:                   2081.244 MB/sec
-[info]                  ·gc.alloc.rate.norm:              576.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          1972.930 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     546.023 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.029 B/op
-[info]                  ·gc.count:                        7.000 counts
-[info]                  ·gc.time:                         5.000 ms
-[info] Iteration   4: 5593071.533 ops/s
-[info]                  ·gc.alloc.rate:                   2047.747 MB/sec
-[info]                  ·gc.alloc.rate.norm:              576.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2124.557 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     597.605 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.187 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.053 B/op
-[info]                  ·gc.count:                        11.000 counts
-[info]                  ·gc.time:                         8.000 ms
-[info] Iteration   5: 5749494.245 ops/s
-[info]                  ·gc.alloc.rate:                   2104.866 MB/sec
-[info]                  ·gc.alloc.rate.norm:              576.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2129.054 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     582.619 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.023 B/op
-[info]                  ·gc.count:                        15.000 counts
-[info]                  ·gc.time:                         10.000 ms
+[info]                  ·gc.count:                        13.000 counts
+[info]                  ·gc.time:                         9.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator":
-[info]   5741723.638 ±(99.9%) 410043.095 ops/s [Average]
-[info]   (min, avg, max) = (5593071.533, 5741723.638, 5853486.235), stdev = 106486.890
-[info]   CI (99.9%): [5331680.543, 6151766.733] (assumes normal distribution)
+[info]   5826829.623 ±(99.9%) 117909.768 ops/s [Average]
+[info]   (min, avg, max) = (5794108.873, 5826829.623, 5862343.798), stdev = 30620.792
+[info]   CI (99.9%): [5708919.856, 5944739.391] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.alloc.rate":
-[info]   2101.900 ±(99.9%) 148.970 MB/sec [Average]
-[info]   (min, avg, max) = (2047.747, 2101.900, 2142.188), stdev = 38.687
-[info]   CI (99.9%): [1952.930, 2250.870] (assumes normal distribution)
+[info]   2132.931 ±(99.9%) 42.811 MB/sec [Average]
+[info]   (min, avg, max) = (2121.254, 2132.931, 2146.229), stdev = 11.118
+[info]   CI (99.9%): [2090.120, 2175.741] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.alloc.rate.norm":
 [info]   576.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (576.000, 576.000, 576.000), stdev = 0.001
 [info]   CI (99.9%): [576.000, 576.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Eden_Space":
-[info]   2182.225 ±(99.9%) 653.393 MB/sec [Average]
-[info]   (min, avg, max) = (1972.930, 2182.225, 2425.870), stdev = 169.684
-[info]   CI (99.9%): [1528.832, 2835.619] (assumes normal distribution)
+[info]   2194.487 ±(99.9%) 324.834 MB/sec [Average]
+[info]   (min, avg, max) = (2100.820, 2194.487, 2276.698), stdev = 84.358
+[info]   CI (99.9%): [1869.653, 2519.321] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Eden_Space.norm":
-[info]   597.669 ±(99.9%) 149.427 B/op [Average]
-[info]   (min, avg, max) = (546.023, 597.669, 652.278), stdev = 38.806
-[info]   CI (99.9%): [448.242, 747.095] (assumes normal distribution)
+[info]   592.628 ±(99.9%) 87.605 B/op [Average]
+[info]   (min, avg, max) = (567.022, 592.628, 618.209), stdev = 22.751
+[info]   CI (99.9%): [505.023, 680.233] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Survivor_Space":
-[info]   0.112 ±(99.9%) 0.185 MB/sec [Average]
-[info]   (min, avg, max) = (0.062, 0.112, 0.187), stdev = 0.048
-[info]   CI (99.9%): [≈ 0, 0.297] (assumes normal distribution)
+[info]   0.083 ±(99.9%) 0.113 MB/sec [Average]
+[info]   (min, avg, max) = (0.062, 0.083, 0.125), stdev = 0.029
+[info]   CI (99.9%): [≈ 0, 0.197] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.031 ±(99.9%) 0.053 B/op [Average]
-[info]   (min, avg, max) = (0.017, 0.031, 0.053), stdev = 0.014
-[info]   CI (99.9%): [≈ 0, 0.084] (assumes normal distribution)
+[info]   0.022 ±(99.9%) 0.031 B/op [Average]
+[info]   (min, avg, max) = (0.017, 0.022, 0.034), stdev = 0.008
+[info]   CI (99.9%): [≈ 0, 0.053] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.count":
-[info]   44.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (5.000, 8.800, 15.000), stdev = 4.147
-[info]   CI (99.9%): [44.000, 44.000] (assumes normal distribution)
+[info]   37.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (4.000, 7.400, 13.000), stdev = 3.647
+[info]   CI (99.9%): [37.000, 37.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.pInterpolator:·gc.time":
-[info]   30.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (3.000, 6.000, 10.000), stdev = 2.915
-[info]   CI (99.9%): [30.000, 30.000] (assumes normal distribution)
+[info]   27.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (3.000, 5.400, 9.000), stdev = 2.608
+[info]   CI (99.9%): [27.000, 27.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -531,94 +629,94 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator
-[info] # Run progress: 55.56% complete, ETA 00:01:01
+[info] # Run progress: 60.00% complete, ETA 00:01:01
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 1681615.201 ops/s
-[info] # Warmup Iteration   2: 2152172.629 ops/s
-[info] # Warmup Iteration   3: 2765519.054 ops/s
-[info] # Warmup Iteration   4: 2759561.857 ops/s
-[info] # Warmup Iteration   5: 2758806.341 ops/s
-[info] Iteration   1: 2762803.416 ops/s
-[info]                  ·gc.alloc.rate:                   2457.453 MB/sec
+[info] # Warmup Iteration   1: 1711919.599 ops/s
+[info] # Warmup Iteration   2: 2170479.299 ops/s
+[info] # Warmup Iteration   3: 2782929.437 ops/s
+[info] # Warmup Iteration   4: 2775377.890 ops/s
+[info] # Warmup Iteration   5: 2705589.827 ops/s
+[info] Iteration   1: 2749834.033 ops/s
+[info]                  ·gc.alloc.rate:                   2446.210 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2315.021 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1318.857 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2594.091 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1484.635 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.062 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.036 B/op
+[info]                  ·gc.count:                        6.000 counts
+[info]                  ·gc.time:                         5.000 ms
+[info] Iteration   2: 2696804.899 ops/s
+[info]                  ·gc.alloc.rate:                   2399.081 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1400.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2521.752 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1471.586 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.071 B/op
-[info]                  ·gc.count:                        5.000 counts
-[info]                  ·gc.time:                         4.000 ms
-[info] Iteration   2: 2724959.993 ops/s
-[info]                  ·gc.alloc.rate:                   2424.873 MB/sec
-[info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2466.739 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1424.171 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.084 B/op
-[info]                  ·gc.count:                        7.000 counts
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.073 B/op
+[info]                  ·gc.count:                        8.000 counts
 [info]                  ·gc.time:                         6.000 ms
-[info] Iteration   3: 2648811.534 ops/s
-[info]                  ·gc.alloc.rate:                   2356.183 MB/sec
+[info] Iteration   3: 2749210.134 ops/s
+[info]                  ·gc.alloc.rate:                   2445.651 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2430.094 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1443.917 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.087 B/op
-[info]                  ·gc.count:                        10.000 counts
-[info]                  ·gc.time:                         7.000 ms
-[info] Iteration   4: 2713373.230 ops/s
-[info]                  ·gc.alloc.rate:                   2414.110 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space:          2470.755 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1414.371 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.167 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.095 B/op
+[info]                  ·gc.count:                        12.000 counts
+[info]                  ·gc.time:                         8.000 ms
+[info] Iteration   4: 2723523.431 ops/s
+[info]                  ·gc.alloc.rate:                   2423.681 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2385.987 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1383.691 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2492.002 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1439.465 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.072 B/op
+[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.time:                         10.000 ms
+[info] Iteration   5: 2743791.757 ops/s
+[info]                  ·gc.alloc.rate:                   2441.124 MB/sec
+[info]                  ·gc.alloc.rate.norm:              1400.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2353.557 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1349.780 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.072 B/op
 [info]                  ·gc.count:                        13.000 counts
 [info]                  ·gc.time:                         10.000 ms
-[info] Iteration   5: 2672294.872 ops/s
-[info]                  ·gc.alloc.rate:                   2377.070 MB/sec
-[info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2324.197 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1368.860 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.086 B/op
-[info]                  ·gc.count:                        12.000 counts
-[info]                  ·gc.time:                         10.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator":
-[info]   2704448.609 ±(99.9%) 172582.279 ops/s [Average]
-[info]   (min, avg, max) = (2648811.534, 2704448.609, 2762803.416), stdev = 44819.070
-[info]   CI (99.9%): [2531866.329, 2877030.888] (assumes normal distribution)
+[info]   2732632.851 ±(99.9%) 87423.861 ops/s [Average]
+[info]   (min, avg, max) = (2696804.899, 2732632.851, 2749834.033), stdev = 22703.699
+[info]   CI (99.9%): [2645208.990, 2820056.712] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.alloc.rate":
-[info]   2405.938 ±(99.9%) 153.881 MB/sec [Average]
-[info]   (min, avg, max) = (2356.183, 2405.938, 2457.453), stdev = 39.962
-[info]   CI (99.9%): [2252.057, 2559.819] (assumes normal distribution)
+[info]   2431.149 ±(99.9%) 77.511 MB/sec [Average]
+[info]   (min, avg, max) = (2399.081, 2431.149, 2446.210), stdev = 20.129
+[info]   CI (99.9%): [2353.638, 2508.661] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.alloc.rate.norm":
 [info]   1400.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (1400.000, 1400.000, 1400.000), stdev = 0.001
 [info]   CI (99.9%): [1400.000, 1400.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Eden_Space":
-[info]   2384.408 ±(99.9%) 253.295 MB/sec [Average]
-[info]   (min, avg, max) = (2315.021, 2384.408, 2466.739), stdev = 65.780
-[info]   CI (99.9%): [2131.113, 2637.702] (assumes normal distribution)
+[info]   2486.431 ±(99.9%) 337.732 MB/sec [Average]
+[info]   (min, avg, max) = (2353.557, 2486.431, 2594.091), stdev = 87.708
+[info]   CI (99.9%): [2148.700, 2824.163] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Eden_Space.norm":
-[info]   1387.899 ±(99.9%) 188.648 B/op [Average]
-[info]   (min, avg, max) = (1318.857, 1387.899, 1443.917), stdev = 48.991
-[info]   CI (99.9%): [1199.251, 1576.547] (assumes normal distribution)
+[info]   1431.967 ±(99.9%) 206.145 B/op [Average]
+[info]   (min, avg, max) = (1349.780, 1431.967, 1484.635), stdev = 53.535
+[info]   CI (99.9%): [1225.822, 1638.113] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Survivor_Space":
-[info]   0.137 ±(99.9%) 0.044 MB/sec [Average]
-[info]   (min, avg, max) = (0.125, 0.137, 0.146), stdev = 0.011
-[info]   CI (99.9%): [0.093, 0.181] (assumes normal distribution)
+[info]   0.121 ±(99.9%) 0.143 MB/sec [Average]
+[info]   (min, avg, max) = (0.062, 0.121, 0.167), stdev = 0.037
+[info]   CI (99.9%): [≈ 0, 0.264] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.080 ±(99.9%) 0.029 B/op [Average]
-[info]   (min, avg, max) = (0.071, 0.080, 0.087), stdev = 0.008
-[info]   CI (99.9%): [0.051, 0.109] (assumes normal distribution)
+[info]   0.070 ±(99.9%) 0.082 B/op [Average]
+[info]   (min, avg, max) = (0.036, 0.070, 0.095), stdev = 0.021
+[info]   CI (99.9%): [≈ 0, 0.152] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.count":
-[info]   47.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (5.000, 9.400, 13.000), stdev = 3.362
-[info]   CI (99.9%): [47.000, 47.000] (assumes normal distribution)
+[info]   53.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (6.000, 10.600, 14.000), stdev = 3.435
+[info]   CI (99.9%): [53.000, 53.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.rawInterpolator:·gc.time":
-[info]   37.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (4.000, 7.400, 10.000), stdev = 2.608
-[info]   CI (99.9%): [37.000, 37.000] (assumes normal distribution)
+[info]   39.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 7.800, 10.000), stdev = 2.280
+[info]   CI (99.9%): [39.000, 39.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
 [info] # VM invoker: /usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -629,93 +727,93 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator
-[info] # Run progress: 66.67% complete, ETA 00:00:45
+[info] # Run progress: 70.00% complete, ETA 00:00:45
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 1533349.711 ops/s
-[info] # Warmup Iteration   2: 2073413.730 ops/s
-[info] # Warmup Iteration   3: 2571837.659 ops/s
-[info] # Warmup Iteration   4: 2616279.469 ops/s
-[info] # Warmup Iteration   5: 2525938.952 ops/s
-[info] Iteration   1: 2519754.271 ops/s
-[info]                  ·gc.alloc.rate:                   2241.471 MB/sec
+[info] # Warmup Iteration   1: 1611098.070 ops/s
+[info] # Warmup Iteration   2: 2041883.189 ops/s
+[info] # Warmup Iteration   3: 2622945.054 ops/s
+[info] # Warmup Iteration   4: 2532127.886 ops/s
+[info] # Warmup Iteration   5: 2611139.512 ops/s
+[info] Iteration   1: 2614870.494 ops/s
+[info]                  ·gc.alloc.rate:                   2326.232 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2315.222 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1446.065 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.078 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2315.365 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1393.460 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.050 B/op
 [info]                  ·gc.count:                        5.000 counts
 [info]                  ·gc.time:                         4.000 ms
-[info] Iteration   2: 2595724.577 ops/s
-[info]                  ·gc.alloc.rate:                   2309.178 MB/sec
+[info] Iteration   2: 2589861.449 ops/s
+[info]                  ·gc.alloc.rate:                   2303.924 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2159.410 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1309.199 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2465.861 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1498.402 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.076 B/op
-[info]                  ·gc.count:                        6.000 counts
+[info]                  ·gc.count:                        7.000 counts
 [info]                  ·gc.time:                         5.000 ms
-[info] Iteration   3: 2590963.326 ops/s
-[info]                  ·gc.alloc.rate:                   2304.745 MB/sec
+[info] Iteration   3: 2556702.894 ops/s
+[info]                  ·gc.alloc.rate:                   2274.518 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2537.377 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1541.311 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.063 B/op
-[info]                  ·gc.count:                        10.000 counts
-[info]                  ·gc.time:                         8.000 ms
-[info] Iteration   4: 2574654.731 ops/s
-[info]                  ·gc.alloc.rate:                   2290.266 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space:          2231.213 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1373.345 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.051 B/op
+[info]                  ·gc.count:                        9.000 counts
+[info]                  ·gc.time:                         7.000 ms
+[info] Iteration   4: 2522199.492 ops/s
+[info]                  ·gc.alloc.rate:                   2243.752 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2240.642 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1369.666 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2342.337 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1461.513 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.167 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.102 B/op
-[info]                  ·gc.count:                        13.000 counts
-[info]                  ·gc.time:                         9.000 ms
-[info] Iteration   5: 2549624.494 ops/s
-[info]                  ·gc.alloc.rate:                   2268.006 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.104 B/op
+[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.time:                         10.000 ms
+[info] Iteration   5: 2528866.661 ops/s
+[info]                  ·gc.alloc.rate:                   2249.689 MB/sec
 [info]                  ·gc.alloc.rate.norm:              1400.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2248.719 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1388.095 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2176.793 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     1354.636 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.064 B/op
-[info]                  ·gc.count:                        13.000 counts
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.065 B/op
+[info]                  ·gc.count:                        14.000 counts
 [info]                  ·gc.time:                         10.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator":
-[info]   2566144.280 ±(99.9%) 121590.492 ops/s [Average]
-[info]   (min, avg, max) = (2519754.271, 2566144.280, 2595724.577), stdev = 31576.665
-[info]   CI (99.9%): [2444553.788, 2687734.772] (assumes normal distribution)
+[info]   2562500.198 ±(99.9%) 152578.049 ops/s [Average]
+[info]   (min, avg, max) = (2522199.492, 2562500.198, 2614870.494), stdev = 39624.035
+[info]   CI (99.9%): [2409922.149, 2715078.247] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.alloc.rate":
-[info]   2282.733 ±(99.9%) 108.230 MB/sec [Average]
-[info]   (min, avg, max) = (2241.471, 2282.733, 2309.178), stdev = 28.107
-[info]   CI (99.9%): [2174.503, 2390.963] (assumes normal distribution)
+[info]   2279.623 ±(99.9%) 135.756 MB/sec [Average]
+[info]   (min, avg, max) = (2243.752, 2279.623, 2326.232), stdev = 35.255
+[info]   CI (99.9%): [2143.867, 2415.379] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.alloc.rate.norm":
 [info]   1400.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (1400.000, 1400.000, 1400.000), stdev = 0.001
 [info]   CI (99.9%): [1400.000, 1400.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Eden_Space":
-[info]   2300.274 ±(99.9%) 552.999 MB/sec [Average]
-[info]   (min, avg, max) = (2159.410, 2300.274, 2537.377), stdev = 143.612
-[info]   CI (99.9%): [1747.275, 2853.273] (assumes normal distribution)
+[info]   2306.314 ±(99.9%) 427.277 MB/sec [Average]
+[info]   (min, avg, max) = (2176.793, 2306.314, 2465.861), stdev = 110.962
+[info]   CI (99.9%): [1879.037, 2733.591] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Eden_Space.norm":
-[info]   1410.867 ±(99.9%) 337.930 B/op [Average]
-[info]   (min, avg, max) = (1309.199, 1410.867, 1541.311), stdev = 87.759
-[info]   CI (99.9%): [1072.937, 1748.797] (assumes normal distribution)
+[info]   1416.271 ±(99.9%) 235.442 B/op [Average]
+[info]   (min, avg, max) = (1354.636, 1416.271, 1498.402), stdev = 61.144
+[info]   CI (99.9%): [1180.829, 1651.714] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Survivor_Space":
-[info]   0.125 ±(99.9%) 0.098 MB/sec [Average]
-[info]   (min, avg, max) = (0.104, 0.125, 0.167), stdev = 0.025
-[info]   CI (99.9%): [0.027, 0.223] (assumes normal distribution)
+[info]   0.112 ±(99.9%) 0.134 MB/sec [Average]
+[info]   (min, avg, max) = (0.083, 0.112, 0.167), stdev = 0.035
+[info]   CI (99.9%): [≈ 0, 0.247] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.077 ±(99.9%) 0.060 B/op [Average]
-[info]   (min, avg, max) = (0.063, 0.077, 0.102), stdev = 0.016
-[info]   CI (99.9%): [0.017, 0.137] (assumes normal distribution)
+[info]   0.069 ±(99.9%) 0.085 B/op [Average]
+[info]   (min, avg, max) = (0.050, 0.069, 0.104), stdev = 0.022
+[info]   CI (99.9%): [≈ 0, 0.154] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.count":
-[info]   47.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (5.000, 9.400, 13.000), stdev = 3.782
-[info]   CI (99.9%): [47.000, 47.000] (assumes normal distribution)
+[info]   49.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (5.000, 9.800, 14.000), stdev = 4.087
+[info]   CI (99.9%): [49.000, 49.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.sInterpolator:·gc.time":
 [info]   36.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (4.000, 7.200, 10.000), stdev = 2.588
+[info]   (min, avg, max) = (4.000, 7.200, 10.000), stdev = 2.775
 [info]   CI (99.9%): [36.000, 36.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
@@ -727,93 +825,93 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder
-[info] # Run progress: 77.78% complete, ETA 00:00:30
+[info] # Run progress: 80.00% complete, ETA 00:00:30
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 3030679.168 ops/s
-[info] # Warmup Iteration   2: 3500856.669 ops/s
-[info] # Warmup Iteration   3: 4521808.776 ops/s
-[info] # Warmup Iteration   4: 4450454.377 ops/s
-[info] # Warmup Iteration   5: 4516275.279 ops/s
-[info] Iteration   1: 4393019.539 ops/s
-[info]                  ·gc.alloc.rate:                   2478.442 MB/sec
+[info] # Warmup Iteration   1: 3039579.813 ops/s
+[info] # Warmup Iteration   2: 3566095.908 ops/s
+[info] # Warmup Iteration   3: 4537030.274 ops/s
+[info] # Warmup Iteration   4: 4518976.310 ops/s
+[info] # Warmup Iteration   5: 4524641.699 ops/s
+[info] Iteration   1: 4517184.967 ops/s
+[info]                  ·gc.alloc.rate:                   2548.928 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2827.620 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     1013.107 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2366.027 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     824.280 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.021 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.007 B/op
+[info]                  ·gc.count:                        6.000 counts
+[info]                  ·gc.time:                         4.000 ms
+[info] Iteration   2: 4409955.942 ops/s
+[info]                  ·gc.alloc.rate:                   2489.041 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2543.757 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     907.521 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.045 B/op
-[info]                  ·gc.count:                        7.000 counts
-[info]                  ·gc.time:                         5.000 ms
-[info] Iteration   2: 4429337.287 ops/s
-[info]                  ·gc.alloc.rate:                   2498.955 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2542.933 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     903.628 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.229 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.081 B/op
 [info]                  ·gc.count:                        9.000 counts
-[info]                  ·gc.time:                         7.000 ms
-[info] Iteration   3: 4423218.113 ops/s
-[info]                  ·gc.alloc.rate:                   2495.567 MB/sec
+[info]                  ·gc.time:                         6.000 ms
+[info] Iteration   3: 4348207.862 ops/s
+[info]                  ·gc.alloc.rate:                   2454.120 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2357.642 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     838.922 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.037 B/op
-[info]                  ·gc.count:                        13.000 counts
-[info]                  ·gc.time:                         10.000 ms
-[info] Iteration   4: 4419712.176 ops/s
-[info]                  ·gc.alloc.rate:                   2493.518 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2519.566 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     897.276 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2526.752 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     914.281 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.044 B/op
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.045 B/op
+[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.time:                         11.000 ms
+[info] Iteration   4: 4354083.979 ops/s
+[info]                  ·gc.alloc.rate:                   2457.429 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2559.657 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     924.940 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.083 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.030 B/op
+[info]                  ·gc.count:                        16.000 counts
+[info]                  ·gc.time:                         10.000 ms
+[info] Iteration   5: 4402531.391 ops/s
+[info]                  ·gc.alloc.rate:                   2484.209 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2443.575 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     873.475 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.052 B/op
 [info]                  ·gc.count:                        14.000 counts
 [info]                  ·gc.time:                         10.000 ms
-[info] Iteration   5: 4328512.603 ops/s
-[info]                  ·gc.alloc.rate:                   2442.195 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2482.021 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     902.481 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.053 B/op
-[info]                  ·gc.count:                        13.000 counts
-[info]                  ·gc.time:                         9.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder":
-[info]   4398759.944 ±(99.9%) 160389.988 ops/s [Average]
-[info]   (min, avg, max) = (4328512.603, 4398759.944, 4429337.287), stdev = 41652.771
-[info]   CI (99.9%): [4238369.956, 4559149.932] (assumes normal distribution)
+[info]   4406392.828 ±(99.9%) 261335.140 ops/s [Average]
+[info]   (min, avg, max) = (4348207.862, 4406392.828, 4517184.967), stdev = 67867.906
+[info]   CI (99.9%): [4145057.688, 4667727.968] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.alloc.rate":
-[info]   2481.735 ±(99.9%) 90.325 MB/sec [Average]
-[info]   (min, avg, max) = (2442.195, 2481.735, 2498.955), stdev = 23.457
-[info]   CI (99.9%): [2391.411, 2572.060] (assumes normal distribution)
+[info]   2486.745 ±(99.9%) 146.657 MB/sec [Average]
+[info]   (min, avg, max) = (2454.120, 2486.745, 2548.928), stdev = 38.086
+[info]   CI (99.9%): [2340.088, 2633.403] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.alloc.rate.norm":
 [info]   888.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (888.000, 888.000, 888.000), stdev = 0.001
 [info]   CI (99.9%): [888.000, 888.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Eden_Space":
-[info]   2545.956 ±(99.9%) 665.811 MB/sec [Average]
-[info]   (min, avg, max) = (2357.642, 2545.956, 2827.620), stdev = 172.909
-[info]   CI (99.9%): [1880.145, 3211.767] (assumes normal distribution)
+[info]   2487.953 ±(99.9%) 313.989 MB/sec [Average]
+[info]   (min, avg, max) = (2366.027, 2487.953, 2559.657), stdev = 81.542
+[info]   CI (99.9%): [2173.965, 2801.942] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Eden_Space.norm":
-[info]   911.083 ±(99.9%) 243.051 B/op [Average]
-[info]   (min, avg, max) = (838.922, 911.083, 1013.107), stdev = 63.120
-[info]   CI (99.9%): [668.032, 1154.134] (assumes normal distribution)
+[info]   888.900 ±(99.9%) 157.635 B/op [Average]
+[info]   (min, avg, max) = (824.280, 888.900, 924.940), stdev = 40.937
+[info]   CI (99.9%): [731.265, 1046.535] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Survivor_Space":
-[info]   0.146 ±(99.9%) 0.188 MB/sec [Average]
-[info]   (min, avg, max) = (0.104, 0.146, 0.229), stdev = 0.049
-[info]   CI (99.9%): [≈ 0, 0.334] (assumes normal distribution)
+[info]   0.100 ±(99.9%) 0.191 MB/sec [Average]
+[info]   (min, avg, max) = (0.021, 0.100, 0.146), stdev = 0.050
+[info]   CI (99.9%): [≈ 0, 0.291] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.052 ±(99.9%) 0.067 B/op [Average]
-[info]   (min, avg, max) = (0.037, 0.052, 0.081), stdev = 0.017
-[info]   CI (99.9%): [≈ 0, 0.119] (assumes normal distribution)
+[info]   0.036 ±(99.9%) 0.069 B/op [Average]
+[info]   (min, avg, max) = (0.007, 0.036, 0.052), stdev = 0.018
+[info]   CI (99.9%): [≈ 0, 0.105] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.count":
-[info]   56.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (7.000, 11.200, 14.000), stdev = 3.033
-[info]   CI (99.9%): [56.000, 56.000] (assumes normal distribution)
+[info]   59.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (6.000, 11.800, 16.000), stdev = 4.147
+[info]   CI (99.9%): [59.000, 59.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringBuilder:·gc.time":
 [info]   41.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (5.000, 8.200, 10.000), stdev = 2.168
+[info]   (min, avg, max) = (4.000, 8.200, 11.000), stdev = 3.033
 [info]   CI (99.9%): [41.000, 41.000] (assumes normal distribution)
 [info] # JMH version: 1.20
 [info] # VM version: JDK 1.8.0_161, VM 25.161-b12
@@ -825,176 +923,185 @@ Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-i
 [info] # Threads: 1 thread, will synchronize iterations
 [info] # Benchmark mode: Throughput, ops/time
 [info] # Benchmark: com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation
-[info] # Run progress: 88.89% complete, ETA 00:00:15
+[info] # Run progress: 90.00% complete, ETA 00:00:15
 [info] # Fork: 1 of 1
-[info] # Warmup Iteration   1: 3293165.808 ops/s
-[info] # Warmup Iteration   2: 3836665.579 ops/s
-[info] # Warmup Iteration   3: 4534762.435 ops/s
-[info] # Warmup Iteration   4: 4586540.395 ops/s
-[info] # Warmup Iteration   5: 4589516.270 ops/s
-[info] Iteration   1: 4469902.060 ops/s
-[info]                  ·gc.alloc.rate:                   2522.061 MB/sec
+[info] # Warmup Iteration   1: 3254753.457 ops/s
+[info] # Warmup Iteration   2: 3825977.217 ops/s
+[info] # Warmup Iteration   3: 4469556.307 ops/s
+[info] # Warmup Iteration   4: 4491321.783 ops/s
+[info] # Warmup Iteration   5: 4504931.906 ops/s
+[info] Iteration   1: 4473165.788 ops/s
+[info]                  ·gc.alloc.rate:                   2523.952 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2477.217 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     872.211 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.042 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.015 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2530.088 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     890.159 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.146 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.051 B/op
 [info]                  ·gc.count:                        6.000 counts
-[info]                  ·gc.time:                         5.000 ms
-[info] Iteration   2: 4556769.309 ops/s
-[info]                  ·gc.alloc.rate:                   2571.006 MB/sec
+[info]                  ·gc.time:                         4.000 ms
+[info] Iteration   2: 4453272.641 ops/s
+[info]                  ·gc.alloc.rate:                   2513.468 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2411.852 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     833.030 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2712.993 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     958.492 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.167 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.059 B/op
+[info]                  ·gc.count:                        9.000 counts
+[info]                  ·gc.time:                         7.000 ms
+[info] Iteration   3: 4512333.905 ops/s
+[info]                  ·gc.alloc.rate:                   2546.061 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2589.615 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     903.191 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.036 B/op
-[info]                  ·gc.count:                        8.000 counts
-[info]                  ·gc.time:                         6.000 ms
-[info] Iteration   3: 4481605.894 ops/s
-[info]                  ·gc.alloc.rate:                   2528.556 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2701.861 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     948.863 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.037 B/op
-[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.count:                        13.000 counts
 [info]                  ·gc.time:                         10.000 ms
-[info] Iteration   4: 4509438.421 ops/s
-[info]                  ·gc.alloc.rate:                   2544.312 MB/sec
+[info] Iteration   4: 4440556.692 ops/s
+[info]                  ·gc.alloc.rate:                   2506.486 MB/sec
 [info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2508.029 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     875.337 B/op
-[info]                  ·gc.churn.PS_Survivor_Space:      0.125 MB/sec
-[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.044 B/op
-[info]                  ·gc.count:                        14.000 counts
-[info]                  ·gc.time:                         10.000 ms
-[info] Iteration   5: 4483778.722 ops/s
-[info]                  ·gc.alloc.rate:                   2529.827 MB/sec
-[info]                  ·gc.alloc.rate.norm:              888.000 B/op
-[info]                  ·gc.churn.PS_Eden_Space:          2570.955 MB/sec
-[info]                  ·gc.churn.PS_Eden_Space.norm:     902.436 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2477.365 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     877.683 B/op
 [info]                  ·gc.churn.PS_Survivor_Space:      0.042 MB/sec
 [info]                  ·gc.churn.PS_Survivor_Space.norm: 0.015 B/op
-[info]                  ·gc.count:                        14.000 counts
+[info]                  ·gc.count:                        15.000 counts
+[info]                  ·gc.time:                         10.000 ms
+[info] Iteration   5: 4445455.947 ops/s
+[info]                  ·gc.alloc.rate:                   2508.398 MB/sec
+[info]                  ·gc.alloc.rate.norm:              888.000 B/op
+[info]                  ·gc.churn.PS_Eden_Space:          2611.547 MB/sec
+[info]                  ·gc.churn.PS_Eden_Space.norm:     924.516 B/op
+[info]                  ·gc.churn.PS_Survivor_Space:      0.104 MB/sec
+[info]                  ·gc.churn.PS_Survivor_Space.norm: 0.037 B/op
+[info]                  ·gc.count:                        16.000 counts
 [info]                  ·gc.time:                         10.000 ms
 [info] Result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation":
-[info]   4500298.881 ±(99.9%) 133650.501 ops/s [Average]
-[info]   (min, avg, max) = (4469902.060, 4500298.881, 4556769.309), stdev = 34708.611
-[info]   CI (99.9%): [4366648.380, 4633949.382] (assumes normal distribution)
+[info]   4464956.995 ±(99.9%) 112662.526 ops/s [Average]
+[info]   (min, avg, max) = (4440556.692, 4464956.995, 4512333.905), stdev = 29258.100
+[info]   CI (99.9%): [4352294.469, 4577619.520] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.alloc.rate":
-[info]   2539.152 ±(99.9%) 75.374 MB/sec [Average]
-[info]   (min, avg, max) = (2522.061, 2539.152, 2571.006), stdev = 19.574
-[info]   CI (99.9%): [2463.778, 2614.526] (assumes normal distribution)
+[info]   2519.673 ±(99.9%) 62.511 MB/sec [Average]
+[info]   (min, avg, max) = (2506.486, 2519.673, 2546.061), stdev = 16.234
+[info]   CI (99.9%): [2457.162, 2582.184] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.alloc.rate.norm":
 [info]   888.000 ±(99.9%) 0.001 B/op [Average]
 [info]   (min, avg, max) = (888.000, 888.000, 888.000), stdev = 0.001
 [info]   CI (99.9%): [888.000, 888.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Eden_Space":
-[info]   2533.983 ±(99.9%) 423.403 MB/sec [Average]
-[info]   (min, avg, max) = (2411.852, 2533.983, 2701.861), stdev = 109.956
-[info]   CI (99.9%): [2110.579, 2957.386] (assumes normal distribution)
+[info]   2584.322 ±(99.9%) 342.830 MB/sec [Average]
+[info]   (min, avg, max) = (2477.365, 2584.322, 2712.993), stdev = 89.032
+[info]   CI (99.9%): [2241.491, 2927.152] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Eden_Space.norm":
-[info]   886.375 ±(99.9%) 164.846 B/op [Average]
-[info]   (min, avg, max) = (833.030, 886.375, 948.863), stdev = 42.810
-[info]   CI (99.9%): [721.529, 1051.222] (assumes normal distribution)
+[info]   910.808 ±(99.9%) 122.426 B/op [Average]
+[info]   (min, avg, max) = (877.683, 910.808, 958.492), stdev = 31.794
+[info]   CI (99.9%): [788.382, 1033.234] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Survivor_Space":
-[info]   0.083 ±(99.9%) 0.150 MB/sec [Average]
-[info]   (min, avg, max) = (0.042, 0.083, 0.125), stdev = 0.039
-[info]   CI (99.9%): [≈ 0, 0.233] (assumes normal distribution)
+[info]   0.112 ±(99.9%) 0.185 MB/sec [Average]
+[info]   (min, avg, max) = (0.042, 0.112, 0.167), stdev = 0.048
+[info]   CI (99.9%): [≈ 0, 0.297] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Survivor_Space.norm":
-[info]   0.029 ±(99.9%) 0.052 B/op [Average]
-[info]   (min, avg, max) = (0.015, 0.029, 0.044), stdev = 0.014
-[info]   CI (99.9%): [≈ 0, 0.081] (assumes normal distribution)
+[info]   0.040 ±(99.9%) 0.065 B/op [Average]
+[info]   (min, avg, max) = (0.015, 0.040, 0.059), stdev = 0.017
+[info]   CI (99.9%): [≈ 0, 0.105] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.count":
-[info]   56.000 ±(99.9%) 0.001 counts [Sum]
-[info]   (min, avg, max) = (6.000, 11.200, 14.000), stdev = 3.899
-[info]   CI (99.9%): [56.000, 56.000] (assumes normal distribution)
+[info]   59.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (6.000, 11.800, 16.000), stdev = 4.207
+[info]   CI (99.9%): [59.000, 59.000] (assumes normal distribution)
 [info] Secondary result "com.sizmek.fsi.benchmark.StringConcatenationBenchmark.scalaStringConcatenation:·gc.time":
 [info]   41.000 ±(99.9%) 0.001 ms [Sum]
-[info]   (min, avg, max) = (5.000, 8.200, 10.000), stdev = 2.490
+[info]   (min, avg, max) = (4.000, 8.200, 10.000), stdev = 2.683
 [info]   CI (99.9%): [41.000, 41.000] (assumes normal distribution)
-[info] # Run complete. Total time: 00:02:17
+[info] # Run complete. Total time: 00:02:33
 [info] Benchmark                                                                                Mode  Cnt        Score        Error   Units
-[info] StringConcatenationBenchmark.fInterpolator                                              thrpt    5   474678.143 ±  20462.919   ops/s
-[info] StringConcatenationBenchmark.fInterpolator:·gc.alloc.rate                               thrpt    5     1131.675 ±     49.100  MB/sec
+[info] StringConcatenationBenchmark.fInterpolator                                              thrpt    5   475815.455 ±  18246.277   ops/s
+[info] StringConcatenationBenchmark.fInterpolator:·gc.alloc.rate                               thrpt    5     1134.552 ±     43.171  MB/sec
 [info] StringConcatenationBenchmark.fInterpolator:·gc.alloc.rate.norm                          thrpt    5     3752.001 ±      0.001    B/op
-[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Eden_Space                      thrpt    5     1146.769 ±    324.305  MB/sec
-[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Eden_Space.norm                 thrpt    5     3801.446 ±   1014.811    B/op
-[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Survivor_Space                  thrpt    5        0.112 ±      0.146  MB/sec
-[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Survivor_Space.norm             thrpt    5        0.372 ±      0.472    B/op
-[info] StringConcatenationBenchmark.fInterpolator:·gc.count                                    thrpt    5       23.000               counts
-[info] StringConcatenationBenchmark.fInterpolator:·gc.time                                     thrpt    5       18.000                   ms
-[info] StringConcatenationBenchmark.frawInterpolator                                           thrpt    5  6894504.378 ± 134673.748   ops/s
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.alloc.rate                            thrpt    5     1156.630 ±     22.696  MB/sec
+[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Eden_Space                      thrpt    5     1166.068 ±    356.694  MB/sec
+[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Eden_Space.norm                 thrpt    5     3854.666 ±   1063.905    B/op
+[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Survivor_Space                  thrpt    5        0.079 ±      0.105  MB/sec
+[info] StringConcatenationBenchmark.fInterpolator:·gc.churn.PS_Survivor_Space.norm             thrpt    5        0.261 ±      0.337    B/op
+[info] StringConcatenationBenchmark.fInterpolator:·gc.count                                    thrpt    5       22.000               counts
+[info] StringConcatenationBenchmark.fInterpolator:·gc.time                                     thrpt    5       16.000                   ms
+[info] StringConcatenationBenchmark.fastInterpolator                                           thrpt    5  2996801.956 ±  69808.350   ops/s
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.alloc.rate                            thrpt    5     2529.013 ±     58.797  MB/sec
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.alloc.rate.norm                       thrpt    5     1328.000 ±      0.001    B/op
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Eden_Space                   thrpt    5     2536.385 ±    642.388  MB/sec
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Eden_Space.norm              thrpt    5     1332.070 ±    348.231    B/op
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Survivor_Space               thrpt    5        0.125 ±      0.170  MB/sec
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.churn.PS_Survivor_Space.norm          thrpt    5        0.066 ±      0.091    B/op
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.count                                 thrpt    5       54.000               counts
+[info] StringConcatenationBenchmark.fastInterpolator:·gc.time                                  thrpt    5       39.000                   ms
+[info] StringConcatenationBenchmark.frawInterpolator                                           thrpt    5  6687509.220 ± 182488.216   ops/s
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.alloc.rate                            thrpt    5     1121.998 ±     30.751  MB/sec
 [info] StringConcatenationBenchmark.frawInterpolator:·gc.alloc.rate.norm                       thrpt    5      264.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Eden_Space                   thrpt    5     1153.765 ±    410.921  MB/sec
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Eden_Space.norm              thrpt    5      263.296 ±     91.222    B/op
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Survivor_Space               thrpt    5        0.096 ±      0.091  MB/sec
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Survivor_Space.norm          thrpt    5        0.022 ±      0.021    B/op
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.count                                 thrpt    5       25.000               counts
-[info] StringConcatenationBenchmark.frawInterpolator:·gc.time                                  thrpt    5       21.000                   ms
-[info] StringConcatenationBenchmark.fsInterpolator                                             thrpt    5  6829766.525 ± 412635.656   ops/s
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.alloc.rate                              thrpt    5     1145.655 ±     69.277  MB/sec
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Eden_Space                   thrpt    5     1122.653 ±     45.110  MB/sec
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Eden_Space.norm              thrpt    5      264.158 ±      9.941    B/op
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Survivor_Space               thrpt    5        0.121 ±      0.313  MB/sec
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.churn.PS_Survivor_Space.norm          thrpt    5        0.028 ±      0.073    B/op
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.count                                 thrpt    5       59.000               counts
+[info] StringConcatenationBenchmark.frawInterpolator:·gc.time                                  thrpt    5       41.000                   ms
+[info] StringConcatenationBenchmark.fsInterpolator                                             thrpt    5  6841010.332 ± 514559.455   ops/s
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.alloc.rate                              thrpt    5     1147.660 ±     86.296  MB/sec
 [info] StringConcatenationBenchmark.fsInterpolator:·gc.alloc.rate.norm                         thrpt    5      264.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Eden_Space                     thrpt    5     1153.687 ±    429.138  MB/sec
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Eden_Space.norm                thrpt    5      265.868 ±     97.860    B/op
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Survivor_Space                 thrpt    5        0.087 ±      0.105  MB/sec
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Survivor_Space.norm            thrpt    5        0.020 ±      0.024    B/op
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.count                                   thrpt    5       25.000               counts
-[info] StringConcatenationBenchmark.fsInterpolator:·gc.time                                    thrpt    5       18.000                   ms
-[info] StringConcatenationBenchmark.javaStringBuilder                                          thrpt    5  4464759.857 ± 220330.117   ops/s
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.alloc.rate                           thrpt    5     2519.625 ±    122.519  MB/sec
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Eden_Space                     thrpt    5     1179.807 ±    502.494  MB/sec
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Eden_Space.norm                thrpt    5      271.133 ±    101.375    B/op
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Survivor_Space                 thrpt    5        0.096 ±      0.108  MB/sec
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.churn.PS_Survivor_Space.norm            thrpt    5        0.022 ±      0.023    B/op
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.count                                   thrpt    5       26.000               counts
+[info] StringConcatenationBenchmark.fsInterpolator:·gc.time                                    thrpt    5       20.000                   ms
+[info] StringConcatenationBenchmark.javaStringBuilder                                          thrpt    5  4510564.732 ± 130231.111   ops/s
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.alloc.rate                           thrpt    5     2545.167 ±     73.060  MB/sec
 [info] StringConcatenationBenchmark.javaStringBuilder:·gc.alloc.rate.norm                      thrpt    5      888.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Eden_Space                  thrpt    5     2563.112 ±    409.331  MB/sec
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Eden_Space.norm             thrpt    5      903.222 ±    123.501    B/op
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Survivor_Space              thrpt    5        0.104 ±      0.204  MB/sec
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Survivor_Space.norm         thrpt    5        0.037 ±      0.073    B/op
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.count                                thrpt    5       61.000               counts
-[info] StringConcatenationBenchmark.javaStringBuilder:·gc.time                                 thrpt    5       44.000                   ms
-[info] StringConcatenationBenchmark.pInterpolator                                              thrpt    5  5741723.638 ± 410043.095   ops/s
-[info] StringConcatenationBenchmark.pInterpolator:·gc.alloc.rate                               thrpt    5     2101.900 ±    148.970  MB/sec
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Eden_Space                  thrpt    5     2537.882 ±    290.102  MB/sec
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Eden_Space.norm             thrpt    5      885.471 ±    100.245    B/op
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Survivor_Space              thrpt    5        0.096 ±      0.091  MB/sec
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.churn.PS_Survivor_Space.norm         thrpt    5        0.033 ±      0.032    B/op
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.count                                thrpt    5       56.000               counts
+[info] StringConcatenationBenchmark.javaStringBuilder:·gc.time                                 thrpt    5       42.000                   ms
+[info] StringConcatenationBenchmark.pInterpolator                                              thrpt    5  5826829.623 ± 117909.768   ops/s
+[info] StringConcatenationBenchmark.pInterpolator:·gc.alloc.rate                               thrpt    5     2132.931 ±     42.811  MB/sec
 [info] StringConcatenationBenchmark.pInterpolator:·gc.alloc.rate.norm                          thrpt    5      576.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Eden_Space                      thrpt    5     2182.225 ±    653.393  MB/sec
-[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Eden_Space.norm                 thrpt    5      597.669 ±    149.427    B/op
-[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Survivor_Space                  thrpt    5        0.112 ±      0.185  MB/sec
-[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Survivor_Space.norm             thrpt    5        0.031 ±      0.053    B/op
-[info] StringConcatenationBenchmark.pInterpolator:·gc.count                                    thrpt    5       44.000               counts
-[info] StringConcatenationBenchmark.pInterpolator:·gc.time                                     thrpt    5       30.000                   ms
-[info] StringConcatenationBenchmark.rawInterpolator                                            thrpt    5  2704448.609 ± 172582.279   ops/s
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.alloc.rate                             thrpt    5     2405.938 ±    153.881  MB/sec
+[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Eden_Space                      thrpt    5     2194.487 ±    324.834  MB/sec
+[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Eden_Space.norm                 thrpt    5      592.628 ±     87.605    B/op
+[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Survivor_Space                  thrpt    5        0.083 ±      0.113  MB/sec
+[info] StringConcatenationBenchmark.pInterpolator:·gc.churn.PS_Survivor_Space.norm             thrpt    5        0.022 ±      0.031    B/op
+[info] StringConcatenationBenchmark.pInterpolator:·gc.count                                    thrpt    5       37.000               counts
+[info] StringConcatenationBenchmark.pInterpolator:·gc.time                                     thrpt    5       27.000                   ms
+[info] StringConcatenationBenchmark.rawInterpolator                                            thrpt    5  2732632.851 ±  87423.861   ops/s
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.alloc.rate                             thrpt    5     2431.149 ±     77.511  MB/sec
 [info] StringConcatenationBenchmark.rawInterpolator:·gc.alloc.rate.norm                        thrpt    5     1400.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Eden_Space                    thrpt    5     2384.408 ±    253.295  MB/sec
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Eden_Space.norm               thrpt    5     1387.899 ±    188.648    B/op
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Survivor_Space                thrpt    5        0.137 ±      0.044  MB/sec
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Survivor_Space.norm           thrpt    5        0.080 ±      0.029    B/op
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.count                                  thrpt    5       47.000               counts
-[info] StringConcatenationBenchmark.rawInterpolator:·gc.time                                   thrpt    5       37.000                   ms
-[info] StringConcatenationBenchmark.sInterpolator                                              thrpt    5  2566144.280 ± 121590.492   ops/s
-[info] StringConcatenationBenchmark.sInterpolator:·gc.alloc.rate                               thrpt    5     2282.733 ±    108.230  MB/sec
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Eden_Space                    thrpt    5     2486.431 ±    337.732  MB/sec
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Eden_Space.norm               thrpt    5     1431.967 ±    206.145    B/op
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Survivor_Space                thrpt    5        0.121 ±      0.143  MB/sec
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.churn.PS_Survivor_Space.norm           thrpt    5        0.070 ±      0.082    B/op
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.count                                  thrpt    5       53.000               counts
+[info] StringConcatenationBenchmark.rawInterpolator:·gc.time                                   thrpt    5       39.000                   ms
+[info] StringConcatenationBenchmark.sInterpolator                                              thrpt    5  2562500.198 ± 152578.049   ops/s
+[info] StringConcatenationBenchmark.sInterpolator:·gc.alloc.rate                               thrpt    5     2279.623 ±    135.756  MB/sec
 [info] StringConcatenationBenchmark.sInterpolator:·gc.alloc.rate.norm                          thrpt    5     1400.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Eden_Space                      thrpt    5     2300.274 ±    552.999  MB/sec
-[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Eden_Space.norm                 thrpt    5     1410.867 ±    337.930    B/op
-[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Survivor_Space                  thrpt    5        0.125 ±      0.098  MB/sec
-[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Survivor_Space.norm             thrpt    5        0.077 ±      0.060    B/op
-[info] StringConcatenationBenchmark.sInterpolator:·gc.count                                    thrpt    5       47.000               counts
+[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Eden_Space                      thrpt    5     2306.314 ±    427.277  MB/sec
+[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Eden_Space.norm                 thrpt    5     1416.271 ±    235.442    B/op
+[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Survivor_Space                  thrpt    5        0.112 ±      0.134  MB/sec
+[info] StringConcatenationBenchmark.sInterpolator:·gc.churn.PS_Survivor_Space.norm             thrpt    5        0.069 ±      0.085    B/op
+[info] StringConcatenationBenchmark.sInterpolator:·gc.count                                    thrpt    5       49.000               counts
 [info] StringConcatenationBenchmark.sInterpolator:·gc.time                                     thrpt    5       36.000                   ms
-[info] StringConcatenationBenchmark.scalaStringBuilder                                         thrpt    5  4398759.944 ± 160389.988   ops/s
-[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.alloc.rate                          thrpt    5     2481.735 ±     90.325  MB/sec
+[info] StringConcatenationBenchmark.scalaStringBuilder                                         thrpt    5  4406392.828 ± 261335.140   ops/s
+[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.alloc.rate                          thrpt    5     2486.745 ±    146.657  MB/sec
 [info] StringConcatenationBenchmark.scalaStringBuilder:·gc.alloc.rate.norm                     thrpt    5      888.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Eden_Space                 thrpt    5     2545.956 ±    665.811  MB/sec
-[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Eden_Space.norm            thrpt    5      911.083 ±    243.051    B/op
-[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Survivor_Space             thrpt    5        0.146 ±      0.188  MB/sec
-[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Survivor_Space.norm        thrpt    5        0.052 ±      0.067    B/op
-[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.count                               thrpt    5       56.000               counts
+[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Eden_Space                 thrpt    5     2487.953 ±    313.989  MB/sec
+[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Eden_Space.norm            thrpt    5      888.900 ±    157.635    B/op
+[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Survivor_Space             thrpt    5        0.100 ±      0.191  MB/sec
+[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.churn.PS_Survivor_Space.norm        thrpt    5        0.036 ±      0.069    B/op
+[info] StringConcatenationBenchmark.scalaStringBuilder:·gc.count                               thrpt    5       59.000               counts
 [info] StringConcatenationBenchmark.scalaStringBuilder:·gc.time                                thrpt    5       41.000                   ms
-[info] StringConcatenationBenchmark.scalaStringConcatenation                                   thrpt    5  4500298.881 ± 133650.501   ops/s
-[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.alloc.rate                    thrpt    5     2539.152 ±     75.374  MB/sec
+[info] StringConcatenationBenchmark.scalaStringConcatenation                                   thrpt    5  4464956.995 ± 112662.526   ops/s
+[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.alloc.rate                    thrpt    5     2519.673 ±     62.511  MB/sec
 [info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.alloc.rate.norm               thrpt    5      888.000 ±      0.001    B/op
-[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Eden_Space           thrpt    5     2533.983 ±    423.403  MB/sec
-[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Eden_Space.norm      thrpt    5      886.375 ±    164.846    B/op
-[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Survivor_Space       thrpt    5        0.083 ±      0.150  MB/sec
-[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Survivor_Space.norm  thrpt    5        0.029 ±      0.052    B/op
-[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.count                         thrpt    5       56.000               counts
+[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Eden_Space           thrpt    5     2584.322 ±    342.830  MB/sec
+[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Eden_Space.norm      thrpt    5      910.808 ±    122.426    B/op
+[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Survivor_Space       thrpt    5        0.112 ±      0.185  MB/sec
+[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.churn.PS_Survivor_Space.norm  thrpt    5        0.040 ±      0.065    B/op
+[info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.count                         thrpt    5       59.000               counts
 [info] StringConcatenationBenchmark.scalaStringConcatenation:·gc.time                          thrpt    5       41.000                   ms
 [info] Benchmark result is saved to jdk-8_scala-2.12.4.json
-[success] Total time: 144 s, completed Mar 13, 2018 6:25:05 PM
+[success] Total time: 160 s, completed Mar 16, 2018 11:27:31 AM
