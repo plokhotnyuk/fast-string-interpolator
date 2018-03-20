@@ -3,6 +3,7 @@ package com.sizmek.fsi.benchmark
 import java.util.concurrent.TimeUnit
 
 import com.dongxiguo.fastring.Fastring.Implicits._
+import com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore
 import org.openjdk.jmh.annotations.{Benchmark, _}
 import perfolation._
 

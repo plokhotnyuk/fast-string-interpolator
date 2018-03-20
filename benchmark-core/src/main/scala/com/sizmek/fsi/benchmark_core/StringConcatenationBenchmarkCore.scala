@@ -1,4 +1,4 @@
-package com.sizmek.fsi.benchmark
+package com.sizmek.fsi.benchmark_core
 
 import java.util.concurrent.TimeUnit
 
