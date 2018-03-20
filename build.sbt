@@ -107,9 +107,22 @@ lazy val macros = project
     )
   )
 
-lazy val benchmark = project
+lazy val `benchmark-core` = project
   .enablePlugins(JmhPlugin)
   .dependsOn(macros)
+  .settings(commonSettings: _*)
+  .settings(noPublishSettings: _*)
+  .settings(
+    crossScalaVersions := Seq("2.13.0-M3", "2.12.4", "2.11.12"),
+    libraryDependencies ++= Seq(
+      "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
+      "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
+    )
+  )
+
+lazy val benchmark = project
+  .enablePlugins(JmhPlugin)
+  .dependsOn(`benchmark-core`)
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
