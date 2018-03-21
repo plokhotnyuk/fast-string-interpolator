@@ -67,9 +67,9 @@ lazy val noPublishSettings = Seq(
   skip in publish := true,
   publishArtifact := false,
   // Replace tasks to work around https://github.com/sbt/sbt-bintray/issues/93
-  bintrayRelease := (),
-  bintrayEnsureBintrayPackageExists := (),
-  bintrayEnsureLicenses := (),
+  bintrayRelease := ((): Unit),
+  bintrayEnsureBintrayPackageExists := ((): Unit),
+  bintrayEnsureLicenses := ((): Unit),
 )
 
 lazy val publishSettings = Seq(
@@ -91,7 +91,7 @@ lazy val publishSettings = Seq(
 )
 
 lazy val `fast-string-interpolator` = project.in(file("."))
-  .aggregate(macros, benchmark)
+  .aggregate(macros, `benchmark-core`, benchmark)
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
 
@@ -130,7 +130,6 @@ lazy val benchmark = project
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "0.3.1",
       "com.outr" %% "perfolation" % "1.0.0",
-      "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
     )
   )
