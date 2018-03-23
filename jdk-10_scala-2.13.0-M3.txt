@@ -1,0 +1,860 @@
+[info] Loading settings from idea.sbt,build.sbt ...
+[info] Loading global plugins from /home/andriy/.sbt/1.0/plugins
+[info] Loading settings from plugins.sbt ...
+[info] Loading project definition from /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/project
+[info] Loading settings from release.sbt,build.sbt,version.sbt ...
+[info] Set current project to fast-string-interpolator (in build file:/home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/)
+[info] Setting Scala version to 2.13.0-M3 on 2 projects.
+[info] Excluded 2 projects, run ++ 2.13.0-M3 -v for more details.
+[info] Reapplying settings...
+[info] Set current project to fast-string-interpolator (in build file:/home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/)
+[success] Total time: 0 s, completed Mar 23, 2018 1:12:11 PM
+[info] Updating macros...
+[info] Done updating.
+[info] Updating benchmark-core...
+[info] Done updating.
+[info] Compiling 1 Scala source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/macros/target/scala-2.13.0-M3/classes ...
+[info] Done compiling.
+[info] Compiling 1 Scala source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/classes ...
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/macros/target/scala-2.13.0-M3/macros_2.13.0-M3-0.1.1-SNAPSHOT.jar ...
+[info] Done packaging.
+[info] Done compiling.
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/benchmark-core_2.13.0-M3-0.1.1-SNAPSHOT.jar ...
+[info] Done packaging.
+Processing 1 classes from /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/classes with "reflection" generator
+Writing out Java source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/src_managed/jmh and resources to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/resource_managed/jmh
+[info] Compiling 1 Scala source to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/test-classes ...
+[info] Compiling 12 Java sources to /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/classes ...
+[info] Done compiling.
+[info] Done compiling.
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/benchmark-core_2.13.0-M3-0.1.1-SNAPSHOT-tests.jar ...
+[info] Packaging /home/andriy/Projects/com/github/Sizmek/fast-string-interpolator/benchmark-core/target/scala-2.13.0-M3/benchmark-core_2.13.0-M3-0.1.1-SNAPSHOT-jmh.jar ...
+[info] Done packaging.
+[info] Done packaging.
+[info] Running (fork) org.openjdk.jmh.Main -jvm /usr/lib/jvm/jdk-10/bin/java -prof gc -rf json -rff jdk-10_scala-2.13.0-M3.json .*
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator
+[info] # Run progress: 0.00% complete, ETA 00:01:20
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 205483.719 ops/s
+[info] # Warmup Iteration   2: 485357.505 ops/s
+[info] # Warmup Iteration   3: 494681.280 ops/s
+[info] # Warmup Iteration   4: 499456.884 ops/s
+[info] # Warmup Iteration   5: 511808.246 ops/s
+[info] Iteration   1: 498972.150 ops/s
+[info]                  ·gc.alloc.rate:                                  773.613 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             2440.001 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.004 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.011 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            859.355 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       2710.433 B/op
+[info]                  ·gc.count:                                       6.000 counts
+[info]                  ·gc.time:                                        4.000 ms
+[info] Iteration   2: 512058.607 ops/s
+[info]                  ·gc.alloc.rate:            793.799 MB/sec
+[info]                  ·gc.alloc.rate.norm:       2440.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      716.046 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 2201.002 B/op
+[info]                  ·gc.count:                 5.000 counts
+[info]                  ·gc.time:                  4.000 ms
+[info] Iteration   3: 511181.944 ops/s
+[info]                  ·gc.alloc.rate:                                  792.335 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             2440.001 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.003 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            859.134 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       2645.708 B/op
+[info]                  ·gc.count:                                       6.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   4: 510843.310 ops/s
+[info]                  ·gc.alloc.rate:            792.052 MB/sec
+[info]                  ·gc.alloc.rate.norm:       2440.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      716.134 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 2206.129 B/op
+[info]                  ·gc.count:                 5.000 counts
+[info]                  ·gc.time:                  4.000 ms
+[info] Iteration   5: 511683.401 ops/s
+[info]                  ·gc.alloc.rate:                                  793.311 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             2440.001 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.004 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.012 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            859.367 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       2643.169 B/op
+[info]                  ·gc.count:                                       6.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator":
+[info]   508947.882 ±(99.9%) 21548.008 ops/s [Average]
+[info]   (min, avg, max) = (498972.150, 508947.882, 512058.607), stdev = 5595.949
+[info]   CI (99.9%): [487399.875, 530495.890] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.alloc.rate":
+[info]   789.022 ±(99.9%) 33.281 MB/sec [Average]
+[info]   (min, avg, max) = (773.613, 789.022, 793.799), stdev = 8.643
+[info]   CI (99.9%): [755.741, 822.303] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.alloc.rate.norm":
+[info]   2440.001 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (2440.001, 2440.001, 2440.001), stdev = 0.001
+[info]   CI (99.9%): [2440.001, 2440.001] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.002 ±(99.9%) 0.007 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.002, 0.004), stdev = 0.002
+[info]   CI (99.9%): [≈ 0, 0.009] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   0.005 ±(99.9%) 0.023 B/op [Average]
+[info]   (min, avg, max) = (≈ 0, 0.005, 0.012), stdev = 0.006
+[info]   CI (99.9%): [≈ 0, 0.028] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.G1_Old_Gen":
+[info]   802.007 ±(99.9%) 302.011 MB/sec [Average]
+[info]   (min, avg, max) = (716.046, 802.007, 859.367), stdev = 78.431
+[info]   CI (99.9%): [499.997, 1104.018] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.G1_Old_Gen.norm":
+[info]   2481.288 ±(99.9%) 981.762 B/op [Average]
+[info]   (min, avg, max) = (2201.002, 2481.288, 2710.433), stdev = 254.960
+[info]   CI (99.9%): [1499.526, 3463.050] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.count":
+[info]   28.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (5.000, 5.600, 6.000), stdev = 0.548
+[info]   CI (99.9%): [28.000, 28.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fInterpolator:·gc.time":
+[info]   18.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (3.000, 3.600, 4.000), stdev = 0.548
+[info]   CI (99.9%): [18.000, 18.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator
+[info] # Run progress: 12.50% complete, ETA 00:01:47
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 4799658.782 ops/s
+[info] # Warmup Iteration   2: 6416156.058 ops/s
+[info] # Warmup Iteration   3: 6034161.346 ops/s
+[info] # Warmup Iteration   4: 6030535.760 ops/s
+[info] # Warmup Iteration   5: 6073529.708 ops/s
+[info] Iteration   1: 6131125.765 ops/s
+[info]                  ·gc.alloc.rate:                                  592.201 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.276 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       153.046 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   2: 6114600.974 ops/s
+[info]                  ·gc.alloc.rate:                                  590.576 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.003 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.254 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       153.461 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   3: 6051860.288 ops/s
+[info]                  ·gc.alloc.rate:                                  584.429 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.003 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.175 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       155.055 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   4: 5963452.216 ops/s
+[info]                  ·gc.alloc.rate:            575.887 MB/sec
+[info]                  ·gc.alloc.rate.norm:       152.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      596.149 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 157.348 B/op
+[info]                  ·gc.count:                 5.000 counts
+[info]                  ·gc.time:                  3.000 ms
+[info] Iteration   5: 6080067.173 ops/s
+[info]                  ·gc.alloc.rate:                                  587.144 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.141 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       154.329 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator":
+[info]   6068221.283 ±(99.9%) 254642.404 ops/s [Average]
+[info]   (min, avg, max) = (5963452.216, 6068221.283, 6131125.765), stdev = 66129.824
+[info]   CI (99.9%): [5813578.879, 6322863.687] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.alloc.rate":
+[info]   586.047 ±(99.9%) 24.764 MB/sec [Average]
+[info]   (min, avg, max) = (575.887, 586.047, 592.201), stdev = 6.431
+[info]   CI (99.9%): [561.283, 610.811] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.alloc.rate.norm":
+[info]   152.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (152.000, 152.000, 152.000), stdev = 0.001
+[info]   CI (99.9%): [152.000, 152.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.002 ±(99.9%) 0.004 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.002, 0.003), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.006] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   ≈ 10⁻³ B/op
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.G1_Old_Gen":
+[info]   596.199 ±(99.9%) 0.239 MB/sec [Average]
+[info]   (min, avg, max) = (596.141, 596.199, 596.276), stdev = 0.062
+[info]   CI (99.9%): [595.961, 596.438] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.G1_Old_Gen.norm":
+[info]   154.648 ±(99.9%) 6.538 B/op [Average]
+[info]   (min, avg, max) = (153.046, 154.648, 157.348), stdev = 1.698
+[info]   CI (99.9%): [148.110, 161.186] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.count":
+[info]   25.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (5.000, 5.000, 5.000), stdev = 0.001
+[info]   CI (99.9%): [25.000, 25.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.frawInterpolator:·gc.time":
+[info]   15.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (3.000, 3.000, 3.000), stdev = 0.001
+[info]   CI (99.9%): [15.000, 15.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator
+[info] # Run progress: 25.00% complete, ETA 00:01:32
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 4685161.746 ops/s
+[info] # Warmup Iteration   2: 6410027.606 ops/s
+[info] # Warmup Iteration   3: 6070685.067 ops/s
+[info] # Warmup Iteration   4: 6108096.546 ops/s
+[info] # Warmup Iteration   5: 6143732.553 ops/s
+[info] Iteration   1: 6144575.310 ops/s
+[info]                  ·gc.alloc.rate:                                  593.302 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      ≈ 10⁻³ MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻⁴ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.067 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       152.709 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   2: 6033219.134 ops/s
+[info]                  ·gc.alloc.rate:                                  582.605 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻⁴ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.139 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       155.531 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   3: 6066780.934 ops/s
+[info]                  ·gc.alloc.rate:                                  585.764 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.029 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       154.664 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        2.000 ms
+[info] Iteration   4: 6043656.644 ops/s
+[info]                  ·gc.alloc.rate:                                  583.807 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             152.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.003 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            596.343 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       155.264 B/op
+[info]                  ·gc.count:                                       5.000 counts
+[info]                  ·gc.time:                                        3.000 ms
+[info] Iteration   5: 6032434.569 ops/s
+[info]                  ·gc.alloc.rate:            582.626 MB/sec
+[info]                  ·gc.alloc.rate.norm:       152.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      596.237 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 155.551 B/op
+[info]                  ·gc.count:                 5.000 counts
+[info]                  ·gc.time:                  3.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator":
+[info]   6064133.318 ±(99.9%) 181202.519 ops/s [Average]
+[info]   (min, avg, max) = (6032434.569, 6064133.318, 6144575.310), stdev = 47057.719
+[info]   CI (99.9%): [5882930.799, 6245335.837] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.alloc.rate":
+[info]   585.621 ±(99.9%) 17.260 MB/sec [Average]
+[info]   (min, avg, max) = (582.605, 585.621, 593.302), stdev = 4.482
+[info]   CI (99.9%): [568.360, 602.881] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.alloc.rate.norm":
+[info]   152.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (152.000, 152.000, 152.000), stdev = 0.001
+[info]   CI (99.9%): [152.000, 152.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.001 ±(99.9%) 0.004 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.001, 0.003), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.005] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   ≈ 10⁻⁴ B/op
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.G1_Old_Gen":
+[info]   596.163 ±(99.9%) 0.492 MB/sec [Average]
+[info]   (min, avg, max) = (596.029, 596.163, 596.343), stdev = 0.128
+[info]   CI (99.9%): [595.671, 596.655] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.G1_Old_Gen.norm":
+[info]   154.744 ±(99.9%) 4.593 B/op [Average]
+[info]   (min, avg, max) = (152.709, 154.744, 155.551), stdev = 1.193
+[info]   CI (99.9%): [150.151, 159.336] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.count":
+[info]   25.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (5.000, 5.000, 5.000), stdev = 0.001
+[info]   CI (99.9%): [25.000, 25.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.fsInterpolator:·gc.time":
+[info]   14.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (2.000, 2.800, 3.000), stdev = 0.447
+[info]   CI (99.9%): [14.000, 14.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder
+[info] # Run progress: 37.50% complete, ETA 00:01:16
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 4230156.213 ops/s
+[info] # Warmup Iteration   2: 4543087.836 ops/s
+[info] # Warmup Iteration   3: 5075778.972 ops/s
+[info] # Warmup Iteration   4: 5072548.576 ops/s
+[info] # Warmup Iteration   5: 5036345.870 ops/s
+[info] Iteration   1: 5084941.107 ops/s
+[info]                  ·gc.alloc.rate:                                  1653.858 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1651.701 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       511.332 B/op
+[info]                  ·gc.count:                                       8.000 counts
+[info]                  ·gc.time:                                        5.000 ms
+[info] Iteration   2: 5130872.993 ops/s
+[info]                  ·gc.alloc.rate:                                  1669.589 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1652.468 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       506.749 B/op
+[info]                  ·gc.count:                                       8.000 counts
+[info]                  ·gc.time:                                        5.000 ms
+[info] Iteration   3: 4983470.809 ops/s
+[info]                  ·gc.alloc.rate:                                  1621.545 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1652.438 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       521.755 B/op
+[info]                  ·gc.count:                                       8.000 counts
+[info]                  ·gc.time:                                        6.000 ms
+[info] Iteration   4: 5109473.156 ops/s
+[info]                  ·gc.alloc.rate:                                  1662.504 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1652.348 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       508.872 B/op
+[info]                  ·gc.count:                                       8.000 counts
+[info]                  ·gc.time:                                        5.000 ms
+[info] Iteration   5: 5103441.262 ops/s
+[info]                  ·gc.alloc.rate:            1660.600 MB/sec
+[info]                  ·gc.alloc.rate.norm:       512.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1652.368 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 509.462 B/op
+[info]                  ·gc.count:                 8.000 counts
+[info]                  ·gc.time:                  5.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder":
+[info]   5082439.866 ±(99.9%) 222195.466 ops/s [Average]
+[info]   (min, avg, max) = (4983470.809, 5082439.866, 5130872.993), stdev = 57703.457
+[info]   CI (99.9%): [4860244.400, 5304635.331] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.alloc.rate":
+[info]   1653.619 ±(99.9%) 72.335 MB/sec [Average]
+[info]   (min, avg, max) = (1621.545, 1653.619, 1669.589), stdev = 18.785
+[info]   CI (99.9%): [1581.284, 1725.955] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.alloc.rate.norm":
+[info]   512.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (512.000, 512.000, 512.000), stdev = 0.001
+[info]   CI (99.9%): [512.000, 512.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.001 ±(99.9%) 0.002 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.001, 0.001), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.003] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   ≈ 10⁻³ B/op
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.G1_Old_Gen":
+[info]   1652.264 ±(99.9%) 1.228 MB/sec [Average]
+[info]   (min, avg, max) = (1651.701, 1652.264, 1652.468), stdev = 0.319
+[info]   CI (99.9%): [1651.036, 1653.492] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.G1_Old_Gen.norm":
+[info]   511.634 ±(99.9%) 22.676 B/op [Average]
+[info]   (min, avg, max) = (506.749, 511.634, 521.755), stdev = 5.889
+[info]   CI (99.9%): [488.958, 534.310] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.count":
+[info]   40.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (8.000, 8.000, 8.000), stdev = 0.001
+[info]   CI (99.9%): [40.000, 40.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.javaStringBuilder:·gc.time":
+[info]   26.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 5.200, 6.000), stdev = 0.447
+[info]   CI (99.9%): [26.000, 26.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator
+[info] # Run progress: 50.00% complete, ETA 00:01:01
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 2034204.870 ops/s
+[info] # Warmup Iteration   2: 2942787.643 ops/s
+[info] # Warmup Iteration   3: 3136189.330 ops/s
+[info] # Warmup Iteration   4: 3121083.302 ops/s
+[info] # Warmup Iteration   5: 3106758.243 ops/s
+[info] Iteration   1: 3133588.903 ops/s
+[info]                  ·gc.alloc.rate:                                  1974.709 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             992.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            2064.639 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       1037.177 B/op
+[info]                  ·gc.count:                                       10.000 counts
+[info]                  ·gc.time:                                        7.000 ms
+[info] Iteration   2: 3120599.986 ops/s
+[info]                  ·gc.alloc.rate:                                  1966.621 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             992.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.003 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1858.345 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       937.384 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        5.000 ms
+[info] Iteration   3: 3043650.547 ops/s
+[info]                  ·gc.alloc.rate:                                  1918.746 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             992.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            2065.448 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       1067.846 B/op
+[info]                  ·gc.count:                                       10.000 counts
+[info]                  ·gc.time:                                        6.000 ms
+[info] Iteration   4: 3145401.914 ops/s
+[info]                  ·gc.alloc.rate:            1982.345 MB/sec
+[info]                  ·gc.alloc.rate.norm:       992.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1858.295 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 929.923 B/op
+[info]                  ·gc.count:                 9.000 counts
+[info]                  ·gc.time:                  6.000 ms
+[info] Iteration   5: 3149507.874 ops/s
+[info]                  ·gc.alloc.rate:            1984.828 MB/sec
+[info]                  ·gc.alloc.rate.norm:       992.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      2064.656 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 1031.897 B/op
+[info]                  ·gc.count:                 10.000 counts
+[info]                  ·gc.time:                  8.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator":
+[info]   3118549.845 ±(99.9%) 166956.772 ops/s [Average]
+[info]   (min, avg, max) = (3043650.547, 3118549.845, 3149507.874), stdev = 43358.143
+[info]   CI (99.9%): [2951593.073, 3285506.617] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.alloc.rate":
+[info]   1965.450 ±(99.9%) 104.205 MB/sec [Average]
+[info]   (min, avg, max) = (1918.746, 1965.450, 1984.828), stdev = 27.062
+[info]   CI (99.9%): [1861.245, 2069.655] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.alloc.rate.norm":
+[info]   992.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (992.000, 992.000, 992.000), stdev = 0.001
+[info]   CI (99.9%): [992.000, 992.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.001 ±(99.9%) 0.004 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.001, 0.003), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.005] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   0.001 ±(99.9%) 0.002 B/op [Average]
+[info]   (min, avg, max) = (≈ 0, 0.001, 0.001), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.003] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.G1_Old_Gen":
+[info]   1982.277 ±(99.9%) 435.727 MB/sec [Average]
+[info]   (min, avg, max) = (1858.295, 1982.277, 2065.448), stdev = 113.157
+[info]   CI (99.9%): [1546.550, 2418.004] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.G1_Old_Gen.norm":
+[info]   1000.845 ±(99.9%) 242.244 B/op [Average]
+[info]   (min, avg, max) = (929.923, 1000.845, 1067.846), stdev = 62.910
+[info]   CI (99.9%): [758.602, 1243.089] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.count":
+[info]   48.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (9.000, 9.600, 10.000), stdev = 0.548
+[info]   CI (99.9%): [48.000, 48.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.rawInterpolator:·gc.time":
+[info]   32.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 6.400, 8.000), stdev = 1.140
+[info]   CI (99.9%): [32.000, 32.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator
+[info] # Run progress: 62.50% complete, ETA 00:00:46
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 1887360.491 ops/s
+[info] # Warmup Iteration   2: 2732681.894 ops/s
+[info] # Warmup Iteration   3: 2910959.484 ops/s
+[info] # Warmup Iteration   4: 2912817.940 ops/s
+[info] # Warmup Iteration   5: 2948713.172 ops/s
+[info] Iteration   1: 2949484.849 ops/s
+[info]                  ·gc.alloc.rate:            1858.749 MB/sec
+[info]                  ·gc.alloc.rate.norm:       992.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1858.225 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 991.720 B/op
+[info]                  ·gc.count:                 9.000 counts
+[info]                  ·gc.time:                  6.000 ms
+[info] Iteration   2: 2927673.989 ops/s
+[info]                  ·gc.alloc.rate:            1845.149 MB/sec
+[info]                  ·gc.alloc.rate.norm:       992.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1858.361 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 999.103 B/op
+[info]                  ·gc.count:                 9.000 counts
+[info]                  ·gc.time:                  6.000 ms
+[info] Iteration   3: 2901272.649 ops/s
+[info]                  ·gc.alloc.rate:            1828.470 MB/sec
+[info]                  ·gc.alloc.rate.norm:       992.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1858.391 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 1008.233 B/op
+[info]                  ·gc.count:                 9.000 counts
+[info]                  ·gc.time:                  5.000 ms
+[info] Iteration   4: 2912351.723 ops/s
+[info]                  ·gc.alloc.rate:                                  1836.020 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             992.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.003 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1858.939 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       1004.383 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        7.000 ms
+[info] Iteration   5: 2903637.994 ops/s
+[info]                  ·gc.alloc.rate:                                  1829.901 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             992.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1858.282 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       1007.386 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        7.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator":
+[info]   2918884.241 ±(99.9%) 76987.529 ops/s [Average]
+[info]   (min, avg, max) = (2901272.649, 2918884.241, 2949484.849), stdev = 19993.417
+[info]   CI (99.9%): [2841896.712, 2995871.769] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.alloc.rate":
+[info]   1839.658 ±(99.9%) 48.257 MB/sec [Average]
+[info]   (min, avg, max) = (1828.470, 1839.658, 1858.749), stdev = 12.532
+[info]   CI (99.9%): [1791.401, 1887.915] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.alloc.rate.norm":
+[info]   992.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (992.000, 992.000, 992.000), stdev = 0.001
+[info]   CI (99.9%): [992.000, 992.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.001 ±(99.9%) 0.005 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.001, 0.003), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.005] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   ≈ 10⁻³ B/op
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.G1_Old_Gen":
+[info]   1858.439 ±(99.9%) 1.105 MB/sec [Average]
+[info]   (min, avg, max) = (1858.225, 1858.439, 1858.939), stdev = 0.287
+[info]   CI (99.9%): [1857.335, 1859.544] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.G1_Old_Gen.norm":
+[info]   1002.165 ±(99.9%) 26.361 B/op [Average]
+[info]   (min, avg, max) = (991.720, 1002.165, 1008.233), stdev = 6.846
+[info]   CI (99.9%): [975.804, 1028.527] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.count":
+[info]   45.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (9.000, 9.000, 9.000), stdev = 0.001
+[info]   CI (99.9%): [45.000, 45.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.sInterpolator:·gc.time":
+[info]   31.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 6.200, 7.000), stdev = 0.837
+[info]   CI (99.9%): [31.000, 31.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder
+[info] # Run progress: 75.00% complete, ETA 00:00:30
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 3629128.296 ops/s
+[info] # Warmup Iteration   2: 4500373.720 ops/s
+[info] # Warmup Iteration   3: 4948121.614 ops/s
+[info] # Warmup Iteration   4: 4929968.738 ops/s
+[info] # Warmup Iteration   5: 4905561.902 ops/s
+[info] Iteration   1: 4867428.145 ops/s
+[info]                  ·gc.alloc.rate:                                  1583.517 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻⁴ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1606.801 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       519.529 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        6.000 ms
+[info] Iteration   2: 4897252.027 ops/s
+[info]                  ·gc.alloc.rate:                                  1593.055 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1606.634 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       516.364 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        7.000 ms
+[info] Iteration   3: 4876996.686 ops/s
+[info]                  ·gc.alloc.rate:                                  1586.496 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.004 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.001 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1606.579 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       518.481 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        6.000 ms
+[info] Iteration   4: 4947109.187 ops/s
+[info]                  ·gc.alloc.rate:            1608.970 MB/sec
+[info]                  ·gc.alloc.rate.norm:       512.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1606.336 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 511.162 B/op
+[info]                  ·gc.count:                 9.000 counts
+[info]                  ·gc.time:                  6.000 ms
+[info] Iteration   5: 4904115.671 ops/s
+[info]                  ·gc.alloc.rate:                                  1595.576 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1606.870 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       515.624 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        5.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder":
+[info]   4898580.343 ±(99.9%) 119055.390 ops/s [Average]
+[info]   (min, avg, max) = (4867428.145, 4898580.343, 4947109.187), stdev = 30918.307
+[info]   CI (99.9%): [4779524.953, 5017635.733] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.alloc.rate":
+[info]   1593.523 ±(99.9%) 38.145 MB/sec [Average]
+[info]   (min, avg, max) = (1583.517, 1593.523, 1608.970), stdev = 9.906
+[info]   CI (99.9%): [1555.378, 1631.668] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.alloc.rate.norm":
+[info]   512.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (512.000, 512.000, 512.000), stdev = 0.001
+[info]   CI (99.9%): [512.000, 512.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.002 ±(99.9%) 0.006 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.002, 0.004), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.007] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   ≈ 10⁻³ B/op
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.G1_Old_Gen":
+[info]   1606.644 ±(99.9%) 0.806 MB/sec [Average]
+[info]   (min, avg, max) = (1606.336, 1606.644, 1606.870), stdev = 0.209
+[info]   CI (99.9%): [1605.838, 1607.450] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.G1_Old_Gen.norm":
+[info]   516.232 ±(99.9%) 12.480 B/op [Average]
+[info]   (min, avg, max) = (511.162, 516.232, 519.529), stdev = 3.241
+[info]   CI (99.9%): [503.752, 528.713] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.count":
+[info]   45.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (9.000, 9.000, 9.000), stdev = 0.001
+[info]   CI (99.9%): [45.000, 45.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.time":
+[info]   30.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 6.000, 7.000), stdev = 0.707
+[info]   CI (99.9%): [30.000, 30.000] (assumes normal distribution)
+[info] # JMH version: 1.20
+[info] # VM version: JDK 10, VM 10+46
+[info] # VM invoker: /usr/lib/jvm/jdk-10/bin/java
+[info] # VM options: <none>
+[info] # Warmup: 5 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Throughput, ops/time
+[info] # Benchmark: com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation
+[info] # Run progress: 87.50% complete, ETA 00:00:15
+[info] # Fork: 1 of 1
+[info] # Warmup Iteration   1: 4139739.011 ops/s
+[info] # Warmup Iteration   2: 4612377.826 ops/s
+[info] # Warmup Iteration   3: 5064967.671 ops/s
+[info] # Warmup Iteration   4: 5094934.338 ops/s
+[info] # Warmup Iteration   5: 5021845.379 ops/s
+[info] Iteration   1: 5107498.087 ops/s
+[info]                  ·gc.alloc.rate:                                  1661.852 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻⁴ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1547.063 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       476.635 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        5.000 ms
+[info] Iteration   2: 5014043.650 ops/s
+[info]                  ·gc.alloc.rate:                                  1631.278 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.005 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: 0.002 B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1718.836 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       539.481 B/op
+[info]                  ·gc.count:                                       10.000 counts
+[info]                  ·gc.time:                                        7.000 ms
+[info] Iteration   3: 5041061.455 ops/s
+[info]                  ·gc.alloc.rate:                                  1640.262 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1547.071 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       482.911 B/op
+[info]                  ·gc.count:                                       9.000 counts
+[info]                  ·gc.time:                                        6.000 ms
+[info] Iteration   4: 5071471.803 ops/s
+[info]                  ·gc.alloc.rate:                                  1649.462 MB/sec
+[info]                  ·gc.alloc.rate.norm:                             512.000 B/op
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods':      0.001 MB/sec
+[info]                  ·gc.churn.CodeHeap_'non-profiled_nmethods'.norm: ≈ 10⁻³ B/op
+[info]                  ·gc.churn.G1_Old_Gen:                            1718.202 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm:                       533.337 B/op
+[info]                  ·gc.count:                                       10.000 counts
+[info]                  ·gc.time:                                        6.000 ms
+[info] Iteration   5: 5065852.433 ops/s
+[info]                  ·gc.alloc.rate:            1647.830 MB/sec
+[info]                  ·gc.alloc.rate.norm:       512.000 B/op
+[info]                  ·gc.churn.G1_Old_Gen:      1718.423 MB/sec
+[info]                  ·gc.churn.G1_Old_Gen.norm: 533.934 B/op
+[info]                  ·gc.count:                 10.000 counts
+[info]                  ·gc.time:                  6.000 ms
+[info] Result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation":
+[info]   5059985.486 ±(99.9%) 134670.388 ops/s [Average]
+[info]   (min, avg, max) = (5014043.650, 5059985.486, 5107498.087), stdev = 34973.472
+[info]   CI (99.9%): [4925315.098, 5194655.874] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.alloc.rate":
+[info]   1646.137 ±(99.9%) 43.742 MB/sec [Average]
+[info]   (min, avg, max) = (1631.278, 1646.137, 1661.852), stdev = 11.360
+[info]   CI (99.9%): [1602.394, 1689.879] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.alloc.rate.norm":
+[info]   512.000 ±(99.9%) 0.001 B/op [Average]
+[info]   (min, avg, max) = (512.000, 512.000, 512.000), stdev = 0.001
+[info]   CI (99.9%): [512.000, 512.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.CodeHeap_'non-profiled_nmethods'":
+[info]   0.002 ±(99.9%) 0.008 MB/sec [Average]
+[info]   (min, avg, max) = (≈ 0, 0.002, 0.005), stdev = 0.002
+[info]   CI (99.9%): [≈ 0, 0.010] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm":
+[info]   0.001 ±(99.9%) 0.003 B/op [Average]
+[info]   (min, avg, max) = (≈ 0, 0.001, 0.002), stdev = 0.001
+[info]   CI (99.9%): [≈ 0, 0.003] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.G1_Old_Gen":
+[info]   1649.919 ±(99.9%) 361.540 MB/sec [Average]
+[info]   (min, avg, max) = (1547.063, 1649.919, 1718.836), stdev = 93.891
+[info]   CI (99.9%): [1288.379, 2011.459] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.G1_Old_Gen.norm":
+[info]   513.260 ±(99.9%) 118.381 B/op [Average]
+[info]   (min, avg, max) = (476.635, 513.260, 539.481), stdev = 30.743
+[info]   CI (99.9%): [394.879, 631.641] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.count":
+[info]   48.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (9.000, 9.600, 10.000), stdev = 0.548
+[info]   CI (99.9%): [48.000, 48.000] (assumes normal distribution)
+[info] Secondary result "com.sizmek.fsi.benchmark_core.StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.time":
+[info]   30.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (5.000, 6.000, 7.000), stdev = 0.707
+[info]   CI (99.9%): [30.000, 30.000] (assumes normal distribution)
+[info] # Run complete. Total time: 00:02:02
+[info] Benchmark                                                                                                   Mode  Cnt        Score        Error   Units
+[info] StringConcatenationBenchmarkCore.fInterpolator                                                             thrpt    5   508947.882 ±  21548.008   ops/s
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.alloc.rate                                              thrpt    5      789.022 ±     33.281  MB/sec
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.alloc.rate.norm                                         thrpt    5     2440.001 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'                  thrpt    5        0.002 ±      0.007  MB/sec
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm             thrpt    5        0.005 ±      0.023    B/op
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.G1_Old_Gen                                        thrpt    5      802.007 ±    302.011  MB/sec
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.churn.G1_Old_Gen.norm                                   thrpt    5     2481.288 ±    981.762    B/op
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.count                                                   thrpt    5       28.000               counts
+[info] StringConcatenationBenchmarkCore.fInterpolator:·gc.time                                                    thrpt    5       18.000                   ms
+[info] StringConcatenationBenchmarkCore.frawInterpolator                                                          thrpt    5  6068221.283 ± 254642.404   ops/s
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.alloc.rate                                           thrpt    5      586.047 ±     24.764  MB/sec
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.alloc.rate.norm                                      thrpt    5      152.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'               thrpt    5        0.002 ±      0.004  MB/sec
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm          thrpt    5       ≈ 10⁻³                 B/op
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.G1_Old_Gen                                     thrpt    5      596.199 ±      0.239  MB/sec
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.churn.G1_Old_Gen.norm                                thrpt    5      154.648 ±      6.538    B/op
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.count                                                thrpt    5       25.000               counts
+[info] StringConcatenationBenchmarkCore.frawInterpolator:·gc.time                                                 thrpt    5       15.000                   ms
+[info] StringConcatenationBenchmarkCore.fsInterpolator                                                            thrpt    5  6064133.318 ± 181202.519   ops/s
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.alloc.rate                                             thrpt    5      585.621 ±     17.260  MB/sec
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.alloc.rate.norm                                        thrpt    5      152.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'                 thrpt    5        0.001 ±      0.004  MB/sec
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm            thrpt    5       ≈ 10⁻⁴                 B/op
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.G1_Old_Gen                                       thrpt    5      596.163 ±      0.492  MB/sec
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.churn.G1_Old_Gen.norm                                  thrpt    5      154.744 ±      4.593    B/op
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.count                                                  thrpt    5       25.000               counts
+[info] StringConcatenationBenchmarkCore.fsInterpolator:·gc.time                                                   thrpt    5       14.000                   ms
+[info] StringConcatenationBenchmarkCore.javaStringBuilder                                                         thrpt    5  5082439.866 ± 222195.466   ops/s
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.alloc.rate                                          thrpt    5     1653.619 ±     72.335  MB/sec
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.alloc.rate.norm                                     thrpt    5      512.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'              thrpt    5        0.001 ±      0.002  MB/sec
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm         thrpt    5       ≈ 10⁻³                 B/op
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.G1_Old_Gen                                    thrpt    5     1652.264 ±      1.228  MB/sec
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.churn.G1_Old_Gen.norm                               thrpt    5      511.634 ±     22.676    B/op
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.count                                               thrpt    5       40.000               counts
+[info] StringConcatenationBenchmarkCore.javaStringBuilder:·gc.time                                                thrpt    5       26.000                   ms
+[info] StringConcatenationBenchmarkCore.rawInterpolator                                                           thrpt    5  3118549.845 ± 166956.772   ops/s
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.alloc.rate                                            thrpt    5     1965.450 ±    104.205  MB/sec
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.alloc.rate.norm                                       thrpt    5      992.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'                thrpt    5        0.001 ±      0.004  MB/sec
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm           thrpt    5        0.001 ±      0.002    B/op
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.G1_Old_Gen                                      thrpt    5     1982.277 ±    435.727  MB/sec
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.churn.G1_Old_Gen.norm                                 thrpt    5     1000.845 ±    242.244    B/op
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.count                                                 thrpt    5       48.000               counts
+[info] StringConcatenationBenchmarkCore.rawInterpolator:·gc.time                                                  thrpt    5       32.000                   ms
+[info] StringConcatenationBenchmarkCore.sInterpolator                                                             thrpt    5  2918884.241 ±  76987.529   ops/s
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.alloc.rate                                              thrpt    5     1839.658 ±     48.257  MB/sec
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.alloc.rate.norm                                         thrpt    5      992.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'                  thrpt    5        0.001 ±      0.005  MB/sec
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm             thrpt    5       ≈ 10⁻³                 B/op
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.G1_Old_Gen                                        thrpt    5     1858.439 ±      1.105  MB/sec
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.churn.G1_Old_Gen.norm                                   thrpt    5     1002.165 ±     26.361    B/op
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.count                                                   thrpt    5       45.000               counts
+[info] StringConcatenationBenchmarkCore.sInterpolator:·gc.time                                                    thrpt    5       31.000                   ms
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder                                                        thrpt    5  4898580.343 ± 119055.390   ops/s
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.alloc.rate                                         thrpt    5     1593.523 ±     38.145  MB/sec
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.alloc.rate.norm                                    thrpt    5      512.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'             thrpt    5        0.002 ±      0.006  MB/sec
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm        thrpt    5       ≈ 10⁻³                 B/op
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.G1_Old_Gen                                   thrpt    5     1606.644 ±      0.806  MB/sec
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.churn.G1_Old_Gen.norm                              thrpt    5      516.232 ±     12.480    B/op
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.count                                              thrpt    5       45.000               counts
+[info] StringConcatenationBenchmarkCore.scalaStringBuilder:·gc.time                                               thrpt    5       30.000                   ms
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation                                                  thrpt    5  5059985.486 ± 134670.388   ops/s
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.alloc.rate                                   thrpt    5     1646.137 ±     43.742  MB/sec
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.alloc.rate.norm                              thrpt    5      512.000 ±      0.001    B/op
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.CodeHeap_'non-profiled_nmethods'       thrpt    5        0.002 ±      0.008  MB/sec
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.CodeHeap_'non-profiled_nmethods'.norm  thrpt    5        0.001 ±      0.003    B/op
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.G1_Old_Gen                             thrpt    5     1649.919 ±    361.540  MB/sec
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.churn.G1_Old_Gen.norm                        thrpt    5      513.260 ±    118.381    B/op
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.count                                        thrpt    5       48.000               counts
+[info] StringConcatenationBenchmarkCore.scalaStringConcatenation:·gc.time                                         thrpt    5       30.000                   ms
+[info] Benchmark result is saved to jdk-10_scala-2.13.0-M3.json
+[success] Total time: 132 s, completed Mar 23, 2018 1:14:23 PM
