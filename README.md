@@ -5,6 +5,10 @@
 
 Scala macro that generates ultra-fast string interpolators.
 
+## Acknowledgments
+
+A general idea and some parts of code was borrowed from a great article ["Scala: String Interpolation Performance" by Dmitry Komanov](https://medium.com/@dkomanov/scala-string-interpolation-performance-21dc85e83afd).
+
 ## Goals, features, and limitations
 
 A high-performance 100% compatible drop-in replacement of simple and raw string interpolators (`s""` or `raw""` literals).
@@ -137,10 +141,3 @@ Double check binary and source compatibility (including behavior) and run `relea
 ```sh
 sbt release
 ```
-
-## Acknowledgments
-
-A general idea and some parts of code was borrowed from an article ["Scala: String Interpolation Performance" by Dmitry Komanov](https://medium.com/@dkomanov/scala-string-interpolation-performance-21dc85e83afd).
-
-An idea to use a thread-local cache for string builders come from an implementation of
-[Jsoniter-scala - a most efficient JSON parser for Scala](https://github.com/plokhotnyuk/jsoniter-scala).
