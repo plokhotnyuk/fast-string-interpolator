@@ -7,7 +7,7 @@ class SimpleConcatenationBenchmarkCoreSpec extends WordSpec with Matchers {
   private val expected =
     "10000xxx10000xxx10000.0xxx10000.0xxxxxxxfalsexxxSizmek is the largest independent buy-side advertising platform"
 
-  "StringConcatenationBenchmarkCode" should {
+  "SimpleConcatenationBenchmarkCode" should {
     "build the same string value" in {
       benchmark.fInterpolator shouldBe expected
       benchmark.frawInterpolator shouldBe expected
