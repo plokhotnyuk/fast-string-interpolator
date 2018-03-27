@@ -61,6 +61,7 @@ lazy val commonSettings = Seq(
     "-Xlint"
   ),
   testOptions in Test += Tests.Argument("-oDF"),
+  parallelExecution in ThisBuild := false
 )
 
 lazy val noPublishSettings = Seq(

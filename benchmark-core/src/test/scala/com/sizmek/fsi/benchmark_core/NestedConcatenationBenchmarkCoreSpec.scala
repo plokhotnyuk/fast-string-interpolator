@@ -17,7 +17,7 @@ class NestedConcatenationBenchmarkCoreSpec extends WordSpec with Matchers {
       |<hr/>baz9 99999 foo 99999 i=0,99999 i=1,99999 i=2,99999 i=3 bar
       | tail""".stripMargin
 
-  "NestedConcatenationBenchmark" should {
+  "NestedConcatenationBenchmarkCore" should {
     "build the same string value" in {
       benchmark.fInterpolator shouldBe expected
       benchmark.frawInterpolator shouldBe expected
