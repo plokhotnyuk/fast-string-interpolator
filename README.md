@@ -41,13 +41,13 @@ fs"http://$host/$path"
 fraw"http://$host/$path"
 ```
 
-That's it! You have got ~2.5x speed up in runtime and ~5x less usage of heap memory comparing to Scala interpolators
-(numbers can vary depending on payload, JDK, and Scala versions).
+That's it! You have got ~1.5x speed up in runtime and ~4x less usage of heap memory comparing to standard interpolators
+which come with 2.12.5 version of Scala compiler.
 
 Also, it is more efficient than a simple concatenation of strings by the `+` operator or using string builders for that.
 
 Check for benchmark results where the fast string interpolator compared with standard Scala interpolators, 3rd-party 
-interpolators, Scala/Java string builders, and a string concatenation using JDK 8 and Scala 2.12.4:
+interpolators, Scala/Java string builders, and a string concatenation using JDK 8 and Scala 2.12.5:
 - *fInterpolator* - standard string interpolator with formatting
 - *fastInterpolator* - the [fastring](https://github.com/Atry/fastring) interpolator  
 - *frawInterpolator* - fast string interpolator replacement for raw string interpolator  
@@ -62,6 +62,13 @@ interpolators, Scala/Java string builders, and a string concatenation using JDK 
 [![Throughput](docs/fast_string_interpolator_throughput.png)](docs/fast_string_interpolator_throughput.png)
 
 [![Heap Usage](docs/fast_string_interpolator_heap_usage.png)](docs/fast_string_interpolator_heap_usage.png)
+
+*NOTE*: Numbers can vary depending on use case, payload, JDK, and Scala versions. For cases, like templating with lot 
+of nested cycles, please consider using of [fastring](https://github.com/Atry/fastring) or string builders immediately.
+
+[Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
+Interpolator with other alternatives for different cases of simple and nested loop usage, and for different versions of 
+JDK and Scala.  
 
 ### How it works
 
@@ -102,20 +109,17 @@ sbt clean +coverage +test +coverageReport +mimaReportBinaryIssues
 Feel free to modify benchmarks and check how it works on your payload, JDK, and Scala versions.
 
 To see throughput with allocation rate for different approaches of string concatenation run benchmarks with GC profiler
-for a specified Scala version using the following command:
+for a specified JDK and Scala versions using the following command:
 
 ```sh
-sbt -no-colors ++2.12.4 clean 'benchmark/jmh:run -prof gc -rf json -rff jdk-8_scala-2.12.4.json .*'
+sbt -java-home /usr/lib/jvm/java-8-oracle -no-colors ++2.12.5 clean 'benchmark/jmh:run -jvm /usr/lib/jvm/java-9-oracle/bin/java -prof gc -rf json -rff jdk-9_scala-2.12.5.json .*'
 ```
 
 It will save benchmark report in a specified JSON file.
 
 Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
 of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like 
-[here](http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.4.json).
-
-[Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
-Interpolator for different JDK and Scala versions.  
+[here](http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.5.json).
 
 ### Publish locally
 

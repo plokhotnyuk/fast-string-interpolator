@@ -2,8 +2,8 @@ package com.sizmek.fsi.benchmark
 
 import org.scalatest.{Matchers, WordSpec}
 
-class StringConcatenationBenchmarkSpec extends WordSpec with Matchers {
-  private val benchmark = new StringConcatenationBenchmark
+class SimpleConcatenationBenchmarkSpec extends WordSpec with Matchers {
+  private val benchmark = new SimpleConcatenationBenchmark
   private val expected =
     "10000xxx10000xxx10000.0xxx10000.0xxxxxxxfalsexxxSizmek is the largest independent buy-side advertising platform"
 

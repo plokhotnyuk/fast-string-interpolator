@@ -11,7 +11,7 @@ import org.openjdk.jmh.annotations.{Benchmark, _}
 @Fork(1)
 @BenchmarkMode(Array(Mode.Throughput))
 @OutputTimeUnit(TimeUnit.SECONDS)
-class StringConcatenationBenchmarkCore {
+class SimpleConcatenationBenchmarkCore {
   var int: Int = _
   var long: Long = _
   var float: Float = _
