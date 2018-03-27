@@ -48,7 +48,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.4",
+  scalaVersion := "2.12.5",
   resolvers += Resolver.jcenterRepo,
   scalacOptions ++= Seq(
     "-deprecation",
@@ -100,7 +100,7 @@ lazy val macros = project
   .settings(mimaSettings: _*)
   .settings(publishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M3", "2.12.4", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0-M3", "2.12.5", "2.11.12"),
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
@@ -113,7 +113,7 @@ lazy val `benchmark-core` = project
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M3", "2.12.4", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0-M3", "2.12.5", "2.11.12"),
     libraryDependencies ++= Seq(
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
@@ -126,9 +126,9 @@ lazy val benchmark = project
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.12.4", "2.11.12"),
+    crossScalaVersions := Seq("2.12.5", "2.11.12"),
     libraryDependencies ++= Seq(
-      "com.dongxiguo" %% "fastring" % "0.3.1",
+      "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.0.0",
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
     )
