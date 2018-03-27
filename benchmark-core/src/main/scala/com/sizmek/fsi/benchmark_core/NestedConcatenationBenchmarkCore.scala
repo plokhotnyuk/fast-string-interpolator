@@ -22,7 +22,7 @@ class NestedConcatenationBenchmarkCore {
   }
 
   @Benchmark
-  final def fInterpolator: String =
+  def fInterpolator: String =
     f"head ${(for (j <- 0 until 10 view) yield {
       f"baz$j $a foo ${(for (i <- 0 until 4 view) yield {
         f"$a i=$i"
@@ -30,7 +30,7 @@ class NestedConcatenationBenchmarkCore {
     }).mkString("<hr/>")} tail"
 
   @Benchmark
-  final def frawInterpolator: String =
+  def frawInterpolator: String =
     fraw"head ${(for (j <- 0 until 10 view) yield {
       fraw"baz$j $a foo ${(for (i <- 0 until 4 view) yield {
         fraw"$a i=$i"
@@ -46,7 +46,7 @@ class NestedConcatenationBenchmarkCore {
     }).mkString("<hr/>")} tail"
 
   @Benchmark
-  final def javaStringBuilder: String = {
+  def javaStringBuilder: String = {
     val sb: java.lang.StringBuilder = new java.lang.StringBuilder
     sb.append("head ")
     var first = true
@@ -71,7 +71,7 @@ class NestedConcatenationBenchmarkCore {
   }
 
   @Benchmark
-  final def rawInterpolator: String =
+  def rawInterpolator: String =
     raw"head ${(for (j <- 0 until 10 view) yield {
       raw"baz$j $a foo ${(for (i <- 0 until 4 view) yield {
         raw"$a i=$i"
@@ -79,7 +79,7 @@ class NestedConcatenationBenchmarkCore {
     }).mkString("<hr/>")} tail"
 
   @Benchmark
-  final def scalaStringBuilder: String = {
+  def scalaStringBuilder: String = {
     val sb = new StringBuilder
     sb.append("head ")
     var first = true
@@ -104,7 +104,7 @@ class NestedConcatenationBenchmarkCore {
   }
 
   @Benchmark
-  final def scalaStringConcatenation: String =
+  def scalaStringConcatenation: String =
     "head " + (for (j <- 0 until 10 view) yield {
       "baz" + j + " " + a + " foo " + (for (i <- 0 until 4 view) yield {
         "" + a + " i=" + i
@@ -112,7 +112,7 @@ class NestedConcatenationBenchmarkCore {
     }).mkString("<hr/>") + " tail"
 
   @Benchmark
-  final def sInterpolator: String =
+  def sInterpolator: String =
     s"head ${(for (j <- 0 until 10 view) yield {
       s"baz$j $a foo ${(for (i <- 0 until 4 view) yield {
         s"$a i=$i"

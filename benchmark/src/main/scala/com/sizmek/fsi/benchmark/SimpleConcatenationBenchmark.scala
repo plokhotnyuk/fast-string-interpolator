@@ -15,10 +15,10 @@ import perfolation._
 @OutputTimeUnit(TimeUnit.SECONDS)
 class SimpleConcatenationBenchmark extends SimpleConcatenationBenchmarkCore {
   @Benchmark
-  final def fastInterpolator: String =
+  def fastInterpolator: String =
     fast"${int}xxx${long}xxx${float}xxx${double}xxx${char}xxx${boolean}xxx$string".toString
 
   @Benchmark
-  final def pInterpolator: String =
+  def pInterpolator: String =
     p"${int}xxx${long}xxx${float}xxx${double}xxx${char}xxx${boolean}xxx$string"
 }

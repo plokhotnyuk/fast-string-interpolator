@@ -17,7 +17,7 @@ import scala.language.postfixOps
 @OutputTimeUnit(TimeUnit.SECONDS)
 class NestedConcatenationBenchmark extends NestedConcatenationBenchmarkCore {
   @Benchmark
-  final def fastInterpolator: String =
+  def fastInterpolator: String =
     fast"head ${(for (j <- 0 until 10 view) yield {
       fast"baz$j $a foo ${(for (i <- 0 until 4 view) yield {
         fast"$a i=$i"
@@ -25,7 +25,7 @@ class NestedConcatenationBenchmark extends NestedConcatenationBenchmarkCore {
     }).mkFastring("<hr/>")} tail".toString
 
   @Benchmark
-  final def pInterpolator: String =
+  def pInterpolator: String =
     p"head ${(for (j <- 0 until 10 view) yield {
       p"baz$j $a foo ${(for (i <- 0 until 4 view) yield {
         p"$a i=$i"
