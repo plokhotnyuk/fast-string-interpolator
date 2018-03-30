@@ -41,8 +41,8 @@ fs"http://$host/$path"
 fraw"http://$host/$path"
 ```
 
-That's it! You have got ~1.5x speed up in runtime and ~4x less usage of heap memory comparing to standard interpolators
-which come with 2.12.5 version of Scala compiler.
+That's it! You have got ~1.3x speed up in runtime and ~1.6x less usage of heap memory comparing to standard interpolators
+which come with 2.12.5 version of Scala compiler. For earlier versions speed up is ~2.5x times.
 
 Also, it is more efficient than a simple concatenation of strings by the `+` operator or using string builders for that.
 
@@ -72,27 +72,18 @@ JDK and Scala.
 
 ### How it works
 
-Let we have defined functions: `def f(): Int` and `def g(): Double`, then in compile-time for `fs"a${f()}bb${g()}"`
+Let we have defined functions: `def f(): Int` and `def g(): AnyRef`, then in compile-time for `fs"a${f()}bb${g()}"`
 the following code will be generated:
 
 ```scala
 {
   val fresh$macro$1: Int = f();
-  val fresh$macro$2: Double = g();
-  com.sizmek.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString();
+  val fresh$macro$2: String = g().toString;
+  (new java.lang.StringBuilder(14 + fresh$macro$2.length)).append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString();
 }: String
 ```
 
 You can check this by adding a compiler option: `scalacOptions += "-Ymacro-debug-lite"`.
-
-In this code ```com.sizmek.fsi.`package`.stringBuilder()``` stands for getting a preallocated instance of
-`java.lang.StringBuilder` from the thread-local pool.
-
-By default a buffer capacity of all created `java.lang.StringBuilder` instances is 16384 characters (32Kb). If limit
-is reached buffer size grows to ensure that whole string can fit in it. However next retrieval from the pool a new 
-`java.lang.StringBuilder` instance will be allocated with the default size of the buffer and returned to avoid 
-exhausting of Java heap. So if you want to work with longer strings without reallocations then set a greater value for 
-the following JVM system property: `com.sizmek.fsi.buffer.size`.
 
 ## How to contribute
 

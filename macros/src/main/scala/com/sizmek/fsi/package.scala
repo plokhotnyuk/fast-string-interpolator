@@ -1,9 +1,9 @@
 package com.sizmek
 
 import scala.StringContext._
+import scala.collection.mutable
 import scala.language.experimental.macros
 import scala.reflect.macros.blackbox
-import scala.util.Try
 
 package object fsi {
 
@@ -24,13 +24,13 @@ package object fsi {
     * http://sizmek.com/blog
     * }}}
     *
-    * Let we have defined functions: `def f(): Int` and `def g(): Double`, then in compile-time
+    * Let we have defined functions: `def f(): Int` and `def g(): AnyRef`, then in compile-time
     * for `fs"a${f()}bb${g()}"` the following code will be generated:
     * {{{
     * {
     *   val fresh$macro$1: Int = f();
-    *   val fresh$macro$2: Double = g();
-    *   com.sizmek.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString()
+    *   val fresh$macro$2: String = g().toString;
+    *   (new java.lang.StringBuilder(14 + fresh$macro$2.length)).append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString()
     * }: String
     * }}}
     */
@@ -59,13 +59,6 @@ package object fsi {
     def fraw(args: Any*): String = macro Impl.fraw
   }
 
-  /** A method to access the thread-local pool for cached string builder instances.
-    * It is used internally in generated code only.
-    *
-    * @return a cached instance of `java.lang.StringBuilder`
-    */
-  private[fsi] def stringBuilder(): java.lang.StringBuilder = pool.get()
-
   private object Impl {
     def fs(c: blackbox.Context)(args: c.Expr[Any]*): c.Expr[String] = fx(c)(args: _*)(treatEscapes)
 
@@ -74,6 +67,18 @@ package object fsi {
     private[this] def fx(c: blackbox.Context)(args: c.Expr[Any]*)(process: String => String): c.Expr[String] = {
       import c.universe._
 
+      def isPrimitive(tpe: Type): Boolean = tpe.typeSymbol.isClass && tpe.typeSymbol.asClass.isPrimitive
+
+      val primitiveLengths = Map(
+        (definitions.BooleanTpe, 5), // false.toString.length
+        (definitions.ByteTpe, 4), // Byte.MinValue.toString.length
+        (definitions.CharTpe, 1), // 'x'.toString.length
+        (definitions.ShortTpe, 6), // Short.MinValue.toString.length
+        (definitions.IntTpe, 11), // Int.MinValue.toString.length
+        (definitions.LongTpe, 20), // Long.MinValue.toString.length
+        (definitions.FloatTpe, 14), // Float.MinValue.toString.length + 1 (for an exponent sign)
+        (definitions.DoubleTpe, 24), // Double.MinValue.toString.length + 1 (for an exponent sign)
+        (definitions.UnitTpe, 2)) // ().toString.length
       val constants = (c.prefix.tree match {
         case Apply(_, List(Apply(_, literals))) => literals
       }).map { case Literal(Constant(s: String)) =>
@@ -81,52 +86,56 @@ package object fsi {
           case ex: InvalidEscapeException => c.abort(c.enclosingPosition, ex.getMessage)
         }
       }
-
       if (args.isEmpty) c.Expr(Literal(Constant(constants.mkString)))
       else {
-        val (valDeclarations, values) = args.map { arg =>
+        var constStrLen = 0
+        val varStrLenValues = new mutable.ArrayBuffer[TermName]()
+        val valueDefinitions = new mutable.ArrayBuffer[Tree]()
+        val values = new mutable.ArrayBuffer[Tree]()
+        args.foreach { arg =>
           arg.tree match {
-            case tree @ Literal(Constant(_)) =>
-              (EmptyTree, if (tree.tpe <:< definitions.NullTpe) q"(null: String)" else tree)
+            case tree @ Literal(Constant(const)) =>
+              values.append(if (tree.tpe <:< definitions.NullTpe) {
+                constStrLen += 4 // ("" + null).length
+                q"(null: String)"
+              } else {
+                constStrLen += const.toString.length
+                tree
+              })
             case tree =>
               val name = TermName(c.freshName())
-              val tpe = if (tree.tpe <:< definitions.NullTpe) typeOf[String] else tree.tpe
-              (q"val $name: $tpe = $arg", Ident(name))
+              val tpe = tree.tpe
+              valueDefinitions.append(if (tpe <:< definitions.NullTpe) {
+                constStrLen += 4 // ("" + null).length
+                q"val $name: String = $arg"
+              } else if (isPrimitive(tpe)) {
+                constStrLen += primitiveLengths(tpe)
+                q"val $name: $tpe = $arg"
+              } else {
+                varStrLenValues.append(name)
+                if (tpe <:< typeOf[CharSequence]) q"val $name: $tpe = $arg"
+                else q"val $name: String = $arg.toString"
+              })
+              values.append(Ident(name))
           }
-        }.unzip
-
+        }
+        val capacity = varStrLenValues.foldLeft(q"$constStrLen")((acc, name) => q"$acc + $name.length")
         val stringBuilderWithAppends = constants.zipAll(values, "", null)
-          .foldLeft(q"com.sizmek.fsi.stringBuilder()") { case (sb, (s, v)) =>
-            val len = s.length
+          .foldLeft(q"new java.lang.StringBuilder($capacity)") { case (sb, (constant, value)) =>
+            val len = constant.length
             if (len == 0) {
-              if (v == null) sb
-              else q"$sb.append($v)"
+              if (value == null) sb
+              else q"$sb.append($value)"
             } else if (len == 1) {
-              if (v == null) q"$sb.append(${s.charAt(0)})"
-              else q"$sb.append(${s.charAt(0)}).append($v)"
+              if (value == null) q"$sb.append(${constant.charAt(0)})"
+              else q"$sb.append(${constant.charAt(0)}).append($value)"
             } else {
-              if (v == null) q"$sb.append($s)"
-              else q"$sb.append($s).append($v)"
+              if (value == null) q"$sb.append($constant)"
+              else q"$sb.append($constant).append($value)"
             }
           }
-
-        c.Expr(c.typecheck(q"..$valDeclarations; $stringBuilderWithAppends.toString"))
+        c.Expr(c.typecheck(q"..$valueDefinitions; $stringBuilderWithAppends.toString"))
       }
     }
   }
-
-  private[this] final val pool = new ThreadLocal[java.lang.StringBuilder] {
-    override def initialValue(): java.lang.StringBuilder = new java.lang.StringBuilder(size)
-
-    override def get(): java.lang.StringBuilder = {
-      var sb = super.get()
-      if (sb.capacity > size) {
-        sb = initialValue()
-        set(sb)
-      } else sb.setLength(0)
-      sb
-    }
-  }
-
-  private[this] final val size = Try(sys.props.getOrElse("com.sizmek.fsi.buffer.size", "").toInt).getOrElse(16384)
 }
