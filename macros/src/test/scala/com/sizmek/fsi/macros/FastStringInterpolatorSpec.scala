@@ -26,7 +26,7 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
       fs"${null}x${1}x${'A'}x${"A"}" shouldBe s"${null}x${1}x${'A'}x${"A"}"
       fs"${null}xx${1}xx${'A'}xx${"A"}" shouldBe s"${null}xx${1}xx${'A'}xx${"A"}"
       fs"[${fs"<${fs"{${fs"${1}".toInt}}"}>"}]" shouldBe s"[${s"<${s"{${s"${1}".toInt}}"}>"}]"
-      fs"\b\f\n\t\1\11\111" shouldBe s"\b\f\n\t\1\11\111"
+      fs"\b\f\n\t\\\'" shouldBe s"\b\f\n\t\\\'"
       fs""""""" shouldBe s"""""""
       (1 to 16384).foldLeft("")((s, i) => fs"$s$i") shouldBe (1 to 16384).foldLeft("")((s, i) => s"$s$i")
     }
@@ -57,7 +57,7 @@ class FastStringInterpolatorSpec extends WordSpec with Matchers {
       fraw"${null}x${1}x${'A'}x${"A"}" shouldBe raw"${null}x${1}x${'A'}x${"A"}"
       fraw"${null}xx${1}xx${'A'}xx${"A"}" shouldBe raw"${null}xx${1}xx${'A'}xx${"A"}"
       fraw"[${fraw"<${fraw"{${fraw"${1}".toInt}}"}>"}]" shouldBe raw"[${raw"<${raw"{${raw"${1}".toInt}}"}>"}]"
-      fraw"\b\f\n\t\1\11\111" shouldBe raw"\b\f\n\t\1\11\111"
+      fraw"\b\f\n\t\\\'\1\11\111" shouldBe raw"\b\f\n\t\\\'\1\11\111"
       fraw""""""" shouldBe raw"""""""
       (1 to 16384).foldLeft("")((s, i) => fraw"$s$i") shouldBe (1 to 16384).foldLeft("")((s, i) => raw"$s$i")
     }
