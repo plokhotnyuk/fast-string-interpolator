@@ -27,7 +27,7 @@ resolvers += Resolver.jcenterRepo
 Add the library to a dependency list:
 
 ```sbt
-libraryDependencies += "com.sizmek.fsi" %% "macros" % "0.1.0"
+libraryDependencies += "com.sizmek.fsi" %% "macros" % "0.2.0"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):
