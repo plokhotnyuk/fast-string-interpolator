@@ -17,7 +17,7 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 
 ## How to use
 
-The library is published to JCenter, so please add a resolver for it in your `build.sbt` file or ensure that it is 
+The library is published to JCenter, so please add a resolver for it in your `build.sbt` file or ensure that it is
 already added:
 
 ```sbt
@@ -46,29 +46,29 @@ which come with 2.12.5 version of Scala compiler.
 
 Also, it is more efficient than a simple concatenation of strings by the `+` operator or using string builders for that.
 
-Check for benchmark results where the fast string interpolator compared with standard Scala interpolators, 3rd-party 
+Check for benchmark results where the fast string interpolator compared with standard Scala interpolators, 3rd-party
 interpolators, Scala/Java string builders, and a string concatenation using JDK 8 and Scala 2.12.5:
 - *fInterpolator* - standard string interpolator with formatting
-- *fastInterpolator* - the [fastring](https://github.com/Atry/fastring) interpolator  
-- *frawInterpolator* - fast string interpolator replacement for raw string interpolator  
-- *fsInterpolator* - fast string interpolator replacement for simple string interpolator 
+- *fastInterpolator* - the [fastring](https://github.com/Atry/fastring) interpolator
+- *frawInterpolator* - fast string interpolator replacement for raw string interpolator
+- *fsInterpolator* - fast string interpolator replacement for simple string interpolator
 - *javaStringBuilder* - java.lang.StringBuilder
 - *pInterpolator* - the [perfolation](https://github.com/outr/perfolation) interpolator
-- *rawInterpolator* - standard raw string interpolator  
-- *sInterpolator* - standard simple string interpolator 
+- *rawInterpolator* - standard raw string interpolator
+- *sInterpolator* - standard simple string interpolator
 - *scalaStringBuilder* - scala.collection.mutable.StringBuilder
-- *scalaStringConcatenation* - `+` operand for strings 
+- *scalaStringConcatenation* - `+` operand for strings
 
 [![Throughput](docs/fast_string_interpolator_throughput.png)](docs/fast_string_interpolator_throughput.png)
 
 [![Heap Usage](docs/fast_string_interpolator_heap_usage.png)](docs/fast_string_interpolator_heap_usage.png)
 
-*NOTE*: Numbers can vary depending on use case, payload, JDK, and Scala versions. For cases, like templating with lot 
+*NOTE*: Numbers can vary depending on use case, payload, JDK, and Scala versions. For cases, like templating with lot
 of nested cycles, please consider using of [fastring](https://github.com/Atry/fastring) or string builders immediately.
 
 [Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
-Interpolator with other alternatives for different cases of simple and nested loop usage, and for different versions of 
-JDK and Scala.  
+Interpolator with other alternatives for different cases of simple and nested loop usage, and for different versions of
+JDK and Scala.
 
 ### How it works
 
@@ -89,9 +89,9 @@ In this code ```com.sizmek.fsi.`package`.stringBuilder()``` stands for getting a
 `java.lang.StringBuilder` from the thread-local pool.
 
 By default a buffer capacity of all created `java.lang.StringBuilder` instances is 16384 characters (32Kb). If limit
-is reached buffer size grows to ensure that whole string can fit in it. However next retrieval from the pool a new 
-`java.lang.StringBuilder` instance will be allocated with the default size of the buffer and returned to avoid 
-exhausting of Java heap. So if you want to work with longer strings without reallocations then set a greater value for 
+is reached buffer size grows to ensure that whole string can fit in it. However next retrieval from the pool a new
+`java.lang.StringBuilder` instance will be allocated with the default size of the buffer and returned to avoid
+exhausting of Java heap. So if you want to work with longer strings without reallocations then set a greater value for
 the following JVM system property: `com.sizmek.fsi.buffer.size`.
 
 ## How to contribute
@@ -118,7 +118,7 @@ sbt -java-home /usr/lib/jvm/java-8-oracle -no-colors ++2.12.5 clean 'benchmark/j
 It will save benchmark report in a specified JSON file.
 
 Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
-of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like 
+of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like
 [here](http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.5.json).
 
 ### Publish locally
