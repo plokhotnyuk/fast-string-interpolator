@@ -60,11 +60,13 @@ package object fsi {
   }
 
   /** A method to access the thread-local pool for cached string builder instances.
-    * It is used internally in generated code only.
+    * It is used internally in generated code.
+    *
+    * WARNING: Do not reuse an instance of cached string builder in nested functions or in different threads.
     *
     * @return a cached instance of `java.lang.StringBuilder`
     */
-  private[fsi] def stringBuilder(): java.lang.StringBuilder = pool.get()
+  def stringBuilder(): java.lang.StringBuilder = pool.get()
 
   private object Impl {
     def fs(c: blackbox.Context)(args: c.Expr[Any]*): c.Expr[String] = fx(c)(args: _*)(treatEscapes)
