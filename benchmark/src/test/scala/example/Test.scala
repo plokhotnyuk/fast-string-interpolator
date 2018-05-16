@@ -1,7 +1,5 @@
 package example
 
-import com.sizmek.fsi._
-
 object Test {
   def main(args: Array[String]): Unit = {
     val bt = new BugTest
@@ -9,11 +7,9 @@ object Test {
     def sample(message: => String) = bt.sample(() => message)
 
     val d = 12.3456
-/*
-    val record = bt.example(fs"Value: $d")
+    val record = bt.example(f"Value: $d")
     println(s"Record: ${record.message}")
-*/
-    val record2 = sample(fs"Value: $d")
+    val record2 = sample(f"Value: $d")
     println(s"Record: ${record2.message}")
   }
 }
