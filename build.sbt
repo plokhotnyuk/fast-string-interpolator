@@ -131,6 +131,7 @@ lazy val benchmark = project
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.0.0",
+      "com.outr" %% "scribe-slf4j" % "2.3.4" % Test,
       "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
     )
   )
