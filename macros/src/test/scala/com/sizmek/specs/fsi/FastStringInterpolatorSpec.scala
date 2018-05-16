@@ -1,4 +1,4 @@
-package com.sizmek.fsi.macros
+package com.sizmek.specs.fsi
 
 import com.sizmek.fsi._
 import org.scalatest.exceptions.TestFailedException
