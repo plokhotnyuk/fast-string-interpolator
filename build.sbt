@@ -55,7 +55,6 @@ lazy val commonSettings = Seq(
     "-encoding", "UTF-8",
     "-feature",
     "-unchecked",
-    "-Yno-adapted-args",
     "-Ywarn-dead-code",
     "-Xfuture",
     "-Xlint"
@@ -92,38 +91,38 @@ lazy val publishSettings = Seq(
 )
 
 lazy val `fast-string-interpolator` = project.in(file("."))
-  .aggregate(macros, `benchmark-core`, benchmark)
+  .aggregate(`fsi-macros`, `fsi-benchmark-core`, `fsi-benchmark`)
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
 
-lazy val macros = project
+lazy val `fsi-macros` = project
   .settings(commonSettings: _*)
   .settings(mimaSettings: _*)
   .settings(publishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M3", "2.12.6", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0-M4", "2.12.6", "2.11.12"),
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-      "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
+      "org.scalatest" %% "scalatest" % "3.0.6-SNAP1" % Test
     )
   )
 
-lazy val `benchmark-core` = project
+lazy val `fsi-benchmark-core` = project
   .enablePlugins(JmhPlugin)
-  .dependsOn(macros)
+  .dependsOn(`fsi-macros`)
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M3", "2.12.6", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0-M4", "2.12.6", "2.11.12"),
     libraryDependencies ++= Seq(
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
-      "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
+      "org.scalatest" %% "scalatest" % "3.0.6-SNAP1" % Test
     )
   )
 
-lazy val benchmark = project
+lazy val `fsi-benchmark` = project
   .enablePlugins(JmhPlugin)
-  .dependsOn(`benchmark-core`)
+  .dependsOn(`fsi-benchmark-core`)
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
@@ -131,6 +130,7 @@ lazy val benchmark = project
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.0.0",
-      "org.scalatest" %% "scalatest" % "3.0.5-M1" % Test
+      "com.outr" %% "scribe-slf4j" % "2.3.4" % Test,
+      "org.scalatest" %% "scalatest" % "3.0.6-SNAP1" % Test
     )
   )
