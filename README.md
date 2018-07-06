@@ -27,7 +27,7 @@ resolvers += Resolver.jcenterRepo
 Add the library to a dependency list:
 
 ```sbt
-libraryDependencies += "com.sizmek.fsi" %% "macros" % "0.2.0"
+libraryDependencies += "com.sizmek.fsi" %% "fsi-macros" % "0.2.0"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):
@@ -101,7 +101,8 @@ the following JVM system property: `com.sizmek.fsi.buffer.size`.
 To compile, run tests, check coverage, and check binary compatibility for different Scala versions use a command:
 
 ```sh
-sbt clean +coverage +test +coverageReport +mimaReportBinaryIssues
+sbt ++2.11.12 clean coverage test coverageReport mimaReportBinaryIssues
+sbt ++2.12.6 clean coverage test coverageReport mimaReportBinaryIssues
 ```
 
 ### Run benchmarks
