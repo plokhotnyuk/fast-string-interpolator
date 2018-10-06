@@ -115,7 +115,7 @@ lazy val `fsi-benchmark-core` = project
   .settings(
     crossScalaVersions := Seq("2.13.0-M4", "2.12.6", "2.11.12"),
     libraryDependencies ++= Seq(
-      "pl.project13.scala" % "sbt-jmh-extras" % "0.3.3",
+      "pl.project13.scala" % "sbt-jmh-extras" % "0.3.4",
       "org.scalatest" %% "scalatest" % "3.0.6-SNAP2" % Test
     )
   )
