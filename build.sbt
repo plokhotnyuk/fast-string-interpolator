@@ -129,7 +129,7 @@ lazy val `fsi-benchmark` = project
     crossScalaVersions := Seq("2.12.6", "2.11.12"),
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
-      "com.outr" %% "perfolation" % "1.0.0",
+      "com.outr" %% "perfolation" % "1.0.4",
       "com.outr" %% "scribe-slf4j" % "2.3.4" % Test,
       "org.scalatest" %% "scalatest" % "3.0.6-SNAP1" % Test
     )
