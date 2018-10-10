@@ -103,7 +103,7 @@ lazy val `fsi-macros` = project
     crossScalaVersions := Seq("2.13.0-M4", "2.12.7", "2.11.12"),
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-      "org.scalatest" %% "scalatest" % "3.0.6-SNAP2" % Test
+      "org.scalatest" %% "scalatest" % "3.0.6-SNAP3" % Test
     )
   )
 
@@ -116,7 +116,7 @@ lazy val `fsi-benchmark-core` = project
     crossScalaVersions := Seq("2.13.0-M4", "2.12.7", "2.11.12"),
     libraryDependencies ++= Seq(
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.4",
-      "org.scalatest" %% "scalatest" % "3.0.6-SNAP2" % Test
+      "org.scalatest" %% "scalatest" % "3.0.6-SNAP3" % Test
     )
   )
 
@@ -131,6 +131,6 @@ lazy val `fsi-benchmark` = project
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.0.4",
       "com.outr" %% "scribe-slf4j" % "2.6.0" % Test,
-      "org.scalatest" %% "scalatest" % "3.0.6-SNAP2" % Test
+      "org.scalatest" %% "scalatest" % "3.0.6-SNAP3" % Test
     )
   )
