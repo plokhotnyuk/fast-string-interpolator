@@ -48,7 +48,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.7",
+  scalaVersion := "2.12.8",
   resolvers += Resolver.jcenterRepo,
   scalacOptions ++= Seq(
     "-deprecation",
@@ -100,7 +100,7 @@ lazy val `fsi-macros` = project
   .settings(mimaSettings: _*)
   .settings(publishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M5", "2.13.0-M4", "2.12.7", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0-M5", "2.13.0-M4", "2.12.8", "2.11.12"),
     libraryDependencies ++= {
       val scalatestV =
         if (scalaVersion.value == "2.13.0-M4") "3.0.6-SNAP2"
@@ -118,7 +118,7 @@ lazy val `fsi-benchmark-core` = project
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M5", "2.13.0-M4", "2.12.7", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0-M5", "2.13.0-M4", "2.12.8", "2.11.12"),
     libraryDependencies ++= {
       val scalatestV =
         if (scalaVersion.value == "2.13.0-M4") "3.0.6-SNAP2"
@@ -136,7 +136,7 @@ lazy val `fsi-benchmark` = project
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.12.7", "2.11.12"),
+    crossScalaVersions := Seq("2.12.8", "2.11.12"),
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.0.4",
