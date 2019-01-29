@@ -66,7 +66,7 @@ interpolators, Scala/Java string builders, and a string concatenation using JDK 
 *NOTE*: Numbers can vary depending on use case, payload, JDK, and Scala versions. For cases, like templating with lot
 of nested cycles, please consider using of [fastring](https://github.com/Atry/fastring) or string builders immediately.
 
-[Results of benchmarks](https://sizmek.github.io/fast-string-interpolator) which compare performance of Fast String
+[Results of benchmarks](https://sizmek-public.github.io/fast-string-interpolator) which compare performance of Fast String
 Interpolator with other alternatives for different cases of simple and nested loop usage, and for different versions of
 JDK and Scala.
 
