@@ -1,7 +1,7 @@
 # Fast String Interpolator
 
-[![build status](https://travis-ci.org/Sizmek/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/Sizmek/fast-string-interpolator)
-[![codecov](https://codecov.io/gh/Sizmek/fast-string-interpolator/branch/master/graph/badge.svg)](https://codecov.io/gh/Sizmek/fast-string-interpolator)
+[![build status](https://travis-ci.org/sizmek-public/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/sizmek-public/fast-string-interpolator)
+[![codecov](https://codecov.io/gh/sizmek-public/fast-string-interpolator/branch/master/graph/badge.svg)](https://codecov.io/gh/sizmek-public/fast-string-interpolator)
 
 Scala macro that generates ultra-fast string interpolators.
 
@@ -42,7 +42,7 @@ fraw"http://$host/$path"
 ```
 
 That's it! You have got ~1.5x speed up in runtime and ~4x less usage of heap memory comparing to standard interpolators
-which come with 2.12.5 version of Scala compiler.
+which come with 2.12.8 version of Scala compiler.
 
 Also, it is more efficient than a simple concatenation of strings by the `+` operator or using string builders for that.
 
@@ -102,7 +102,7 @@ To compile, run tests, check coverage, and check binary compatibility for differ
 
 ```sh
 sbt ++2.11.12 clean coverage test coverageReport mimaReportBinaryIssues
-sbt ++2.12.6 clean coverage test coverageReport mimaReportBinaryIssues
+sbt ++2.12.8 clean coverage test coverageReport mimaReportBinaryIssues
 ```
 
 ### Run benchmarks
@@ -113,14 +113,14 @@ To see throughput with allocation rate for different approaches of string concat
 for a specified JDK and Scala versions using the following command:
 
 ```sh
-sbt -java-home /usr/lib/jvm/java-8-oracle -no-colors ++2.12.5 clean 'benchmark/jmh:run -jvm /usr/lib/jvm/java-9-oracle/bin/java -prof gc -rf json -rff jdk-9_scala-2.12.5.json .*'
+sbt -java-home /usr/lib/jvm/jdk1.8.0 -no-colors ++2.12.8 clean 'fsi-benchmark-core/jmh:run -jvm /usr/lib/jvm/jdk-11/bin/java -prof gc -rf json -rff jdk-11_scala-2.12.8.json .*'
 ```
 
 It will save benchmark report in a specified JSON file.
 
 Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
 of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like
-[here](http://jmh.morethan.io/?source=https://sizmek.github.io/fast-string-interpolator/jdk-8_scala-2.12.5.json).
+[here](http://jmh.morethan.io/?source=https://sizmek-public.github.io/fast-string-interpolator/jdk-8_scala-2.12.5.json).
 
 ### Publish locally
 
