@@ -2,16 +2,16 @@ language: scala
 matrix:
   include:
     - os: linux
-      jdk: oraclejdk11
+      jdk: openjdk11
       scala: 2.12.8
     - os: linux
       jdk: openjdk8
       scala: 2.12.8
     - os: linux
-      jdk: oraclejdk11
+      jdk: openjdk11
       scala: 2.11.12
     - os: linux
-      jdk: oraclejdk8
+      jdk: openjdk8
       scala: 2.11.12
 script:
   - travis_wait sbt -no-colors ++$TRAVIS_SCALA_VERSION clean coverage test coverageReport mimaReportBinaryIssues
