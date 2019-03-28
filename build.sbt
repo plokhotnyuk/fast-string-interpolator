@@ -124,7 +124,7 @@ lazy val `fsi-benchmark-core` = project
         if (scalaVersion.value == "2.13.0-M4") "3.0.6-SNAP2"
         else "3.0.6-SNAP3"
       Seq(
-        "pl.project13.scala" % "sbt-jmh-extras" % "0.3.5",
+        "pl.project13.scala" % "sbt-jmh-extras" % "0.3.6",
         "org.scalatest" %% "scalatest" % scalatestV % Test
       )
     }
