@@ -100,16 +100,12 @@ lazy val `fsi-macros` = project
   .settings(mimaSettings: _*)
   .settings(publishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M5", "2.13.0-M4", "2.12.8", "2.11.12"),
-    libraryDependencies ++= {
-      val scalatestV =
-        if (scalaVersion.value == "2.13.0-M4") "3.0.6-SNAP2"
-        else "3.0.6-SNAP3"
-      Seq(
-        "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-        "org.scalatest" %% "scalatest" % scalatestV % Test
-      )
-    }
+    crossScalaVersions := Seq("2.13.0-RC1", "2.13.0-M5", "2.12.8", "2.11.12"),
+    libraryDependencies ++= Seq(
+      "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+      "org.scalatest" %% "scalatest" % (if (scalaVersion.value == "2.13.0-M5") "3.0.7" else "3.0.8-RC2") % Test
+    )
+
   )
 
 lazy val `fsi-benchmark-core` = project
@@ -118,16 +114,11 @@ lazy val `fsi-benchmark-core` = project
   .settings(commonSettings: _*)
   .settings(noPublishSettings: _*)
   .settings(
-    crossScalaVersions := Seq("2.13.0-M5", "2.13.0-M4", "2.12.8", "2.11.12"),
-    libraryDependencies ++= {
-      val scalatestV =
-        if (scalaVersion.value == "2.13.0-M4") "3.0.6-SNAP2"
-        else "3.0.6-SNAP3"
-      Seq(
-        "pl.project13.scala" % "sbt-jmh-extras" % "0.3.6",
-        "org.scalatest" %% "scalatest" % scalatestV % Test
-      )
-    }
+    crossScalaVersions := Seq("2.13.0-RC1", "2.13.0-M5", "2.12.8", "2.11.12"),
+    libraryDependencies ++= Seq(
+      "pl.project13.scala" % "sbt-jmh-extras" % "0.3.6",
+      "org.scalatest" %% "scalatest" % (if (scalaVersion.value == "2.13.0-M5") "3.0.7" else "3.0.8-RC2") % Test
+    )
   )
 
 lazy val `fsi-benchmark` = project
