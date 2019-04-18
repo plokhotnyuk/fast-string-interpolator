@@ -1,4 +1,8 @@
 language: scala
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/
 matrix:
   include:
     - os: linux
@@ -13,6 +17,27 @@ matrix:
     - os: linux
       jdk: openjdk8
       scala: 2.11.12
+    - os: linux
+      name: linux-arm64
+      install:
+        - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+      script:
+        - |
+          mkdir -p ~/.ivy2 ~/.sbt
+          docker run --rm \
+            -v "$PWD:/volume" -w "/volume" \
+            -v ~/.ivy2:/root/.ivy2 \
+            -v ~/.sbt:/root/.sbt \
+            multiarch/ubuntu-debootstrap:arm64-xenial \
+            sh -c '\
+                apt-get update && \
+                apt-get install -y apt-transport-https &&\
+                echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
+                apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823 && \
+                apt-get update && \
+                apt-get install -y openjdk-8-jdk-headless sbt && \
+                sbt -no-colors ++2.12.8 clean test'
+      after_success:
 script:
   - travis_wait sbt -no-colors ++$TRAVIS_SCALA_VERSION clean coverage test coverageReport mimaReportBinaryIssues
 after_success:
