@@ -1,7 +1,8 @@
 # Fast String Interpolator
 
-[![build status](https://travis-ci.org/sizmek-public/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/sizmek-public/fast-string-interpolator)
-[![codecov](https://codecov.io/gh/sizmek-public/fast-string-interpolator/branch/master/graph/badge.svg)](https://codecov.io/gh/sizmek-public/fast-string-interpolator)
+[![AppVeyor build](https://ci.appveyor.com/api/projects/status/85kei4qwk0xwk4ix?svg=true)](https://ci.appveyor.com/project/plokhotnyuk/jsoniter-scala)
+[![TravisCI build](https://travis-ci.org/plokhotnyuk/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/plokhotnyuk/fast-string-interpolator)
+[![codecov](https://codecov.io/gh/plokhotnyuk/fast-string-interpolator/branch/master/graph/badge.svg)](https://codecov.io/gh/plokhotnyuk/fast-string-interpolator)
 
 Scala macro that generates ultra-fast string interpolators.
 
@@ -66,7 +67,7 @@ interpolators, Scala/Java string builders, and a string concatenation using JDK 
 *NOTE*: Numbers can vary depending on use case, payload, JDK, and Scala versions. For cases, like templating with lot
 of nested cycles, please consider using of [fastring](https://github.com/Atry/fastring) or string builders immediately.
 
-[Results of benchmarks](https://sizmek-public.github.io/fast-string-interpolator) which compare performance of Fast String
+[Results of benchmarks](https://plokhotnyuk.github.io/fast-string-interpolator) which compare performance of Fast String
 Interpolator with other alternatives for different cases of simple and nested loop usage, and for different versions of
 JDK and Scala.
 
@@ -120,7 +121,7 @@ It will save benchmark report in a specified JSON file.
 
 Results that are stored in JSON can be easy plotted in [JMH Visualizer](http://jmh.morethan.io/) by drugging & dropping
 of your file to the drop zone or using the `source` parameter with an HTTP link to your file in the URL like
-[here](http://jmh.morethan.io/?source=https://sizmek-public.github.io/fast-string-interpolator/jdk-8_scala-2.12.5.json).
+[here](http://jmh.morethan.io/?source=https://plokhotnyuk.github.io/fast-string-interpolator/jdk-8_scala-2.12.5.json).
 
 ### Publish locally
 
