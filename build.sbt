@@ -98,13 +98,13 @@ lazy val publishSettings = Seq(
 
 lazy val `fast-string-interpolator` = project.in(file("."))
   .aggregate(`fsi-macros`, `fsi-benchmark-core`, `fsi-benchmark`)
-  .settings(commonSettings: _*)
-  .settings(noPublishSettings: _*)
+  .settings(commonSettings)
+  .settings(noPublishSettings)
 
 lazy val `fsi-macros` = project
-  .settings(commonSettings: _*)
-  .settings(mimaSettings: _*)
-  .settings(publishSettings: _*)
+  .settings(commonSettings)
+  .settings(mimaSettings)
+  .settings(publishSettings)
   .settings(
     crossScalaVersions := Seq("2.13.0-RC2", "2.13.0-RC1", "2.12.8", "2.11.12"),
     libraryDependencies ++= Seq("org.scala-lang" % "scala-reflect" % scalaVersion.value),
@@ -117,8 +117,8 @@ lazy val `fsi-macros` = project
 lazy val `fsi-benchmark-core` = project
   .enablePlugins(JmhPlugin)
   .dependsOn(`fsi-macros`)
-  .settings(commonSettings: _*)
-  .settings(noPublishSettings: _*)
+  .settings(commonSettings)
+  .settings(noPublishSettings)
   .settings(
     crossScalaVersions := Seq("2.13.0-RC2", "2.13.0-RC1", "2.12.8", "2.11.12"),
     libraryDependencies ++= Seq("pl.project13.scala" % "sbt-jmh-extras" % "0.3.4"),
@@ -131,8 +131,8 @@ lazy val `fsi-benchmark-core` = project
 lazy val `fsi-benchmark` = project
   .enablePlugins(JmhPlugin)
   .dependsOn(`fsi-benchmark-core`)
-  .settings(commonSettings: _*)
-  .settings(noPublishSettings: _*)
+  .settings(commonSettings)
+  .settings(noPublishSettings)
   .settings(
     crossScalaVersions := Seq("2.12.8", "2.11.12"),
     libraryDependencies ++= Seq(
