@@ -1,6 +1,6 @@
 # Fast String Interpolator
 
-[![AppVeyor build](https://ci.appveyor.com/api/projects/status/85kei4qwk0xwk4ix?svg=true)](https://ci.appveyor.com/project/plokhotnyuk/jsoniter-scala)
+[![AppVeyor build](https://ci.appveyor.com/api/projects/status/85kei4qwk0xwk4ix?svg=true)](https://ci.appveyor.com/project/plokhotnyuk/fast-string-interpolator)
 [![TravisCI build](https://travis-ci.org/plokhotnyuk/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/plokhotnyuk/fast-string-interpolator)
 [![codecov](https://codecov.io/gh/plokhotnyuk/fast-string-interpolator/branch/master/graph/badge.svg)](https://codecov.io/gh/plokhotnyuk/fast-string-interpolator)
 
