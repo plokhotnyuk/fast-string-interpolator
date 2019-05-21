@@ -107,11 +107,10 @@ lazy val `fsi-macros` = project
   .settings(publishSettings)
   .settings(
     crossScalaVersions := Seq("2.13.0-RC2", "2.13.0-RC1", "2.12.8", "2.11.12"),
-    libraryDependencies ++= Seq("org.scala-lang" % "scala-reflect" % scalaVersion.value),
-    libraryDependencies ++= {
-      if (scalaVersion.value == "2.13.0-RC2") Seq("org.scalatest" % "scalatest_2.13.0-RC1" % "3.0.8-RC2" % Test)
-      else Seq("org.scalatest" %% "scalatest" % "3.0.8-RC2" % Test)
-    }
+    libraryDependencies ++= Seq(
+      "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+      "org.scalatest" %% "scalatest" % (if (scalaVersion.value == "2.13.0-RC1") "3.0.8-RC3" else "3.0.8-RC4") % Test
+    )
   )
 
 lazy val `fsi-benchmark-core` = project
@@ -121,11 +120,10 @@ lazy val `fsi-benchmark-core` = project
   .settings(noPublishSettings)
   .settings(
     crossScalaVersions := Seq("2.13.0-RC2", "2.13.0-RC1", "2.12.8", "2.11.12"),
-    libraryDependencies ++= Seq("pl.project13.scala" % "sbt-jmh-extras" % "0.3.4"),
-    libraryDependencies ++= {
-      if (scalaVersion.value == "2.13.0-RC2") Seq("org.scalatest" % "scalatest_2.13.0-RC1" % "3.0.8-RC2" % Test)
-      else Seq("org.scalatest" %% "scalatest" % "3.0.8-RC2" % Test)
-    }
+    libraryDependencies ++= Seq(
+      "pl.project13.scala" % "sbt-jmh-extras" % "0.3.4",
+      "org.scalatest" %% "scalatest" % (if (scalaVersion.value == "2.13.0-RC1") "3.0.8-RC3" else "3.0.8-RC4") % Test
+    )
   )
 
 lazy val `fsi-benchmark` = project
@@ -139,6 +137,6 @@ lazy val `fsi-benchmark` = project
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.1",
       "com.outr" %% "scribe-slf4j" % "2.7.5" % Test,
-      "org.scalatest" %% "scalatest" % "3.0.7" % Test
+      "org.scalatest" %% "scalatest" % (if (scalaVersion.value == "2.13.0-RC1") "3.0.8-RC3" else "3.0.8-RC4") % Test
     )
   )
