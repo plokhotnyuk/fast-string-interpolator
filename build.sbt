@@ -136,7 +136,7 @@ lazy val `fsi-benchmark` = project
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.1",
-      "com.outr" %% "scribe-slf4j" % "2.7.5" % Test,
+      "com.outr" %% "scribe-slf4j" % "2.7.6" % Test,
       "org.scalatest" %% "scalatest" % (if (scalaVersion.value == "2.13.0-RC1") "3.0.8-RC3" else "3.0.8-RC4") % Test
     )
   )
