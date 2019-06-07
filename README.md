@@ -21,7 +21,7 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 Add the library to a dependency list:
 
 ```sbt
-libraryDependencies += "com.github.plokhotnyuk.fsi" %% "fsi-macros" % "0.5.0"
+libraryDependencies += "com.github.plokhotnyuk.fsi" %% "fsi-macros" % "0.6.0"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):
