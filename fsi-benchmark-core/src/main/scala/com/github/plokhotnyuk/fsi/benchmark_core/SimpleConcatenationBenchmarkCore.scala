@@ -1,8 +1,8 @@
-package com.sizmek.fsi.benchmark_core
+package com.github.plokhotnyuk.fsi.benchmark_core
 
 import java.util.concurrent.TimeUnit
 
-import com.sizmek.fsi._
+import com.github.plokhotnyuk.fsi._
 import org.openjdk.jmh.annotations.{Benchmark, _}
 
 @State(Scope.Benchmark)
@@ -37,7 +37,7 @@ class SimpleConcatenationBenchmarkCore {
     double = 10000d
     char = 'x'
     boolean = false
-    string = "Sizmek is the largest independent buy-side advertising platform"
+    string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }
 
   @Benchmark

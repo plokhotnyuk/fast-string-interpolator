@@ -1,4 +1,4 @@
-package com.sizmek
+package com.github.plokhotnyuk
 
 import scala.StringContext._
 import scala.language.experimental.macros
@@ -13,15 +13,15 @@ package object fsi {
     *
     * Here's an example of usage:
     * {{{
-    * val host = "sizmek.com"
+    * val host = "company.com"
     * val path = "blog"
     * println(fs"http://$host/$path")
     * println(fraw"http://$host/$path")
     * }}}
     * It will print 2 strings:
     * {{{
-    * http://sizmek.com/blog
-    * http://sizmek.com/blog
+    * http://company.com/blog
+    * http://company.com/blog
     * }}}
     *
     * Let we have defined functions: `def f(): Int` and `def g(): Double`, then in compile-time
@@ -30,7 +30,7 @@ package object fsi {
     * {
     *   val fresh$macro$1: Int = f();
     *   val fresh$macro$2: Double = g();
-    *   com.sizmek.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString()
+    *   com.github.plokhotnyuk.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString()
     * }: String
     * }}}
     */
@@ -98,7 +98,7 @@ package object fsi {
         }.unzip
 
         val stringBuilderWithAppends = constants.zipAll(values, "", null)
-          .foldLeft(q"com.sizmek.fsi.stringBuilder()") { case (sb, (s, v)) =>
+          .foldLeft(q"com.github.plokhotnyuk.fsi.stringBuilder()") { case (sb, (s, v)) =>
             val len = s.length
             if (len == 0) {
               if (v == null) sb
@@ -130,5 +130,5 @@ package object fsi {
     }
   }
 
-  private[this] final val size = Try(sys.props.getOrElse("com.sizmek.fsi.buffer.size", "").toInt).getOrElse(16384)
+  private[this] final val size = Try(sys.props.getOrElse("com.github.plokhotnyuk.fsi.buffer.size", "").toInt).getOrElse(16384)
 }

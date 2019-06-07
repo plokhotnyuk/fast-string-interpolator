@@ -18,25 +18,18 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 
 ## How to use
 
-The library is published to JCenter, so please add a resolver for it in your `build.sbt` file or ensure that it is
-already added:
-
-```sbt
-resolvers += Resolver.jcenterRepo
-```
-
 Add the library to a dependency list:
 
 ```sbt
-libraryDependencies += "com.sizmek.fsi" %% "fsi-macros" % "0.5.0"
+libraryDependencies += "com.github.plokhotnyuk.fsi" %% "fsi-macros" % "0.5.0"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):
 
 ```scala
-import com.sizmek.fsi._
+import com.github.plokhotnyuk.fsi._
 
-val host = "sizmek.com"
+val host = "company.com"
 val path = "blog"
 fs"http://$host/$path"
 fraw"http://$host/$path"
@@ -80,20 +73,20 @@ the following code will be generated:
 {
   val fresh$macro$1: Int = f();
   val fresh$macro$2: Double = g();
-  com.sizmek.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString();
+  com.github.plokhotnyuk.fsi.`package`.stringBuilder().append('a').append(fresh$macro$1).append("bb").append(fresh$macro$2).toString();
 }: String
 ```
 
 You can check this by adding a compiler option: `scalacOptions += "-Ymacro-debug-lite"`.
 
-In this code ```com.sizmek.fsi.`package`.stringBuilder()``` stands for getting a preallocated instance of
+In this code ```com.github.plokhotnyuk.fsi.`package`.stringBuilder()``` stands for getting a preallocated instance of
 `java.lang.StringBuilder` from the thread-local pool.
 
 By default a buffer capacity of all created `java.lang.StringBuilder` instances is 16384 characters (32Kb). If limit
 is reached buffer size grows to ensure that whole string can fit in it. However next retrieval from the pool a new
 `java.lang.StringBuilder` instance will be allocated with the default size of the buffer and returned to avoid
 exhausting of Java heap. So if you want to work with longer strings without reallocations then set a greater value for
-the following JVM system property: `com.sizmek.fsi.buffer.size`.
+the following JVM system property: `com.github.plokhotnyuk.fsi.buffer.size`.
 
 ## How to contribute
 

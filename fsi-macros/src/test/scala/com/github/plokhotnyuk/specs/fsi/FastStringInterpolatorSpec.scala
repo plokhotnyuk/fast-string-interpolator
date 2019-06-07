@@ -1,6 +1,6 @@
-package com.sizmek.specs.fsi
+package com.github.plokhotnyuk.specs.fsi
 
-import com.sizmek.fsi._
+import com.github.plokhotnyuk.fsi._
 import org.scalatest.exceptions.TestFailedException
 import org.scalatest.{Matchers, WordSpec}
 

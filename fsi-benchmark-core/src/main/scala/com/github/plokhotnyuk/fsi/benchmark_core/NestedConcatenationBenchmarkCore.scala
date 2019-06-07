@@ -1,8 +1,8 @@
-package com.sizmek.fsi.benchmark_core
+package com.github.plokhotnyuk.fsi.benchmark_core
 
 import java.util.concurrent.TimeUnit
 
-import com.sizmek.fsi._
+import com.github.plokhotnyuk.fsi._
 import org.openjdk.jmh.annotations.{Benchmark, _}
 
 import scala.language.postfixOps

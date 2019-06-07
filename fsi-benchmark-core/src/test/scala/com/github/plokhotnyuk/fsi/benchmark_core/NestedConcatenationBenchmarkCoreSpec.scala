@@ -1,9 +1,9 @@
-package com.sizmek.fsi.benchmark
+package com.github.plokhotnyuk.fsi.benchmark_core
 
 import org.scalatest.{Matchers, WordSpec}
 
-class NestedConcatenationBenchmarkSpec extends WordSpec with Matchers {
-  private val benchmark = new NestedConcatenationBenchmark
+class NestedConcatenationBenchmarkCoreSpec extends WordSpec with Matchers {
+  private val benchmark = new NestedConcatenationBenchmarkCore
   private val expected =
     """head baz0 99999 foo 99999 i=0,99999 i=1,99999 i=2,99999 i=3 bar
       |<hr/>baz1 99999 foo 99999 i=0,99999 i=1,99999 i=2,99999 i=3 bar
@@ -17,14 +17,12 @@ class NestedConcatenationBenchmarkSpec extends WordSpec with Matchers {
       |<hr/>baz9 99999 foo 99999 i=0,99999 i=1,99999 i=2,99999 i=3 bar
       | tail""".stripMargin
 
-  "NestedConcatenationBenchmark" should {
+  "NestedConcatenationBenchmarkCore" should {
     "build the same string value" in {
       benchmark.fInterpolator shouldBe expected
-      benchmark.fastInterpolator shouldBe expected
       benchmark.frawInterpolator shouldBe expected
       benchmark.fsInterpolator shouldBe expected
       benchmark.javaStringBuilder shouldBe expected
-      benchmark.pInterpolator shouldBe expected
       benchmark.rawInterpolator shouldBe expected
       benchmark.scalaStringBuilder shouldBe expected
       benchmark.scalaStringConcatenation shouldBe expected

@@ -1,7 +1,7 @@
-package com.sizmek.fsi.benchmark
+package com.github.plokhotnyuk.fsi.benchmark
 
 import com.dongxiguo.fastring.Fastring.Implicits._
-import com.sizmek.fsi.benchmark_core.NestedConcatenationBenchmarkCore
+import com.github.plokhotnyuk.fsi.benchmark_core.NestedConcatenationBenchmarkCore
 import org.openjdk.jmh.annotations.Benchmark
 import perfolation._
 

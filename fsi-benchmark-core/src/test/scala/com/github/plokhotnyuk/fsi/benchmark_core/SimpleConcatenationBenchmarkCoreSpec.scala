@@ -1,11 +1,11 @@
-package com.sizmek.fsi.benchmark_core
+package com.github.plokhotnyuk.fsi.benchmark_core
 
 import org.scalatest.{Matchers, WordSpec}
 
 class SimpleConcatenationBenchmarkCoreSpec extends WordSpec with Matchers {
   private val benchmark = new SimpleConcatenationBenchmarkCore
   private val expected =
-    "10000xxx10000xxx10000.0xxx10000.0xxxxxxxfalsexxxSizmek is the largest independent buy-side advertising platform"
+    "10000xxx10000xxx10000.0xxx10000.0xxxxxxxfalsexxxLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
   "SimpleConcatenationBenchmarkCode" should {
     "build the same string value" in {
