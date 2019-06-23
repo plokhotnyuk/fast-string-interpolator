@@ -3,6 +3,7 @@
 [![AppVeyor build](https://ci.appveyor.com/api/projects/status/85kei4qwk0xwk4ix/branch/master?svg=true)](https://ci.appveyor.com/project/plokhotnyuk/fast-string-interpolator/branch/master)
 [![TravisCI build](https://travis-ci.org/plokhotnyuk/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/plokhotnyuk/fast-string-interpolator)
 [![codecov](https://codecov.io/gh/plokhotnyuk/fast-string-interpolator/branch/master/graph/badge.svg)](https://codecov.io/gh/plokhotnyuk/fast-string-interpolator)
+[![Maven Central](https://img.shields.io/badge/maven--central-0.6.0-blue.svg)](https://search.maven.org/search?q=com.github.plokhotnyuk.fsi)
 
 Scala macro that generates ultra-fast string interpolators.
 
