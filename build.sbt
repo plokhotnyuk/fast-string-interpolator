@@ -1,32 +1,7 @@
-import com.typesafe.sbt.pgp.PgpKeys._
-import com.typesafe.tools.mima.plugin.MimaPlugin.mimaDefaultSettings
-import sbt.Keys.scalacOptions
 import sbt.url
 import scala.sys.process._
 
 lazy val oldVersion = "git describe --abbrev=0".!!.trim.replaceAll("^v", "")
-
-def mimaSettings = mimaDefaultSettings ++ Seq(
-  mimaCheckDirection := {
-    def isPatch = {
-      val Array(newMajor, newMinor, _) = version.value.split('.')
-      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
-      newMajor == oldMajor && newMinor == oldMinor
-    }
-
-    if (isPatch) "both" else "backward"
-  },
-  mimaPreviousArtifacts := {
-    def isCheckingRequired = {
-      val Array(newMajor, newMinor, _) = version.value.split('.')
-      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
-      newMajor == oldMajor && (newMajor != "0" || newMinor == oldMinor)
-    }
-
-    if (isCheckingRequired) Set(organization.value %% moduleName.value % oldVersion)
-    else Set()
-  }
-)
 
 lazy val commonSettings = Seq(
   organization := "com.github.plokhotnyuk.fsi",
@@ -66,7 +41,8 @@ lazy val commonSettings = Seq(
 
 lazy val noPublishSettings = Seq(
   skip in publish := true,
-  publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging)
+  publishTo := Some(if (isSnapshot.value) Opts.resolver.sonatypeSnapshots else Opts.resolver.sonatypeStaging),
+  mimaPreviousArtifacts := Set()
 )
 
 lazy val publishSettings = Seq(
@@ -79,7 +55,26 @@ lazy val publishSettings = Seq(
     )
   ),
   publishMavenStyle := true,
-  pomIncludeRepository := { _ => false }
+  pomIncludeRepository := { _ => false },
+  mimaCheckDirection := {
+    def isPatch = {
+      val Array(newMajor, newMinor, _) = version.value.split('.')
+      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
+      newMajor == oldMajor && newMinor == oldMinor
+    }
+
+    if (isPatch) "both" else "backward"
+  },
+  mimaPreviousArtifacts := {
+    def isCheckingRequired = {
+      val Array(newMajor, newMinor, _) = version.value.split('.')
+      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
+      newMajor == oldMajor && (newMajor != "0" || newMinor == oldMinor)
+    }
+
+    if (isCheckingRequired) Set(organization.value %% moduleName.value % oldVersion)
+    else Set()
+  }
 )
 
 lazy val `fast-string-interpolator` = project.in(file("."))
@@ -89,7 +84,6 @@ lazy val `fast-string-interpolator` = project.in(file("."))
 
 lazy val `fsi-macros` = project
   .settings(commonSettings)
-  .settings(mimaSettings)
   .settings(publishSettings)
   .settings(
     crossScalaVersions := Seq("2.13.0", "2.12.8", "2.11.12"),
