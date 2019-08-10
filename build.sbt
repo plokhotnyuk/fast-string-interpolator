@@ -23,7 +23,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.13.0",
+  scalaVersion := "2.12.9",
   resolvers += "Sonatype OSS Staging" at "https://oss.sonatype.org/content/repositories/staging",
   scalacOptions ++= Seq(
     "-deprecation",
@@ -32,7 +32,6 @@ lazy val commonSettings = Seq(
     "-feature",
     "-unchecked",
     "-Ywarn-dead-code",
-    "-Xfuture",
     "-Xlint"
   ),
   testOptions in Test += Tests.Argument("-oDF"),
