@@ -23,7 +23,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.9",
+  scalaVersion := "2.12.10",
   resolvers += "Sonatype OSS Staging" at "https://oss.sonatype.org/content/repositories/staging",
   scalacOptions ++= Seq(
     "-deprecation",
@@ -85,7 +85,7 @@ lazy val `fsi-macros` = project
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    crossScalaVersions := Seq("2.13.0", "2.12.9", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
       "org.scalatest" %% "scalatest" % "3.0.8" % Test
@@ -98,7 +98,7 @@ lazy val `fsi-benchmark-core` = project
   .settings(commonSettings)
   .settings(noPublishSettings)
   .settings(
-    crossScalaVersions := Seq("2.13.0", "2.12.9", "2.11.12"),
+    crossScalaVersions := Seq("2.13.0", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.7",
       "org.scalatest" %% "scalatest" % "3.0.8" % Test
@@ -111,7 +111,7 @@ lazy val `fsi-benchmark` = project
   .settings(commonSettings)
   .settings(noPublishSettings)
   .settings(
-    crossScalaVersions := Seq("2.12.9", "2.11.12"),
+    crossScalaVersions := Seq(scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.4",

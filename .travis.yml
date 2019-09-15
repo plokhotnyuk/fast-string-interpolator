@@ -3,11 +3,11 @@ matrix:
   include:
     - os: osx
       osx_image: xcode10.1 # macOS 10.13, JDK 11.0.1+13
-      scala: 2.12.9
+      scala: 2.12.10
     - os: linux
       jdk: openjdk8
       scala: 2.11.12
 script:
-  - travis_wait sbt -no-colors ++$TRAVIS_SCALA_VERSION -Dsbt.supershell=false clean coverage test coverageReport mimaReportBinaryIssues
+  - travis_wait 60 sbt -no-colors ++$TRAVIS_SCALA_VERSION -Dsbt.supershell=false clean coverage test coverageReport mimaReportBinaryIssues
 after_success:
   - bash <(curl -s https://codecov.io/bash)
