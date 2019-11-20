@@ -8,6 +8,6 @@ matrix:
       jdk: openjdk8
       scala: 2.11.12
 script:
-  - travis_wait 60 sbt -no-colors ++$TRAVIS_SCALA_VERSION -Dsbt.supershell=false clean coverage test coverageReport mimaReportBinaryIssues
+  - travis_wait 60 sbt -batch ++$TRAVIS_SCALA_VERSION! clean coverage test coverageReport mimaReportBinaryIssues < /dev/null
 after_success:
   - bash <(curl -s https://codecov.io/bash)
