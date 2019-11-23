@@ -1,4 +1,14 @@
 language: scala
+git:
+  depth: 100
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/boot
+    - $HOME/.coursier
+before_cache:
+  # Cleanup locks to avoid unnecessary cache updates
+  - find $HOME/.sbt -name "*.lock" | xargs rm
 matrix:
   include:
     - os: linux
