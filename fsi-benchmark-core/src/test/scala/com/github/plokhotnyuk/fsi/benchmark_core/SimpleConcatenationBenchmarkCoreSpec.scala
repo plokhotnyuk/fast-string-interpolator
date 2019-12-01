@@ -1,8 +1,9 @@
 package com.github.plokhotnyuk.fsi.benchmark_core
 
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class SimpleConcatenationBenchmarkCoreSpec extends WordSpec with Matchers {
+class SimpleConcatenationBenchmarkCoreSpec extends AnyWordSpec with Matchers {
   private val benchmark = new SimpleConcatenationBenchmarkCore
   private val expected =
     "10000xxx10000xxx10000.0xxx10000.0xxxxxxxfalsexxxLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

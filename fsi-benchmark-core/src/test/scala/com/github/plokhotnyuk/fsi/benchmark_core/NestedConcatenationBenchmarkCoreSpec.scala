@@ -1,8 +1,9 @@
 package com.github.plokhotnyuk.fsi.benchmark_core
 
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class NestedConcatenationBenchmarkCoreSpec extends WordSpec with Matchers {
+class NestedConcatenationBenchmarkCoreSpec extends AnyWordSpec with Matchers {
   private val benchmark = new NestedConcatenationBenchmarkCore
   private val expected =
     """head baz0 99999 foo 99999 i=0,99999 i=1,99999 i=2,99999 i=3 bar

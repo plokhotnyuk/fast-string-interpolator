@@ -2,9 +2,10 @@ package com.github.plokhotnyuk.specs.fsi
 
 import com.github.plokhotnyuk.fsi._
 import org.scalatest.exceptions.TestFailedException
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class FastStringInterpolatorSpec extends WordSpec with Matchers {
+class FastStringInterpolatorSpec extends AnyWordSpec with Matchers {
   "FastStringInterpolator.fs" should {
     "call args exactly once and in order of declaration in a string literal" in {
       var x = 0
