@@ -72,7 +72,8 @@ lazy val publishSettings = Seq(
 
     if (isCheckingRequired) Set(organization.value %% moduleName.value % oldVersion)
     else Set()
-  }
+  },
+  mimaReportSignatureProblems := true
 )
 
 lazy val `fast-string-interpolator` = project.in(file("."))
@@ -100,6 +101,10 @@ lazy val `fsi-benchmark-core` = project
     crossScalaVersions := Seq("2.13.1", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.7",
+      "org.openjdk.jmh" % "jmh-core" % "1.23",
+      "org.openjdk.jmh" % "jmh-generator-asm" % "1.23",
+      "org.openjdk.jmh" % "jmh-generator-bytecode" % "1.23",
+      "org.openjdk.jmh" % "jmh-generator-reflection" % "1.23",
       "org.scalatest" %% "scalatest" % "3.1.0" % Test
     )
   )
