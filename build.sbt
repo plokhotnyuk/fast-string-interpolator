@@ -105,7 +105,7 @@ lazy val `fsi-benchmark-core` = project
       "org.openjdk.jmh" % "jmh-generator-asm" % "1.23",
       "org.openjdk.jmh" % "jmh-generator-bytecode" % "1.23",
       "org.openjdk.jmh" % "jmh-generator-reflection" % "1.23",
-      "org.scalatest" %% "scalatest" % "3.1.0" % Test
+      "org.scalatest" %% "scalatest" % "3.1.1" % Test
     )
   )
 
