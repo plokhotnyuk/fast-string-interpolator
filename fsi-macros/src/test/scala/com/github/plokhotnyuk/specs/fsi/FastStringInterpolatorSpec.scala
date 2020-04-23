@@ -33,7 +33,7 @@ class FastStringInterpolatorSpec extends AnyWordSpec with Matchers {
     }
     "don't compile in case of escaping error" in {
       assert(intercept[TestFailedException](assertCompiles(""" fs"\d" """)).getMessage.contains {
-        """invalid escape '\d' not one of [\b, \t, \n, \f, \r, \\, \", \'] at index 0 in "\d". Use \\ for literal \."""
+        """invalid escape '\d' not one of [\b, \t, \n, \f, \r, \\, \", \'"""
       })
     }
   }
