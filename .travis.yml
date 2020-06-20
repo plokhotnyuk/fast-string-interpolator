@@ -18,6 +18,4 @@ matrix:
       jdk: openjdk8
       scala: 2.11.12
 script:
-  - sbt -batch ++$TRAVIS_SCALA_VERSION! clean coverage test coverageReport mimaReportBinaryIssues
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - travis_wait 60 sbt -batch ++$TRAVIS_SCALA_VERSION! clean coverage test mimaReportBinaryIssues coverageAggregate coveralls
