@@ -101,10 +101,10 @@ lazy val `fsi-benchmark-core` = project
     crossScalaVersions := Seq("2.13.3", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
       "pl.project13.scala" % "sbt-jmh-extras" % "0.3.7",
-      "org.openjdk.jmh" % "jmh-core" % "1.25",
-      "org.openjdk.jmh" % "jmh-generator-asm" % "1.25",
-      "org.openjdk.jmh" % "jmh-generator-bytecode" % "1.25",
-      "org.openjdk.jmh" % "jmh-generator-reflection" % "1.25",
+      "org.openjdk.jmh" % "jmh-core" % "1.25.1",
+      "org.openjdk.jmh" % "jmh-generator-asm" % "1.25.1",
+      "org.openjdk.jmh" % "jmh-generator-bytecode" % "1.25.1",
+      "org.openjdk.jmh" % "jmh-generator-reflection" % "1.25.1",
       "org.scalatest" %% "scalatest" % "3.2.2" % Test
     )
   )
