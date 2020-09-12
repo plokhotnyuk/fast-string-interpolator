@@ -1,7 +1,7 @@
 # Fast String Interpolator
 
 [![Actions Build](https://github.com/plokhotnyuk/fast-string-interpolator/workflows/build/badge.svg)](https://github.com/plokhotnyuk/fast-string-interpolator/actions)
-[![TravisCI Build](https://travis-ci.org/plokhotnyuk/fast-string-interpolator.svg?branch=master)](https://travis-ci.org/plokhotnyuk/fast-string-interpolator)
+[![TravisCI Build](https://travis-ci.com/plokhotnyuk/fast-string-interpolator.svg?branch=master)](https://travis-ci.com/plokhotnyuk/fast-string-interpolator)
 [![Coverage Status](https://coveralls.io/repos/github/plokhotnyuk/fast-string-interpolator/badge.svg?branch=master)](https://coveralls.io/github/plokhotnyuk/fast-string-interpolator?branch=master)
 [![Scala Steward](https://img.shields.io/badge/Scala_Steward-helping-brightgreen.svg?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAVFBMVEUAAACHjojlOy5NWlrKzcYRKjGFjIbp293YycuLa3pYY2LSqql4f3pCUFTgSjNodYRmcXUsPD/NTTbjRS+2jomhgnzNc223cGvZS0HaSD0XLjbaSjElhIr+AAAAAXRSTlMAQObYZgAAAHlJREFUCNdNyosOwyAIhWHAQS1Vt7a77/3fcxxdmv0xwmckutAR1nkm4ggbyEcg/wWmlGLDAA3oL50xi6fk5ffZ3E2E3QfZDCcCN2YtbEWZt+Drc6u6rlqv7Uk0LdKqqr5rk2UCRXOk0vmQKGfc94nOJyQjouF9H/wCc9gECEYfONoAAAAASUVORK5CYII=)](https://scala-steward.org)
 [![Maven Central](https://img.shields.io/badge/maven--central-0.6.0-blue.svg)](https://search.maven.org/search?q=com.github.plokhotnyuk.fsi)
