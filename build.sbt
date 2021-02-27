@@ -23,7 +23,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.12",
+  scalaVersion := "2.12.13",
   resolvers += Resolver.sonatypeRepo("staging"),
   scalacOptions ++= Seq(
     "-deprecation",
