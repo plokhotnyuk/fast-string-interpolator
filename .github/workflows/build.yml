@@ -44,9 +44,4 @@ jobs:
       - name: Compile, test and check binary compatibility
         run: "sbt -batch clean +test +mimaReportBinaryIssues"
         shell: bash
-      - name: Test with coverage
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.java == 'zulu@1.8' }}
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-        run: "sbt -batch ++2.11.12 coverage test coverageAggregate coveralls"
-        shell: bash
+
