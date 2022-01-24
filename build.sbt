@@ -81,7 +81,7 @@ lazy val publishSettings = Seq(
     def isCheckingRequired: Boolean = {
       val Array(newMajor, _, _) = version.value.split('.')
       val Array(oldMajor, _, _) = oldVersion.split('.')
-      newMajor == oldMajor && scalaMajor == 2 // FIXME remove scala version check after release for Scala 3
+      newMajor == oldMajor
     }
 
     if (isCheckingRequired) Set(organization.value %% moduleName.value % oldVersion)
