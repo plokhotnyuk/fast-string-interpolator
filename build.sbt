@@ -25,15 +25,26 @@ lazy val commonSettings = Seq(
   ),
   scalaVersion := "2.12.15",
   resolvers += Resolver.sonatypeRepo("staging"),
-  scalacOptions ++= Seq(
-    "-deprecation",
-    "-encoding", "UTF-8",
-    "-target:jvm-1.8",
-    "-feature",
-    "-unchecked",
-    "-Ywarn-dead-code",
-    "-Xlint"
-  ),
+  scalacOptions ++= {
+    CrossVersion.partialVersion(scalaVersion.value) match {
+      case Some((2, _)) => Seq(
+        "-deprecation",
+        "-encoding", "UTF-8",
+        "-target:jvm-1.8",
+        "-feature",
+        "-unchecked",
+        "-Ywarn-dead-code",
+        "-Xlint"
+      )
+      case _ => Seq(
+        "-deprecation",
+        "-encoding", "UTF-8",
+        "-feature",
+        "-unchecked",
+        "-Xcheck-macros"
+      )
+    }
+  },
   testOptions in Test += Tests.Argument("-oDF"),
   parallelExecution in ThisBuild := false,
   publishTo := sonatypePublishToBundle.value,
@@ -85,11 +96,16 @@ lazy val `fsi-macros` = project
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    crossScalaVersions := Seq("2.13.8", scalaVersion.value, "2.11.12"),
-    libraryDependencies ++= Seq(
-      "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-      "org.scalatest" %% "scalatest" % "3.2.11" % Test
-    )
+    crossScalaVersions := Seq("2.13.8", scalaVersion.value, "2.11.12", "3.1.1-RC2"),
+    libraryDependencies ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((2, _)) => Seq(
+          "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+          "org.scalatest" %% "scalatest" % "3.2.11" % Test
+        )
+        case _ => Seq("org.scalatest" %% "scalatest" % "3.2.11" % Test)
+      }
+    }
   )
 
 lazy val `fsi-benchmark-core` = project
