@@ -65,8 +65,9 @@ lazy val noPublishSettings = Seq(
 )
 
 lazy val publishSettings = Seq(
+  packageOptions += Package.ManifestAttributes("Automatic-Module-Name" -> moduleName.value),
   mimaCheckDirection := {
-    def isPatch = {
+    def isPatch: Boolean = {
       val Array(newMajor, newMinor, _) = version.value.split('.')
       val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
       newMajor == oldMajor && newMinor == oldMinor
@@ -75,10 +76,12 @@ lazy val publishSettings = Seq(
     if (isPatch) "both" else "backward"
   },
   mimaPreviousArtifacts := {
-    def isCheckingRequired = {
-      val Array(newMajor, newMinor, _) = version.value.split('.')
-      val Array(oldMajor, oldMinor, _) = oldVersion.split('.')
-      newMajor == oldMajor && (newMajor != "0" || newMinor == oldMinor)
+    val Some((scalaMajor, _)) = CrossVersion.partialVersion(scalaVersion.value)
+
+    def isCheckingRequired: Boolean = {
+      val Array(newMajor, _, _) = version.value.split('.')
+      val Array(oldMajor, _, _) = oldVersion.split('.')
+      newMajor == oldMajor && scalaMajor == 2 // FIXME remove scala version check after release for Scala 3
     }
 
     if (isCheckingRequired) Set(organization.value %% moduleName.value % oldVersion)
@@ -96,7 +99,7 @@ lazy val `fsi-macros` = project
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    crossScalaVersions := Seq("2.13.8", scalaVersion.value, "2.11.12", "3.1.1-RC2"),
+    crossScalaVersions := Seq("3.1.1", "2.13.8", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= {
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, _)) => Seq(
@@ -126,7 +129,7 @@ lazy val `fsi-benchmark` = project
   .settings(commonSettings)
   .settings(noPublishSettings)
   .settings(
-    crossScalaVersions := Seq(scalaVersion.value, "2.11.12"),
+    crossScalaVersions := Seq(scalaVersion.value),
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.7",
