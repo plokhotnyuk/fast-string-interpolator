@@ -99,7 +99,7 @@ lazy val `fsi-macros` = project
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    crossScalaVersions := Seq("3.1.1", "2.13.8", scalaVersion.value, "2.11.12"),
+    crossScalaVersions := Seq("3.1.2", "2.13.8", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= {
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, _)) => Seq(
