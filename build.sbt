@@ -23,7 +23,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.15",
+  scalaVersion := "2.12.16",
   resolvers += Resolver.sonatypeRepo("staging"),
   scalacOptions ++= {
     CrossVersion.partialVersion(scalaVersion.value) match {
