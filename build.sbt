@@ -104,9 +104,9 @@ lazy val `fsi-macros` = project
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, _)) => Seq(
           "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-          "org.scalatest" %% "scalatest" % "3.2.12" % Test
+          "org.scalatest" %% "scalatest" % "3.2.13" % Test
         )
-        case _ => Seq("org.scalatest" %% "scalatest" % "3.2.12" % Test)
+        case _ => Seq("org.scalatest" %% "scalatest" % "3.2.13" % Test)
       }
     }
   )
@@ -119,7 +119,7 @@ lazy val `fsi-benchmark-core` = project
   .settings(
     crossScalaVersions := Seq("2.13.8", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.2.12" % Test
+      "org.scalatest" %% "scalatest" % "3.2.13" % Test
     )
   )
 
@@ -134,6 +134,6 @@ lazy val `fsi-benchmark` = project
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.7",
       "com.outr" %% "scribe-slf4j" % "2.7.13" % Test,
-      "org.scalatest" %% "scalatest" % "3.2.12" % Test
+      "org.scalatest" %% "scalatest" % "3.2.13" % Test
     )
   )
