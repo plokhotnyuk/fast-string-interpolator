@@ -137,8 +137,7 @@ lazy val `fsi-macrosJS` = `fsi-macros`.js
     libraryDependencies ++= Seq(
       "io.github.cquiroz" %%% "scala-java-time" % "2.4.0",
       "io.github.cquiroz" %%% "scala-java-time-tzdb" % "2.4.0"
-    ),
-    mimaPreviousArtifacts := Set()
+    )
   )
 
 lazy val `fsi-macrosNative` = `fsi-macros`.native
@@ -147,8 +146,7 @@ lazy val `fsi-macrosNative` = `fsi-macros`.native
     libraryDependencies ++= Seq(
       "io.github.cquiroz" %%% "scala-java-time" % "2.4.0",
       "io.github.cquiroz" %%% "scala-java-time-tzdb" % "2.4.0"
-    ),
-    mimaPreviousArtifacts := Set()
+    )
   )
 
 lazy val `fsi-benchmark-core` = crossProject(JVMPlatform)
