@@ -25,26 +25,17 @@ lazy val commonSettings = Seq(
     ),
   ),
   scalaVersion := "2.12.17",
-  scalacOptions ++= {
-    CrossVersion.partialVersion(scalaVersion.value) match {
-      case Some((2, _)) => Seq(
-        "-deprecation",
-        "-encoding", "UTF-8",
-        "-target:jvm-1.8",
-        "-feature",
-        "-unchecked",
-        "-Ywarn-dead-code",
-        "-Xlint"
-      )
-      case _ => Seq(
-        "-deprecation",
-        "-encoding", "UTF-8",
-        "-feature",
-        "-unchecked",
-        "-Xcheck-macros"
-      )
-    }
-  },
+  scalacOptions ++= Seq(
+    "-deprecation",
+    "-encoding", "UTF-8",
+    "-feature",
+    "-unchecked",
+  ) ++ (CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 12)) => Seq("-language:higherKinds")
+    case Some((2, 13)) => Seq("-Wnonunit-statement")
+    case Some((3, _)) => Seq("-Xcheck-macros")
+    case _ => Seq()
+  }),
   Test / testOptions += Tests.Argument("-oDF"),
   ThisBuild / parallelExecution := false,
   publishTo := sonatypePublishToBundle.value,
