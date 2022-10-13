@@ -1,4 +1,5 @@
 import sbt.url
+import org.scalajs.linker.interface.{CheckedBehavior, ESVersion}
 import scala.sys.process._
 
 lazy val oldVersion = "git describe --abbrev=0".!!.trim.replaceAll("^v", "")
@@ -58,6 +59,25 @@ lazy val commonSettings = Seq(
   pomIncludeRepository := { _ => false }
 )
 
+lazy val jsSettings = Seq(
+  scalaJSLinkerConfig ~= {
+    _.withSemantics({
+      _.optimized
+        .withProductionMode(true)
+        .withAsInstanceOfs(CheckedBehavior.Unchecked)
+        .withStringIndexOutOfBounds(CheckedBehavior.Unchecked)
+        .withArrayIndexOutOfBounds(CheckedBehavior.Unchecked)
+    }).withClosureCompiler(true)
+      .withESFeatures(_.withESVersion(ESVersion.ES2015))
+      .withModuleKind(ModuleKind.CommonJSModule)
+  },
+  coverageEnabled := false // FIXME: Unexpected crash of scalac
+)
+
+lazy val nativeSettings = Seq(
+  coverageEnabled := false // FIXME: Unexpected linking error
+)
+
 lazy val noPublishSettings = Seq(
   publish / skip := true,
   mimaPreviousArtifacts := Set()
@@ -88,11 +108,12 @@ lazy val publishSettings = Seq(
 )
 
 lazy val `fast-string-interpolator` = project.in(file("."))
-  .aggregate(`fsi-macros`, `fsi-benchmark-core`, `fsi-benchmark`)
+  .aggregate(`fsi-macrosJVM`, `fsi-macrosJS`, `fsi-macrosNative`, `fsi-benchmark-coreJVM`, `fsi-benchmarkJVM`)
   .settings(commonSettings)
   .settings(noPublishSettings)
 
-lazy val `fsi-macros` = project
+lazy val `fsi-macros` = crossProject(JVMPlatform, JSPlatform, NativePlatform)
+  .crossType(CrossType.Full)
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
@@ -108,8 +129,30 @@ lazy val `fsi-macros` = project
     }
   )
 
-lazy val `fsi-benchmark-core` = project
-  .enablePlugins(JmhPlugin)
+lazy val `fsi-macrosJVM` = `fsi-macros`.jvm
+
+lazy val `fsi-macrosJS` = `fsi-macros`.js
+  .settings(jsSettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      "io.github.cquiroz" %%% "scala-java-time" % "2.4.0",
+      "io.github.cquiroz" %%% "scala-java-time-tzdb" % "2.4.0"
+    ),
+    mimaPreviousArtifacts := Set()
+  )
+
+lazy val `fsi-macrosNative` = `fsi-macros`.native
+  .settings(nativeSettings)
+  .settings(
+    libraryDependencies ++= Seq(
+      "io.github.cquiroz" %%% "scala-java-time" % "2.4.0",
+      "io.github.cquiroz" %%% "scala-java-time-tzdb" % "2.4.0"
+    ),
+    mimaPreviousArtifacts := Set()
+  )
+
+lazy val `fsi-benchmark-core` = crossProject(JVMPlatform)
+  .crossType(CrossType.Full)
   .dependsOn(`fsi-macros`)
   .settings(commonSettings)
   .settings(noPublishSettings)
@@ -120,8 +163,11 @@ lazy val `fsi-benchmark-core` = project
     )
   )
 
-lazy val `fsi-benchmark` = project
+lazy val `fsi-benchmark-coreJVM` = `fsi-benchmark-core`.jvm
   .enablePlugins(JmhPlugin)
+
+lazy val `fsi-benchmark` = crossProject(JVMPlatform)
+  .crossType(CrossType.Full)
   .dependsOn(`fsi-benchmark-core`)
   .settings(commonSettings)
   .settings(noPublishSettings)
@@ -134,3 +180,6 @@ lazy val `fsi-benchmark` = project
       "org.scalatest" %% "scalatest" % "3.2.14" % Test
     )
   )
+
+lazy val `fsi-benchmarkJVM` = `fsi-benchmark`.jvm
+  .enablePlugins(JmhPlugin)
