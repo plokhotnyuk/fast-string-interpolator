@@ -2,7 +2,7 @@
 
 [![Actions Build](https://github.com/plokhotnyuk/fast-string-interpolator/workflows/build/badge.svg)](https://github.com/plokhotnyuk/fast-string-interpolator/actions)
 [![Scala Steward](https://img.shields.io/badge/Scala_Steward-helping-brightgreen.svg?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAVFBMVEUAAACHjojlOy5NWlrKzcYRKjGFjIbp293YycuLa3pYY2LSqql4f3pCUFTgSjNodYRmcXUsPD/NTTbjRS+2jomhgnzNc223cGvZS0HaSD0XLjbaSjElhIr+AAAAAXRSTlMAQObYZgAAAHlJREFUCNdNyosOwyAIhWHAQS1Vt7a77/3fcxxdmv0xwmckutAR1nkm4ggbyEcg/wWmlGLDAA3oL50xi6fk5ffZ3E2E3QfZDCcCN2YtbEWZt+Drc6u6rlqv7Uk0LdKqqr5rk2UCRXOk0vmQKGfc94nOJyQjouF9H/wCc9gECEYfONoAAAAASUVORK5CYII=)](https://scala-steward.org)
-[![Maven Central](https://img.shields.io/badge/maven--central-0.6.2-blue.svg)](https://search.maven.org/search?q=com.github.plokhotnyuk.fsi)
+[![Maven Central](https://img.shields.io/badge/maven--central-0.6.3-blue.svg)](https://search.maven.org/search?q=com.github.plokhotnyuk.fsi)
 
 Scala macro that generates ultra-fast string interpolators.
 
@@ -21,7 +21,7 @@ Currently, it doesn't support formatting string interpolator (`f""` literal), ho
 Add the library to a dependency list:
 
 ```sbt
-libraryDependencies += "com.github.plokhotnyuk.fsi" %% "fsi-macros" % "0.6.2"
+libraryDependencies += "com.github.plokhotnyuk.fsi" %% "fsi-macros" % "0.6.3"
 ```
 
 Add import and replace prefix `s` by `fs` (or for a raw string interpolator `raw` by `fraw`):
