@@ -24,7 +24,6 @@ lazy val commonSettings = Seq(
     ),
   ),
   scalaVersion := "2.12.17",
-  resolvers += Resolver.sonatypeRepo("staging"),
   scalacOptions ++= {
     CrossVersion.partialVersion(scalaVersion.value) match {
       case Some((2, _)) => Seq(
@@ -45,8 +44,8 @@ lazy val commonSettings = Seq(
       )
     }
   },
-  testOptions in Test += Tests.Argument("-oDF"),
-  parallelExecution in ThisBuild := false,
+  Test / testOptions += Tests.Argument("-oDF"),
+  ThisBuild / parallelExecution := false,
   publishTo := sonatypePublishToBundle.value,
   sonatypeProfileName := "com.github.plokhotnyuk",
   scmInfo := Some(
@@ -60,7 +59,7 @@ lazy val commonSettings = Seq(
 )
 
 lazy val noPublishSettings = Seq(
-  skip in publish := true,
+  publish / skip := true,
   mimaPreviousArtifacts := Set()
 )
 
@@ -76,8 +75,6 @@ lazy val publishSettings = Seq(
     if (isPatch) "both" else "backward"
   },
   mimaPreviousArtifacts := {
-    val Some((scalaMajor, _)) = CrossVersion.partialVersion(scalaVersion.value)
-
     def isCheckingRequired: Boolean = {
       val Array(newMajor, _, _) = version.value.split('.')
       val Array(oldMajor, _, _) = oldVersion.split('.')
@@ -99,14 +96,14 @@ lazy val `fsi-macros` = project
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    crossScalaVersions := Seq("3.1.1", "2.13.8", scalaVersion.value, "2.11.12"),
+    crossScalaVersions := Seq("3.2.0", "2.13.10", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= {
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, _)) => Seq(
           "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-          "org.scalatest" %% "scalatest" % "3.2.13" % Test
+          "org.scalatest" %% "scalatest" % "3.2.14" % Test
         )
-        case _ => Seq("org.scalatest" %% "scalatest" % "3.2.13" % Test)
+        case _ => Seq("org.scalatest" %% "scalatest" % "3.2.14" % Test)
       }
     }
   )
@@ -117,9 +114,9 @@ lazy val `fsi-benchmark-core` = project
   .settings(commonSettings)
   .settings(noPublishSettings)
   .settings(
-    crossScalaVersions := Seq("2.13.8", scalaVersion.value, "2.11.12"),
+    crossScalaVersions := Seq("2.13.10", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.2.13" % Test
+      "org.scalatest" %% "scalatest" % "3.2.14" % Test
     )
   )
 
@@ -134,6 +131,6 @@ lazy val `fsi-benchmark` = project
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.7",
       "com.outr" %% "scribe-slf4j" % "2.7.13" % Test,
-      "org.scalatest" %% "scalatest" % "3.2.13" % Test
+      "org.scalatest" %% "scalatest" % "3.2.14" % Test
     )
   )
