@@ -109,7 +109,7 @@ lazy val `fsi-macros` = crossProject(JVMPlatform, JSPlatform, NativePlatform)
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    crossScalaVersions := Seq("3.2.2", "2.13.11", scalaVersion.value, "2.11.12"),
+    crossScalaVersions := Seq("3.3.3", "2.13.11", scalaVersion.value, "2.11.12"),
     libraryDependencies ++= {
       CrossVersion.partialVersion(scalaVersion.value) match {
         case Some((2, _)) => Seq(
