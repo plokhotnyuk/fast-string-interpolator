@@ -24,7 +24,7 @@ lazy val commonSettings = Seq(
       url = url("https://github.com/AnderEnder")
     ),
   ),
-  scalaVersion := "2.12.17",
+  scalaVersion := "2.12.20",
   scalacOptions ++= Seq(
     "-deprecation",
     "-encoding", "UTF-8",
