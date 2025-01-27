@@ -166,7 +166,7 @@ lazy val `fsi-benchmark` = crossProject(JVMPlatform)
     libraryDependencies ++= Seq(
       "com.dongxiguo" %% "fastring" % "1.0.0",
       "com.outr" %% "perfolation" % "1.1.7",
-      "com.outr" %% "scribe-slf4j" % "2.7.13" % Test,
+      "com.outr" %% "scribe-slf4j" % "2.8.6" % Test,
       "org.scalatest" %% "scalatest" % "3.2.19" % Test
     )
   )
